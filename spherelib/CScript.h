@@ -5,6 +5,11 @@ class CScriptMethod
 
 };
 
+class CScriptProp
+{
+
+};
+
 class CScript
 {
 

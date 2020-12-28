@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugProfile|Win32">
+      <Configuration>DebugProfile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/SphereSvr", FCAAAAAA</SccProjectName>
+    <SccLocalPath>d:\menace\spheresvr</SccLocalPath>
+    <ProjectGuid>{0A4CF213-CD13-4A8C-A840-ABFBE6A11A5C}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugProfile|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugProfile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugProfile|Win32'">
+    <OutDir>.\DebugProfile\</OutDir>
+    <IntDir>.\DebugProfile\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level2</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;SPHERE_SVR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\SphereSvr.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <CallingConvention>StdCall</CallingConvention>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\SphereSvr.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\SphereSvr.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Debug\SphereSvr.exe</OutputFile>
+      <AdditionalDependencies>wsock32.lib;comctl32.lib;D:\samples\js\bin\js32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Version>0.12</Version>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugProfile|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level2</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;SPHERE_SVR;USE_JSCRIPT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\DebugProfile\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\DebugProfile\SphereSvr.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\DebugProfile\</ObjectFileName>
+      <ProgramDataBaseFileName>.\DebugProfile\</ProgramDataBaseFileName>
+      <CallingConvention>StdCall</CallingConvention>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\DebugProfile\SphereSvr.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DebugProfile\SphereSvr.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>Debug/sphereSvr.exe</OutputFile>
+      <AdditionalDependencies>wsock32.lib;comctl32.lib;D:\samples\js\bin\js32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Version>0.12</Version>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level2</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;SPHERE_SVR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release\SphereSvr.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <CallingConvention>StdCall</CallingConvention>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\SphereSvr.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\SphereSvr.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Release\SphereSvr.exe</OutputFile>
+      <AdditionalDependencies>wsock32.lib;comctl32.lib;D:\samples\js\bin\js32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Version>0.10</Version>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\scripts\bs3\bs2_crier.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs2_items.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs2_map.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs2_santa.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs2_stuff.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_borgvendors.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_classitems.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_drowvendors.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_dwarfvendors.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_elfvendors.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_gargoyle_town.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_halforcvendors.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_helpgump.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_ogre_town.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_ore_elem.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_patron.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_racemenu.scp" />
+    <CustomBuild Include="..\scripts\bs3\bs3_troll_town.scp" />
+    <CustomBuild Include="..\scripts\bs3\sphereclass.scp" />
+    <CustomBuild Include="..\scripts\bs3\SphereRace.scp" />
+    <CustomBuild Include="..\scripts\custom\spheretest.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char3.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_animals.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_borgvendors.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_crier.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_daemon.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_dragon.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_drowvendors.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_dwarfvendors.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_elfvendors.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_evil.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_gargvendors.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_halforcvendors.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_humans.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_lbr_new.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_monsters.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_mustang.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_ogrevendors.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_ophidian.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_skill_testers.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_traveller.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_trollvendors.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_undead.scp" />
+    <CustomBuild Include="..\scripts\npcs\sphere_d_char_uniques.scp" />
+    <CustomBuild Include="..\scripts\speech\jobactor.scp" />
+    <CustomBuild Include="..\scripts\speech\jobalchemist.scp" />
+    <CustomBuild Include="..\scripts\speech\jobanimal.scp" />
+    <CustomBuild Include="..\scripts\speech\jobarchitect.scp" />
+    <CustomBuild Include="..\scripts\speech\jobarmourer.scp" />
+    <CustomBuild Include="..\scripts\speech\jobartist.scp" />
+    <CustomBuild Include="..\scripts\speech\jobbaker.scp" />
+    <CustomBuild Include="..\scripts\speech\jobbanker.scp" />
+    <CustomBuild Include="..\scripts\speech\jobbard.scp" />
+    <CustomBuild Include="..\scripts\speech\jobbeekeeper.scp" />
+    <CustomBuild Include="..\scripts\speech\jobbeggar.scp" />
+    <CustomBuild Include="..\scripts\speech\jobblacksmith.scp" />
+    <CustomBuild Include="..\scripts\speech\jobbowyer.scp" />
+    <CustomBuild Include="..\scripts\speech\jobBrigand.scp" />
+    <CustomBuild Include="..\scripts\speech\jobbutcher.scp" />
+    <CustomBuild Include="..\scripts\speech\jobcarpenter.scp" />
+    <CustomBuild Include="..\scripts\speech\jobcashual.scp" />
+    <CustomBuild Include="..\scripts\speech\jobcobbler.scp" />
+    <CustomBuild Include="..\scripts\speech\jobfarmer.scp" />
+    <CustomBuild Include="..\scripts\speech\jobfurtrader.scp" />
+    <CustomBuild Include="..\scripts\speech\jobgambler.scp" />
+    <CustomBuild Include="..\scripts\speech\jobglassblower.scp" />
+    <CustomBuild Include="..\scripts\speech\jobGuard.scp" />
+    <CustomBuild Include="..\scripts\speech\jobhealer.scp" />
+    <CustomBuild Include="..\scripts\speech\jobhealwand.scp" />
+    <CustomBuild Include="..\scripts\speech\jobherbalist.scp" />
+    <CustomBuild Include="..\scripts\speech\jobinnkeeper.scp" />
+    <CustomBuild Include="..\scripts\speech\jobjailor.scp" />
+    <CustomBuild Include="..\scripts\speech\jobjeweller.scp" />
+    <CustomBuild Include="..\scripts\speech\jobjudge.scp" />
+    <CustomBuild Include="..\scripts\speech\joblaborer.scp" />
+    <CustomBuild Include="..\scripts\speech\jobMage.scp" />
+    <CustomBuild Include="..\scripts\speech\jobMageEvil.scp" />
+    <CustomBuild Include="..\scripts\speech\jobMageShop.scp" />
+    <CustomBuild Include="..\scripts\speech\jobmapmaker.scp" />
+    <CustomBuild Include="..\scripts\speech\jobmayor.scp" />
+    <CustomBuild Include="..\scripts\speech\jobmiller.scp" />
+    <CustomBuild Include="..\scripts\speech\jobminer.scp" />
+    <CustomBuild Include="..\scripts\speech\jobminter.scp" />
+    <CustomBuild Include="..\scripts\speech\jobmonk.scp" />
+    <CustomBuild Include="..\scripts\speech\jobnoble.scp" />
+    <CustomBuild Include="..\scripts\speech\joboverseer.scp" />
+    <CustomBuild Include="..\scripts\speech\jobpaladin.scp" />
+    <CustomBuild Include="..\scripts\speech\jobparliament.scp" />
+    <CustomBuild Include="..\scripts\speech\jobpirate.scp" />
+    <CustomBuild Include="..\scripts\speech\jobpriest.scp" />
+    <CustomBuild Include="..\scripts\speech\jobprisoner.scp" />
+    <CustomBuild Include="..\scripts\speech\jobprovisioner.scp" />
+    <CustomBuild Include="..\scripts\speech\jobrancher.scp" />
+    <CustomBuild Include="..\scripts\speech\jobranger.scp" />
+    <CustomBuild Include="..\scripts\speech\jobrealtor.scp" />
+    <CustomBuild Include="..\scripts\speech\jobrunner.scp" />
+    <CustomBuild Include="..\scripts\speech\jobsailor.scp" />
+    <CustomBuild Include="..\scripts\speech\jobscholar.scp" />
+    <CustomBuild Include="..\scripts\speech\jobscribe.scp" />
+    <CustomBuild Include="..\scripts\speech\jobsculptor.scp" />
+    <CustomBuild Include="..\scripts\speech\jobservant.scp" />
+    <CustomBuild Include="..\scripts\speech\jobshepherd.scp" />
+    <CustomBuild Include="..\scripts\speech\jobshipwright.scp" />
+    <CustomBuild Include="..\scripts\speech\jobtanner.scp" />
+    <CustomBuild Include="..\scripts\speech\jobtavernkeeper.scp" />
+    <CustomBuild Include="..\scripts\speech\jobthief.scp" />
+    <CustomBuild Include="..\scripts\speech\jobtinker.scp" />
+    <CustomBuild Include="..\scripts\speech\jobveggie.scp" />
+    <CustomBuild Include="..\scripts\speech\jobvet.scp" />
+    <CustomBuild Include="..\scripts\speech\jobwaiter.scp" />
+    <CustomBuild Include="..\scripts\speech\jobweaponsmith.scp" />
+    <CustomBuild Include="..\scripts\speech\jobweaponstrainer.scp" />
+    <CustomBuild Include="..\scripts\speech\jobweaver.scp" />
+    <CustomBuild Include="..\scripts\speech\speakhorse.scp" />
+    <CustomBuild Include="..\scripts\speech\speakhuman.scp" />
+    <CustomBuild Include="..\scripts\speech\speakmaster.scp" />
+    <CustomBuild Include="..\scripts\speech\speakneeds.scp" />
+    <CustomBuild Include="..\scripts\speech\speakorc.scp" />
+    <CustomBuild Include="..\scripts\speech\speakrehello.scp" />
+    <CustomBuild Include="..\scripts\speech\speakshopkeep.scp" />
+    <CustomBuild Include="..\scripts\speech\spherespee.scp" />
+    <CustomBuild Include="..\scripts\speech\townbritain.scp" />
+    <CustomBuild Include="..\scripts\speech\townbucsden.scp" />
+    <CustomBuild Include="..\scripts\speech\towncove.scp" />
+    <CustomBuild Include="..\scripts\speech\townjhelom.scp" />
+    <CustomBuild Include="..\scripts\speech\townmagincia.scp" />
+    <CustomBuild Include="..\scripts\speech\townminoc.scp" />
+    <CustomBuild Include="..\scripts\speech\townmoonglow.scp" />
+    <CustomBuild Include="..\scripts\speech\townnujelm.scp" />
+    <CustomBuild Include="..\scripts\speech\townserphold.scp" />
+    <CustomBuild Include="..\scripts\speech\townskarabrae.scp" />
+    <CustomBuild Include="..\scripts\speech\towntrinsic.scp" />
+    <CustomBuild Include="..\scripts\speech\townvesper.scp" />
+    <CustomBuild Include="..\scripts\speech\townwind.scp" />
+    <CustomBuild Include="..\scripts\speech\townyew.scp" />
+    <CustomBuild Include="..\scripts\SPHERETables.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_book.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_defs.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_dialog.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_dlg_reference.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_events.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_events_human.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_function.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_healing.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_house_item.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_house_menu.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_map.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_map2.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_menu.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_name.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_newb.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_plevel.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_region.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_skillmenu.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_spawns.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_speech.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_spells.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_template.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_templates_loot.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_template_vend.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_trig.scp" />
+    <CustomBuild Include="..\scripts\sphere_d_web.scp" />
+    <CustomBuild Include="..\scripts\test\blacksmith_menu.scp" />
+    <CustomBuild Include="..\scripts\test\classmenus.scp" />
+    <CustomBuild Include="..\scripts\test\clericbook.scp" />
+    <CustomBuild Include="..\scripts\test\custom_vendor.scp" />
+    <CustomBuild Include="..\scripts\test\helpgump2.scp" />
+    <CustomBuild Include="..\scripts\test\helpgump3.scp" />
+    <CustomBuild Include="..\scripts\test\housegump.scp" />
+    <CustomBuild Include="..\scripts\test\housegump2.scp" />
+    <CustomBuild Include="..\scripts\test\housegump3.scp" />
+    <CustomBuild Include="..\scripts\test\necrobook.scp" />
+    <CustomBuild Include="..\scripts\test\RewardSystem.scp" />
+    <CustomBuild Include="..\scripts\test\runebook.scp" />
+    <CustomBuild Include="..\scripts\test\runebook2.scp" />
+    <CustomBuild Include="..\scripts\test\spherechar3.scp" />
+    <CustomBuild Include="..\scripts\test\Tinkering_menu.scp" />
+    <CustomBuild Include="..\scripts\test\traveler.scp" />
+    <CustomBuild Include="..\scripts\web\index.htt" />
+    <CustomBuild Include="..\scripts\web\sphere404.htt" />
+    <CustomBuild Include="..\scripts\web\sphereaccount.htt" />
+    <CustomBuild Include="..\scripts\web\sphereconfig.htt" />
+    <CustomBuild Include="..\scripts\web\sphereconfiggame.htt" />
+    <CustomBuild Include="..\scripts\web\sphereconfigserv.htt" />
+    <CustomBuild Include="..\scripts\web\spherejoin.htt" />
+    <CustomBuild Include="..\scripts\web\spherelogfail.htt" />
+    <CustomBuild Include="..\scripts\web\spherelogin.htt" />
+    <CustomBuild Include="..\scripts\web\spheremailpass.htt" />
+    <CustomBuild Include="..\scripts\web\spheremsgres.htt" />
+    <CustomBuild Include="..\scripts\web\spheremyaccount.htt" />
+    <CustomBuild Include="..\scripts\web\sphereplayer.htt" />
+    <CustomBuild Include="..\scripts\web\sphereplayer2.htt" />
+    <CustomBuild Include="..\scripts\web\spheres1t.htt" />
+    <CustomBuild Include="..\scripts\web\spheres2t.htt" />
+    <CustomBuild Include="..\scripts\web\spheres3t.htt" />
+    <CustomBuild Include="..\scripts\web\spheres4t.htt" />
+    <CustomBuild Include="..\scripts\web\spheres5t.htt" />
+    <CustomBuild Include="..\scripts\web\spherestatus.htt" />
+    <CustomBuild Include="..\SphereAccount\caccountmethods.tbl" />
+    <CustomBuild Include="..\SphereAccount\caccountmgrmethods.tbl" />
+    <CustomBuild Include="..\SphereAccount\caccountprops.tbl" />
+    <CustomBuild Include="..\SphereCommon\cregioncomplexmethods.tbl" />
+    <CustomBuild Include="..\SphereCommon\cregioncomplexprops.tbl" />
+    <CustomBuild Include="..\SphereCommon\cregionevents.tbl" />
+    <CustomBuild Include="..\SphereCommon\cregionmethods.tbl" />
+    <CustomBuild Include="..\SphereCommon\cregionprops.tbl" />
+    <CustomBuild Include="..\SphereCommon\cregionresourceprops.tbl" />
+    <CustomBuild Include="..\SphereCommon\cregiontypeprops.tbl" />
+    <CustomBuild Include="..\SphereCommon\cresourcetag.tbl" />
+    <CustomBuild Include="..\SphereCommon\csphereexpfunc.tbl" />
+    <CustomBuild Include="..\SphereCommon\globalmethods.tbl" />
+    <CustomBuild Include="cchardefprops.tbl" />
+    <CustomBuild Include="ccharevents.tbl" />
+    <CustomBuild Include="ccharmethods.tbl" />
+    <CustomBuild Include="ccharnpcmethods.tbl" />
+    <CustomBuild Include="ccharnpcprops.tbl" />
+    <CustomBuild Include="ccharplayermethods.tbl" />
+    <CustomBuild Include="ccharplayerprops.tbl" />
+    <CustomBuild Include="ccharprops.tbl" />
+    <CustomBuild Include="cclientmethods.tbl" />
+    <CustomBuild Include="cclientprops.tbl" />
+    <CustomBuild Include="ccontainermethods.tbl" />
+    <CustomBuild Include="cgmpageprops.tbl" />
+    <CustomBuild Include="citemcontainermethods.tbl" />
+    <CustomBuild Include="citemdefmultiprops.tbl" />
+    <CustomBuild Include="citemdefprops.tbl" />
+    <CustomBuild Include="CItemDefWeaponProps.tbl" />
+    <CustomBuild Include="citemevents.tbl" />
+    <CustomBuild Include="citemmapmethods.tbl" />
+    <CustomBuild Include="citemmessagemethods.tbl" />
+    <CustomBuild Include="citemmessageprops.tbl" />
+    <CustomBuild Include="citemmethods.tbl" />
+    <CustomBuild Include="citemmultimethods.tbl" />
+    <CustomBuild Include="citemmultiprops.tbl" />
+    <CustomBuild Include="citemprops.tbl" />
+    <CustomBuild Include="citemscriptmethods.tbl" />
+    <CustomBuild Include="citemstonemethods.tbl" />
+    <CustomBuild Include="citemstoneprops.tbl" />
+    <CustomBuild Include="citemvendprops.tbl" />
+    <CustomBuild Include="cobjbasedefprops.tbl" />
+    <CustomBuild Include="cobjbasemethods.tbl" />
+    <CustomBuild Include="cobjbaseprops.tbl" />
+    <CustomBuild Include="cprofessionprops.tbl" />
+    <CustomBuild Include="cprofileprops.tbl" />
+    <CustomBuild Include="CRaceClassMethods.tbl" />
+    <CustomBuild Include="craceclassprops.tbl" />
+    <CustomBuild Include="cresourceprops.tbl" />
+    <CustomBuild Include="csectormethods.tbl" />
+    <CustomBuild Include="csectorprops.tbl" />
+    <CustomBuild Include="cserverdefprops.tbl" />
+    <CustomBuild Include="cservermethods.tbl" />
+    <CustomBuild Include="cservevents.tbl" />
+    <CustomBuild Include="cskilldefevents.tbl" />
+    <CustomBuild Include="cskilldefprops.tbl" />
+    <CustomBuild Include="cspelldefprops.tbl" />
+    <CustomBuild Include="cwebpageevents.tbl" />
+    <CustomBuild Include="cwebpagemethods.tbl" />
+    <CustomBuild Include="cwebpageprops.tbl" />
+    <CustomBuild Include="cworldprops.tbl" />
+    <CustomBuild Include="sphere.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SphereAccount\CAccount.cpp" />
+    <ClCompile Include="..\SphereAccount\caccountmgr.cpp" />
+    <ClCompile Include="..\SphereCommon\ccrypt.cpp" />
+    <ClCompile Include="..\SphereCommon\ccryptnew.cpp" />
+    <ClCompile Include="..\SphereCommon\cMulInst.cpp" />
+    <ClCompile Include="..\SphereCommon\cMulMap.cpp" />
+    <ClCompile Include="..\SphereCommon\cmulmulti.cpp" />
+    <ClCompile Include="..\SphereCommon\cMulVer.cpp" />
+    <ClCompile Include="..\SphereCommon\cObjBaseTemplate.cpp" />
+    <ClCompile Include="..\SphereCommon\cpointmap.cpp" />
+    <ClCompile Include="..\SphereCommon\CRegionComplex.cpp" />
+    <ClCompile Include="..\SphereCommon\CRegionMap.cpp" />
+    <ClCompile Include="..\SphereCommon\CRegionType.cpp" />
+    <ClCompile Include="..\SphereCommon\cresourcebase.cpp" />
+    <ClCompile Include="..\SphereCommon\csectortemplate.cpp" />
+    <ClCompile Include="..\SphereCommon\cSphereExp.cpp" />
+    <ClCompile Include="..\SphereCommon\Cteleport.cpp" />
+    <ClCompile Include="..\SphereCommon\sphereproto.cpp" />
+    <ClCompile Include="..\SphereIRC\CIRCServConf.cpp" />
+    <ClCompile Include="..\SphereIRC\CIRCServer.cpp" />
+    <ClCompile Include="..\SphereIRC\CIRCServer2.cpp" />
+    <ClCompile Include="..\SphereIRC\hash.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCBase64.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCChanServ.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCCloak.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCCommands.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCCommonServ.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCConfig.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCCRule.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCHelpServ.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCMemoServ.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCModes.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCNickServ.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCOperServ.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCPacket.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCProcess.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCRootServ.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCSendTo.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCServices.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCTools.cpp" />
+    <ClCompile Include="..\SphereIRC\IRCWhoWas.cpp" />
+    <ClCompile Include="..\SphereIRC\SCache.cpp" />
+    <ClCompile Include="CBackTask.cpp" />
+    <ClCompile Include="CChar.cpp" />
+    <ClCompile Include="ccharact.cpp" />
+    <ClCompile Include="cCharDef.cpp" />
+    <ClCompile Include="CCharFight.cpp" />
+    <ClCompile Include="CCharNoto.cpp" />
+    <ClCompile Include="CCharNPC.cpp" />
+    <ClCompile Include="CCharNPCAct.cpp" />
+    <ClCompile Include="CCharNPCFood.cpp" />
+    <ClCompile Include="CCharNPCPet.cpp" />
+    <ClCompile Include="CCharNPCStatus.cpp" />
+    <ClCompile Include="ccharskill.cpp" />
+    <ClCompile Include="ccharspell.cpp" />
+    <ClCompile Include="CCharStatus.cpp" />
+    <ClCompile Include="ccharuse.cpp" />
+    <ClCompile Include="CChat.cpp" />
+    <ClCompile Include="CClient.cpp" />
+    <ClCompile Include="CClientDialog.cpp" />
+    <ClCompile Include="cclientevent.cpp" />
+    <ClCompile Include="CClientGMPage.cpp" />
+    <ClCompile Include="CClientLog.cpp" />
+    <ClCompile Include="CClientMsg.cpp" />
+    <ClCompile Include="cclienttarg.cpp" />
+    <ClCompile Include="cclientuse.cpp" />
+    <ClCompile Include="CContain.cpp" />
+    <ClCompile Include="cgmpage.cpp" />
+    <ClCompile Include="CItem.cpp" />
+    <ClCompile Include="CItemCont.cpp" />
+    <ClCompile Include="cItemDef.cpp" />
+    <ClCompile Include="citemmulti.cpp" />
+    <ClCompile Include="CItemSp.cpp" />
+    <ClCompile Include="CItemStone.cpp" />
+    <ClCompile Include="CItemVend.cpp" />
+    <ClCompile Include="CLog.cpp" />
+    <ClCompile Include="CObjBase.cpp" />
+    <ClCompile Include="cObjBaseDef.cpp" />
+    <ClCompile Include="cquest.cpp" />
+    <ClCompile Include="CResource.cpp" />
+    <ClCompile Include="CResourceCalc.cpp" />
+    <ClCompile Include="CResourceDef.cpp" />
+    <ClCompile Include="CResourceTest.cpp" />
+    <ClCompile Include="csector.cpp" />
+    <ClCompile Include="CServConsoleD.cpp" />
+    <ClCompile Include="CServConsoleW.cpp" />
+    <ClCompile Include="CServer.cpp" />
+    <ClCompile Include="CServRef.cpp" />
+    <ClCompile Include="CWebPage.cpp" />
+    <ClCompile Include="CWorld.cpp" />
+    <ClCompile Include="cworldimport.cpp" />
+    <ClCompile Include="cworldmap.cpp" />
+    <ClCompile Include="CWorldSearch.cpp" />
+    <ClCompile Include="spheresvr.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugProfile|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='DebugProfile|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SphereAccount\caccount.h" />
+    <ClInclude Include="..\SphereAccount\caccountbase.h" />
+    <ClInclude Include="..\SphereCommon\ccrypt.h" />
+    <ClInclude Include="..\SphereCommon\cMulInst.h" />
+    <ClInclude Include="..\SphereCommon\cMulMap.h" />
+    <ClInclude Include="..\SphereCommon\CMulMulti.h" />
+    <ClInclude Include="..\SphereCommon\cMulTile.h" />
+    <ClInclude Include="..\SphereCommon\cObjBaseTemplate.h" />
+    <ClInclude Include="..\SphereCommon\cPointMap.h" />
+    <ClInclude Include="..\SphereCommon\CRegionMap.h" />
+    <ClInclude Include="..\SphereCommon\cresourcebase.h" />
+    <ClInclude Include="..\SphereCommon\cSectorTemplate.h" />
+    <ClInclude Include="..\SphereCommon\cSphereExp.h" />
+    <ClInclude Include="..\SphereCommon\SphereCommon.h" />
+    <ClInclude Include="..\SphereCommon\spheremul.h" />
+    <ClInclude Include="..\SphereCommon\sphereproto.h" />
+    <ClInclude Include="..\SphereIRC\CIRCServer.h" />
+    <ClInclude Include="..\SphereIRC\hash.h" />
+    <ClInclude Include="..\SphereIRC\IRCBase64.h" />
+    <ClInclude Include="..\SphereIRC\IRCCRule.h" />
+    <ClInclude Include="..\SphereIRC\IRCModes.h" />
+    <ClInclude Include="..\SphereIRC\IRCSendTo.h" />
+    <ClInclude Include="..\SphereIRC\IRCServices.h" />
+    <ClInclude Include="..\SphereIRC\IRCTools.h" />
+    <ClInclude Include="..\SphereIRC\IRCWhoWas.h" />
+    <ClInclude Include="..\SphereIRC\SCache.h" />
+    <ClInclude Include="..\SphereLib\spherelib.h" />
+    <ClInclude Include="CChat.h" />
+    <ClInclude Include="cclient.h" />
+    <ClInclude Include="cobjbase.h" />
+    <ClInclude Include="cObjBaseDef.h" />
+    <ClInclude Include="cresource.h" />
+    <ClInclude Include="CServRef.h" />
+    <ClInclude Include="CWorld.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SpherePublic.h" />
+    <ClInclude Include="spheresvr.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="spheresvr.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="spheresvr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\SphereDoc\SphereSvr_Bugs.txt" />
+    <Text Include="..\SphereDoc\SphereSvr_Requests.txt" />
+    <Text Include="..\SphereDoc\SphereSvr_REVISIONS.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

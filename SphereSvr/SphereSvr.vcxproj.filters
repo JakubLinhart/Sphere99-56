@@ -1316,4 +1316,9 @@
       <Filter>Scripting Tables</Filter>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\spherelib\cuidrefarraymethods.tbl">
+      <Filter>SphereLib</Filter>
+    </None>
+  </ItemGroup>
 </Project>

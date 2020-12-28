@@ -625,6 +625,9 @@
     <Text Include="..\SphereDoc\SphereSvr_Requests.txt" />
     <Text Include="..\SphereDoc\SphereSvr_REVISIONS.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\spherelib\cuidrefarraymethods.tbl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

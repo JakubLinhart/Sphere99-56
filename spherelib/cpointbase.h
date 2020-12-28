@@ -1,3 +1,5 @@
+#pragma once
+
 #include "..\SphereSvr\stdafx.h"
 
 struct CGPointBase	// Non initialized 3d point.
@@ -16,4 +18,5 @@ public:
 	void Set(const CGPointBase& pt);
 	void Set(const POINT pt);
 	void Set(const POINTS pt);
+	void v_Set(CGVariant& vVal);
 }

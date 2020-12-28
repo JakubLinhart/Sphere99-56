@@ -36,3 +36,8 @@ void CGPointBase::Set(const POINTS pt)
 	m_z = 0;
 	m_mapplane = 0;
 }
+
+void CGPointBase::v_Set(CGVariant& vVal)
+{
+	throw "Not implemented yet";
+}

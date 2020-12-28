@@ -103,6 +103,15 @@ struct CPointMap : public CPointMapBase
 	{
 		InitPoint(); 
 	}
+	HASH_INDEX GetHashCode() const
+	{
+		HASH_INDEX hash = 3049 * m_x;
+		hash *= 5039 + m_y;
+		hash *= 883 + m_z;
+		hash *= 9719 + m_mapplane;
+
+		return hash;
+	}
 };
 
 

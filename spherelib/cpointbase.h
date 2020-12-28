@@ -40,4 +40,13 @@ public:
 	void v_Set(CGVariant& vVal);
 
 	DIR_TYPE GetDir(const CGPointBase& pt, DIR_TYPE DirDefault = DIR_QTY) const; // Direction to point pt
+
+	operator POINT() const
+	{
+		POINT pt;
+
+		pt.x = m_x;
+		pt.y = m_y;
+		return pt;
+	}
 };

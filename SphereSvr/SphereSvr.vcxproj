@@ -451,7 +451,6 @@
     <CustomBuild Include="sphere.ini" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Missing\CScriptProp.cpp" />
     <ClCompile Include="..\SphereAccount\CAccount.cpp" />
     <ClCompile Include="..\SphereAccount\caccountmgr.cpp" />
     <ClCompile Include="..\SphereCommon\ccrypt.cpp" />
@@ -558,7 +557,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Missing\missing.h" />
     <ClInclude Include="..\SphereAccount\caccount.h" />
     <ClInclude Include="..\SphereAccount\caccountbase.h" />
     <ClInclude Include="..\SphereCommon\ccrypt.h" />
@@ -607,7 +605,6 @@
     <ClInclude Include="cobjbase.h" />
     <ClInclude Include="cObjBaseDef.h" />
     <ClInclude Include="cresource.h" />
-    <ClInclude Include="CScriptProp.h" />
     <ClInclude Include="CServRef.h" />
     <ClInclude Include="CWorld.h" />
     <ClInclude Include="resource.h" />

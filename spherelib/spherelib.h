@@ -4,6 +4,7 @@
 #include "CScript.h"
 #include "CResourceObj.h"
 #include "CScriptableInterface.h"
+#include "CExpression.h"
 #include "CScriptExecContext.h"
 #include "CThread.h"
 #include "CScriptConsole.h"

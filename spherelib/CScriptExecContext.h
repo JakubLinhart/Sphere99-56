@@ -1,6 +1,6 @@
 #pragma once
 
-class CScriptExecContext
+class CScriptExecContext : CExpression
 {
 
 };

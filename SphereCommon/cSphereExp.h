@@ -48,6 +48,8 @@ enum RES_TYPE	// all the script resource blocks we know how to deal with !
 
 #define RES_NEWBIE_FEMALE_DEFAULT	(10000+2)
 
+#define UID_INDEX WORD
+#define HASH_INDEX WORD
 
 
 struct CSphereUIDBase

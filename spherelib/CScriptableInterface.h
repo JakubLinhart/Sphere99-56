@@ -1,0 +1,3 @@
+#pragma once
+
+#define CSCRIPT_CLASS_IMP1(TYPE,_PROPS,_METHODS,_HELP)

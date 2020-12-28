@@ -478,9 +478,6 @@
     <ClInclude Include="..\spherelib\CScript.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\spherelib\CResourceObj.h">
-      <Filter>SphereLib</Filter>
-    </ClInclude>
     <ClInclude Include="..\spherelib\CThread.h">
       <Filter>SphereLib</Filter>
     </ClInclude>

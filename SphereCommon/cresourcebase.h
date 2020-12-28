@@ -80,8 +80,15 @@ public:
 
 class CResourceDef : public CScriptObj
 {
+private:
+	CSphereUID m_rid;		// the true resource id. (must be unique for the RES_TYPE)
+
 public:
 	LPCTSTR GetResourceName() const;
+	CSphereUID GetUIDIndex() const
+	{
+		return(m_rid);
+	}
 };
 
 class CResourceTriggered
@@ -93,9 +100,12 @@ public:
 #define CResourceLinkPtr CResourceLink*
 class CResourceLink : public CResourceDef
 {
-
 };
 
+#define CResourceObjPtr CResourceObj*
+class CResourceObj : public CResourceDef
+{
+};
 //***********************************************************
 
 class CResourceRefArray : public CGRefArray<CResourceLink>

@@ -368,3 +368,135 @@ private:
 	*/
 	CGRefArray<TYPE>& operator=(const CGRefArray<TYPE>& other);
 };
+
+//*************************************************
+// CGObArray
+
+template<class TYPE>
+class CGObArray : public CGRefArray<TYPE>
+{
+	// The point of this type is that the array now OWNS the element.
+	// It will get deleted when the array is deleted.
+protected:
+	virtual void DestructElements(TYPE* pElements, int nCount)
+	{
+		// delete the objects that we own.
+		for (int i = 0; i < nCount; i++)
+		{
+			TYPE pDestruct = pElements;
+			if (pDestruct == NULL)
+				continue;
+			pElements = NULL;       // in case the destructor looks for itself.
+			delete pDestruct;
+		}
+		CGRefArray<TYPE>::DestructElements(pElements, nCount);
+	}
+public:
+	bool DeleteOb(TYPE pData)
+	{
+		return(RemovePtr(pData));
+	}
+	void DeleteAt(int nIndex)
+	{
+		RemoveAt(nIndex);
+	}
+	TYPE UnLinkIndex(int index)
+	{
+		// Remove the object from the list so it will not get destroyed.
+		TYPE data = GetAt(index);
+		ElementAt(index) = NULL;
+		RemoveAt(index);
+		return(data);
+	}
+	~CGObArray()
+	{
+		// Make sure the virtuals get called.
+		SetCount(0);
+	}
+};
+
+
+//*************************************************
+// CGSortedArray = A sorted array of objects.
+
+template<class TYPE, class ARG_TYPE, class KEY_TYPE>
+struct CGSortedArray : public CGTypedArray<TYPE, ARG_TYPE>
+{
+	int CGSortedArray<TYPE, KEY_TYPE>::FindKeyNear(KEY_TYPE key, int& iCompareRes) const
+	{
+		// Do a binary search for the key.
+		// RETURN: index
+		//  iCompareRes =
+		//              0 = match with index.
+		//              -1 = key should be less than index.
+		//              +1 = key should be greater than index
+		//
+
+		int iHigh = GetCount() - 1;
+		if (iHigh < 0)
+		{
+			iCompareRes = -1;
+			return(0);
+		}
+
+		int iLow = 0;
+		int i;
+		while (iLow <= iHigh)
+		{
+			i = (iHigh + iLow) / 2;
+			iCompareRes = CompareKey(key, GetAt(i));
+			if (iCompareRes == 0)
+				break;
+			if (iCompareRes > 0)
+			{
+				iLow = i + 1;
+			}
+			else
+			{
+				iHigh = i - 1;
+			}
+		}
+		return(i);
+	}
+	int FindKey(KEY_TYPE key) const
+	{
+		// Find exact key
+		int iCompareRes;
+		int index = FindKeyNear(key, iCompareRes);
+		if (iCompareRes)
+			return(-1);
+		return(index);
+	}
+	int AddPresorted(int index, int iCompareRes, TYPE pNew)
+	{
+		if (iCompareRes > 0)
+		{
+			index++;
+		}
+		InsertAt(index, pNew);
+		return(index);
+	}
+	int AddSortKey(TYPE pNew, KEY_TYPE key)
+	{
+		// Insertion sort.
+		int iCompareRes;
+		int index = FindKeyNear(key, iCompareRes);
+		if (!iCompareRes)
+		{
+			// duplicate should not happen ?!?
+			// DestructElements is called automatically for previous.
+			SetAt(index, pNew);
+			return(-1);
+		}
+		return AddPresorted(index, iCompareRes, pNew);
+	}
+
+	virtual int CompareKey(KEY_TYPE, TYPE) const = 0;
+	void DeleteKey(KEY_TYPE key)
+	{
+		DeleteAt(FindKey(key));
+	}
+#ifdef _DEBUG
+	bool TestSort() const;
+#endif
+};

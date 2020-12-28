@@ -1,5 +1,155 @@
 #pragma once
 
+//*************************************************
+
+class CMemDynamic
+{
+	// This item will always be dynamically allocated with new/delete!
+	// Never stack or data seg based.
+
+#if defined(_DEBUG) || defined(DEBUG)
+
+#define DECLARE_MEM_DYNAMIC virtual const void * GetTopPtr() const { return this; } // Get the top level ptr.
+#define COBJBASE_SIGNATURE  0xDEADBEEF      // used just to make sure this is valid.
+private:
+	DWORD m_dwSignature;
+
+protected:
+	virtual const void* GetTopPtr() const = 0;     // Get the top level class ptr.
+public:
+	bool IsValidDynamic() const
+	{
+		if (m_dwSignature != COBJBASE_SIGNATURE)
+		{
+			return(false);
+		}
+#ifdef GRAY_SVR
+		// return( DEBUG_ValidateAlloc( GetTopPtr()) ? true : false );
+		return(true);
+#else
+		return(true);
+#endif      // GRAY_SVR
+	}
+	CMemDynamic()
+	{
+		// NOTE: virtuals don't work in constructors or destructors !
+		m_dwSignature = COBJBASE_SIGNATURE;
+		// ASSERT( IsValidDynamic());
+	}
+	virtual ~CMemDynamic()
+	{
+		ASSERT(IsValidDynamic());
+		m_dwSignature = 0;
+	}
+
+#else       // _DEBUG
+
+#define DECLARE_MEM_DYNAMIC
+public:
+	bool IsValidDynamic() const
+	{
+		return(true);
+	}
+	virtual ~CMemDynamic()  // always virtual so we can always use dynamic_cast correctly.
+	{
+	}
+
+#endif      // _DEBUG
+};
+
+//*************************************************
+// CGObList
+
+class CGObListRec : public CMemDynamic      // generic list record base class. 
+{
+	// This item belongs to JUST ONE LIST
+	friend class CGObList;
+private:
+	CGObList* m_pParent;              // link me back to my parent object.
+	CGObListRec* m_pNext;
+	CGObListRec* m_pPrev;
+public:
+	CGObList* GetParent() const { return(m_pParent); }
+	CGObListRec* GetNext() const { return(m_pNext); }
+	CGObListRec* GetPrev() const { return(m_pPrev); }
+public:
+	CGObListRec()
+	{
+		m_pParent = NULL;       // not linked yet.
+		m_pNext = NULL;
+		m_pPrev = NULL;
+	}
+	void RemoveSelf();      // remove myself from my parent list.
+	virtual ~CGObListRec()
+	{
+		RemoveSelf();
+	}
+};
+
+class CGObList      // generic list of objects based on CGObListRec.
+{
+	friend class CGObListRec;
+private:
+	CGObListRec* m_pHead;
+	CGObListRec* m_pTail;  // Do we really care about tail ? (as it applies to lists anyhow)
+	int m_iCount;
+private:
+	void RemoveAtSpecial(CGObListRec* pObRec)
+	{
+		// only called by pObRec->RemoveSelf()
+		OnRemoveOb(pObRec);   // call any approriate virtuals.
+	}
+protected:
+	// Override this to get called when an item is removed from this list.
+	// Never called directly. call pObRec->RemoveSelf()
+	virtual void OnRemoveOb(CGObListRec* pObRec); // Override this = called when removed from list.
+public:
+	CGObListRec* GetAt(int index) const;
+	// pPrev = NULL = first
+	virtual void InsertAfter(CGObListRec* pNewRec, CGObListRec* pPrev = NULL);
+	void InsertBefore(CGObListRec* pNewRec, CGObListRec* pNext)
+	{
+		// pPrev = NULL = last
+		InsertAfter(pNewRec, (pNext) ? (pNext->GetPrev()) : GetTail());
+	}
+	void InsertHead(CGObListRec* pNewRec)
+	{
+		InsertAfter(pNewRec, NULL);
+	}
+	void InsertTail(CGObListRec* pNewRec)
+	{
+		InsertAfter(pNewRec, GetTail());
+	}
+	void DeleteAll();
+	void Empty() { DeleteAll(); }
+	CGObListRec* GetHead(void) const { return(m_pHead); }
+	CGObListRec* GetTail(void) const { return(m_pTail); }
+	int GetCount() const { return(m_iCount); }
+	bool IsEmpty() const
+	{
+		return(!GetCount());
+	}
+	CGObList()
+	{
+		m_pHead = NULL;
+		m_pTail = NULL;
+		m_iCount = 0;
+	}
+	virtual ~CGObList()
+	{
+		DeleteAll();
+	}
+};
+
+inline void CGObListRec::RemoveSelf()       // remove myself from my parent list.
+{
+	// Remove myself from my parent list (if i have one)
+	if (GetParent() == NULL)
+		return;
+	m_pParent->RemoveAtSpecial(this);
+	ASSERT(GetParent() == NULL);
+}
+
 ///////////////////////////////////////////////////////////
 // CGTypedArray<class TYPE, class ARG_TYPE>
 

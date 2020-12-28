@@ -44,7 +44,7 @@
 
 #include "../sphereaccount/caccount.h"
 
-
+#include "../Missing/missing.h"
 
 class CClient;
 

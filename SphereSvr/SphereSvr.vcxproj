@@ -598,6 +598,7 @@
     <ClInclude Include="..\spherelib\cstring.h" />
     <ClInclude Include="..\spherelib\cstring2.h" />
     <ClInclude Include="..\spherelib\CThread.h" />
+    <ClInclude Include="..\spherelib\CValueRange.h" />
     <ClInclude Include="..\SphereLib\spherelib.h" />
     <ClInclude Include="CChat.h" />
     <ClInclude Include="cclient.h" />

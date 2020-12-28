@@ -1,4 +1,5 @@
 #pragma once
+#include "common.h"
 #include "CRefPtr.h"
 #include "CArray.h"
 #include "cstring.h"
@@ -7,6 +8,7 @@
 #include "CResourceObj.h"
 #include "CScriptableInterface.h"
 #include "CExpression.h"
+#include "CValueRange.h"
 #include "CScriptExecContext.h"
 #include "CThread.h"
 #include "CScriptConsole.h"

@@ -84,6 +84,12 @@ public:
 	LPCTSTR GetResourceName() const;
 };
 
+class CResourceTriggered
+{
+public:
+	CResourceTriggered(CSphereUID rid);
+};
+
 #define CResourceLinkPtr CResourceLink*
 class CResourceLink : public CResourceDef
 {

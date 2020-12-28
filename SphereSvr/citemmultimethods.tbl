@@ -1,31 +1,62 @@
-//
-// citemmultimethods.tbl
-//
-
-CITEMMULTIMETHOD(Bans,				CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1, "Enumerate Banned")
-CITEMMULTIMETHOD(Comp,				CSCRIPTPROP_RETREF, "iterate through components")
-CITEMMULTIMETHOD(CoOwners,			CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1, "Enumerate CoOwners")
-CITEMMULTIMETHOD(Friends,			CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1, "Enumerate friends")
-CITEMMULTIMETHOD(IsBanned,			CSCRIPTPROP_NARG1,					"(uid) is banned from this house")
-CITEMMULTIMETHOD(IsCoowner,			CSCRIPTPROP_NARG1,					"(uid) is coowner of this house")	
-CITEMMULTIMETHOD(IsFriend,			CSCRIPTPROP_NARG1,					"(uid) is friend of the this house")
-CITEMMULTIMETHOD(ShipAnchorDrop,	0, "")
-CITEMMULTIMETHOD(ShipAnchorRaise,	0, "")
-CITEMMULTIMETHOD(ShipBack,			0, "")
-CITEMMULTIMETHOD(ShipBackLeft,		0, "")
-CITEMMULTIMETHOD(ShipBackRight,		0, "")	
-CITEMMULTIMETHOD(ShipDown,			0, "down one space")
-CITEMMULTIMETHOD(ShipDriftLeft,		0, "")	
-CITEMMULTIMETHOD(ShipDriftRight,	0, "")
-CITEMMULTIMETHOD(ShipFace,			0, "set the ships facing direction")
-CITEMMULTIMETHOD(ShipFore,			0, "")
-CITEMMULTIMETHOD(ShipForeLeft,		0, "")
-CITEMMULTIMETHOD(ShipForeRight,		0, "")	
-CITEMMULTIMETHOD(ShipGate,			0, "moves the whole ship to some new point location")
-CITEMMULTIMETHOD(ShipLand,			0, "")
-CITEMMULTIMETHOD(ShipMove,			0, "move in a specified direction")
-CITEMMULTIMETHOD(ShipStop,			0, "")
-CITEMMULTIMETHOD(ShipTurn,			0, "")
-CITEMMULTIMETHOD(ShipTurnLeft,		0, "")
-CITEMMULTIMETHOD(ShipTurnRight,		0, "")	
-CITEMMULTIMETHOD(ShipUp,			0, "up one space")
+//
+
+// citemmultimethods.tbl
+
+//
+
+
+
+CITEMMULTIMETHOD(Bans,				CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1, "Enumerate Banned")
+
+CITEMMULTIMETHOD(Comp,				CSCRIPTPROP_RETREF, "iterate through components")
+
+CITEMMULTIMETHOD(CoOwners,			CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1, "Enumerate CoOwners")
+
+CITEMMULTIMETHOD(Friends,			CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1, "Enumerate friends")
+
+CITEMMULTIMETHOD(IsBanned,			CSCRIPTPROP_NARG1,					"(uid) is banned from this house")
+
+CITEMMULTIMETHOD(IsCoowner,			CSCRIPTPROP_NARG1,					"(uid) is coowner of this house")	
+
+CITEMMULTIMETHOD(IsFriend,			CSCRIPTPROP_NARG1,					"(uid) is friend of the this house")
+
+CITEMMULTIMETHOD(ShipAnchorDrop,	0, "")
+
+CITEMMULTIMETHOD(ShipAnchorRaise,	0, "")
+
+CITEMMULTIMETHOD(ShipBack,			0, "")
+
+CITEMMULTIMETHOD(ShipBackLeft,		0, "")
+
+CITEMMULTIMETHOD(ShipBackRight,		0, "")	
+
+CITEMMULTIMETHOD(ShipDown,			0, "down one space")
+
+CITEMMULTIMETHOD(ShipDriftLeft,		0, "")	
+
+CITEMMULTIMETHOD(ShipDriftRight,	0, "")
+
+CITEMMULTIMETHOD(ShipFace,			0, "set the ships facing direction")
+
+CITEMMULTIMETHOD(ShipFore,			0, "")
+
+CITEMMULTIMETHOD(ShipForeLeft,		0, "")
+
+CITEMMULTIMETHOD(ShipForeRight,		0, "")	
+
+CITEMMULTIMETHOD(ShipGate,			0, "moves the whole ship to some new point location")
+
+CITEMMULTIMETHOD(ShipLand,			0, "")
+
+CITEMMULTIMETHOD(ShipMove,			0, "move in a specified direction")
+
+CITEMMULTIMETHOD(ShipStop,			0, "")
+
+CITEMMULTIMETHOD(ShipTurn,			0, "")
+
+CITEMMULTIMETHOD(ShipTurnLeft,		0, "")
+
+CITEMMULTIMETHOD(ShipTurnRight,		0, "")	
+
+CITEMMULTIMETHOD(ShipUp,			0, "up one space")
+

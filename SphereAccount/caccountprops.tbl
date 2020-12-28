@@ -1,35 +1,70 @@
-//
-// caccountprops.tbl
-//
-
-CACCOUNTPROP(Account,			CSCRIPTPROP_RETVAL|CSCRIPTPROP_READO, "name")
-CACCOUNTPROP(Block,				CSCRIPTPROP_RETVAL, "(nMinutes) how long to block this account")
-CACCOUNTPROP(Chars,				CSCRIPTPROP_RETVAL, "How many account chars")
-CACCOUNTPROP(CharUID,			CSCRIPTPROP_RETREF, "Enumerate ref to my characters")
-CACCOUNTPROP(ChatName,			CSCRIPTPROP_RETVAL, "My name in the chat system")
-CACCOUNTPROP(Comment,			CSCRIPTPROP_RETVAL, "Attach general comment")
-CACCOUNTPROP(Email,				CSCRIPTPROP_RETVAL, "email address")
-CACCOUNTPROP(EmailFail,			CSCRIPTPROP_RETVAL, "number of failed attempts to send")
-CACCOUNTPROP(EmailLink,			CSCRIPTPROP_RETVAL, "HTML HREF with email")
-CACCOUNTPROP(EmailMsg,			CSCRIPTPROP_RETREF, "Email message queued to account")
-CACCOUNTPROP(EmailQ,			CSCRIPTPROP_RETVAL, "Number of email msgs queued to account")
-CACCOUNTPROP(FirstConnectDate,	CSCRIPTPROP_RETVAL, "first connect date of an account")
-CACCOUNTPROP(FirstIP,			CSCRIPTPROP_RETVAL, "first ip this account connected on")
-CACCOUNTPROP(Guest,				CSCRIPTPROP_RETVAL, "Guest created account")
-CACCOUNTPROP(Jail,				CSCRIPTPROP_RETVAL|CSCRIPTPROP_DUPE, "JAILTIME")
-CACCOUNTPROP(JailTime,			CSCRIPTPROP_RETVAL, "(nMinutes) how long to jail this account")
-CACCOUNTPROP(Lang,				CSCRIPTPROP_RETVAL, "Prefered language to use")
-CACCOUNTPROP(LastCharUID,		CSCRIPTPROP_RETREF, "last char this account played")
-CACCOUNTPROP(LastConnectDate,	CSCRIPTPROP_RETVAL, "last connected date")
-CACCOUNTPROP(LastConnectTime,	CSCRIPTPROP_RETVAL, "last connected time of an account")
-CACCOUNTPROP(LastIP,			CSCRIPTPROP_RETVAL, "last IP address used by an account")
-CACCOUNTPROP(Level,				CSCRIPTPROP_RETVAL|CSCRIPTPROP_DUPE, "PLEVEL")
-CACCOUNTPROP(Name,				CSCRIPTPROP_RETVAL|CSCRIPTPROP_READO,	"Account name")
-CACCOUNTPROP(NewPassword,		CSCRIPTPROP_RETVAL,	"Replaces old password on first usage")
-CACCOUNTPROP(Password,			CSCRIPTPROP_RETVAL,	"password of an account")
-CACCOUNTPROP(PLevel,			CSCRIPTPROP_RETVAL,	"privelege level number")
-CACCOUNTPROP(Priv,				CSCRIPTPROP_RETVAL|CSCRIPTPROP_DUPE,	"PRIVFLAGS")
-CACCOUNTPROP(PrivFlags,			CSCRIPTPROP_RETVAL,	"Priv flags for an account")
-CACCOUNTPROP(Tag,				CSCRIPTPROP_WRITEO|CSCRIPTPROP_NARG2, "Set Tags")
-CACCOUNTPROP(TotalConnectTime,	CSCRIPTPROP_RETVAL,	"total connect time of an account")
-//CACCOUNTPROP(XPass,				CSCRIPTPROP_RETVAL,	"?Crypt account password")
+//
+
+// caccountprops.tbl
+
+//
+
+
+
+CACCOUNTPROP(Account,			CSCRIPTPROP_RETVAL|CSCRIPTPROP_READO, "name")
+
+CACCOUNTPROP(Block,				CSCRIPTPROP_RETVAL, "(nMinutes) how long to block this account")
+
+CACCOUNTPROP(Chars,				CSCRIPTPROP_RETVAL, "How many account chars")
+
+CACCOUNTPROP(CharUID,			CSCRIPTPROP_RETREF, "Enumerate ref to my characters")
+
+CACCOUNTPROP(ChatName,			CSCRIPTPROP_RETVAL, "My name in the chat system")
+
+CACCOUNTPROP(Comment,			CSCRIPTPROP_RETVAL, "Attach general comment")
+
+CACCOUNTPROP(Email,				CSCRIPTPROP_RETVAL, "email address")
+
+CACCOUNTPROP(EmailFail,			CSCRIPTPROP_RETVAL, "number of failed attempts to send")
+
+CACCOUNTPROP(EmailLink,			CSCRIPTPROP_RETVAL, "HTML HREF with email")
+
+CACCOUNTPROP(EmailMsg,			CSCRIPTPROP_RETREF, "Email message queued to account")
+
+CACCOUNTPROP(EmailQ,			CSCRIPTPROP_RETVAL, "Number of email msgs queued to account")
+
+CACCOUNTPROP(FirstConnectDate,	CSCRIPTPROP_RETVAL, "first connect date of an account")
+
+CACCOUNTPROP(FirstIP,			CSCRIPTPROP_RETVAL, "first ip this account connected on")
+
+CACCOUNTPROP(Guest,				CSCRIPTPROP_RETVAL, "Guest created account")
+
+CACCOUNTPROP(Jail,				CSCRIPTPROP_RETVAL|CSCRIPTPROP_DUPE, "JAILTIME")
+
+CACCOUNTPROP(JailTime,			CSCRIPTPROP_RETVAL, "(nMinutes) how long to jail this account")
+
+CACCOUNTPROP(Lang,				CSCRIPTPROP_RETVAL, "Prefered language to use")
+
+CACCOUNTPROP(LastCharUID,		CSCRIPTPROP_RETREF, "last char this account played")
+
+CACCOUNTPROP(LastConnectDate,	CSCRIPTPROP_RETVAL, "last connected date")
+
+CACCOUNTPROP(LastConnectTime,	CSCRIPTPROP_RETVAL, "last connected time of an account")
+
+CACCOUNTPROP(LastIP,			CSCRIPTPROP_RETVAL, "last IP address used by an account")
+
+CACCOUNTPROP(Level,				CSCRIPTPROP_RETVAL|CSCRIPTPROP_DUPE, "PLEVEL")
+
+CACCOUNTPROP(Name,				CSCRIPTPROP_RETVAL|CSCRIPTPROP_READO,	"Account name")
+
+CACCOUNTPROP(NewPassword,		CSCRIPTPROP_RETVAL,	"Replaces old password on first usage")
+
+CACCOUNTPROP(Password,			CSCRIPTPROP_RETVAL,	"password of an account")
+
+CACCOUNTPROP(PLevel,			CSCRIPTPROP_RETVAL,	"privelege level number")
+
+CACCOUNTPROP(Priv,				CSCRIPTPROP_RETVAL|CSCRIPTPROP_DUPE,	"PRIVFLAGS")
+
+CACCOUNTPROP(PrivFlags,			CSCRIPTPROP_RETVAL,	"Priv flags for an account")
+
+CACCOUNTPROP(Tag,				CSCRIPTPROP_WRITEO|CSCRIPTPROP_NARG2, "Set Tags")
+
+CACCOUNTPROP(TotalConnectTime,	CSCRIPTPROP_RETVAL,	"total connect time of an account")
+
+//CACCOUNTPROP(XPass,				CSCRIPTPROP_RETVAL,	"?Crypt account password")
+

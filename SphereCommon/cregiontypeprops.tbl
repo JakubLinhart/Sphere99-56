@@ -1,7 +1,14 @@
-//
-// cregiontypeprops.tbl
-//
-
-CREGIONTYPEPROP(Id,			0, "")
-CREGIONTYPEPROP(Resources,	0, "")
-CREGIONTYPEPROP(Weight,		0, "")
+//
+
+// cregiontypeprops.tbl
+
+//
+
+
+
+CREGIONTYPEPROP(Id,			0, "")
+
+CREGIONTYPEPROP(Resources,	0, "")
+
+CREGIONTYPEPROP(Weight,		0, "")
+

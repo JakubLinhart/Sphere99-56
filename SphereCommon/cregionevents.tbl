@@ -1,9 +1,18 @@
-//
-// cregionevents.tbl
-//
-
-CREGIONEVENT(CliPeriodic,	0, "happens to each client periodically")
-CREGIONEVENT(Enter,			0, "client enters the region")
-CREGIONEVENT(Exit,			0, "client exits the region")
-CREGIONEVENT(RegPeriodic,	0, "happens to the region periodically (1 or many clients)")
-CREGIONEVENT(Step,			0, "client takes a step in region (Very expensive)")
+//
+
+// cregionevents.tbl
+
+//
+
+
+
+CREGIONEVENT(CliPeriodic,	0, "happens to each client periodically")
+
+CREGIONEVENT(Enter,			0, "client enters the region")
+
+CREGIONEVENT(Exit,			0, "client exits the region")
+
+CREGIONEVENT(RegPeriodic,	0, "happens to the region periodically (1 or many clients)")
+
+CREGIONEVENT(Step,			0, "client takes a step in region (Very expensive)")
+

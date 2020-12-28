@@ -1,5 +1,10 @@
-//
-// citemmapmethods.tbl
-//
-
-CITEMMAPMETHOD(Pin,CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG1,"(iPin[,x,y]) Get/Set a pins position")
+//
+
+// citemmapmethods.tbl
+
+//
+
+
+
+CITEMMAPMETHOD(Pin,CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG1,"(iPin[,x,y]) Get/Set a pins position")
+

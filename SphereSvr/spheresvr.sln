@@ -3,15 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "SphereLib", "..\SphereLib\SphereLib.dsp", "{D3B8F9E2-D5D1-4AA6-956E-F6EABF150251}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SphereSvr", "SphereSvr.vcxproj", "{0A4CF213-CD13-4A8C-A840-ABFBE6A11A5C}"
-EndProject
-Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "UOX3_Official", "..\uox\src\UOX3_Official.dsp", "{4EE51CBA-1E43-48F5-911D-A00452BDA5D4}"
-EndProject
-Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "js", "..\js\src\js.dsp", "{CEA64F66-BF9C-444D-97D9-30AD4613F72F}"
-EndProject
-Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "jsshell", "..\js\src\jsshell.dsp", "{0A1D2E57-BAB6-442B-8028-9798F47D39EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

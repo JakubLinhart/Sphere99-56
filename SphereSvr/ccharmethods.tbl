@@ -1,88 +1,176 @@
-//
-// ccharmethods.tbl
-//
-
-CCHARMETHOD(AFK,			0,					"(bOn)",		"Put char in AFK mode")
-CCHARMETHOD(AllSkills,		0,					"(ival)",		"set all skills to this")
-CCHARMETHOD(Anim,			0,					"(iAnim,[iAnimType,bBackward,iFrameDelay)]",	"show this animation")
-CCHARMETHOD(Attack,			0,					"([uid])",		"Attack SRC or uid")
-CCHARMETHOD(Bank,			CSCRIPTPROP_DUPE,	"([iLayer])",	"OPENBANK")
-CCHARMETHOD(Bark,			0,					"(iSoundID)",	"make this sound")
-CCHARMETHOD(Bounce,			0,					"(uid)",		"bounce this item into my pack")
-CCHARMETHOD(Bow,			0,					"",				"ANIM bow")
-CCHARMETHOD(CanCast,		0,					"(iSpell)",		"Can I cast this spell")	
-CCHARMETHOD(CanMake,		0,					"(id)",			"Can I make this item")
-CCHARMETHOD(Consume,		CSCRIPTPROP_ARG1S,	"(iQty idResource,[...])",	"Consume the list of resources")
-CCHARMETHOD(Control,		0,					"",				"swap bodies with SRC")
-CCHARMETHOD(Criminal,		0,					"(bOn)",		"Set/Clear criminal flag")
-CCHARMETHOD(Disconnect,		0,					"",				"Remove char from the visible world")	
-CCHARMETHOD(Dismount,		CSCRIPTPROP_RETREF, "",				"Get off horse")
-CCHARMETHOD(DrawMap,		0,					"(iDistance)",	"Create a map of my area")
-CCHARMETHOD(Drop,			0,					"(uid)",		"Drop this uid item")
-CCHARMETHOD(Dupe,			CSCRIPTPROP_RETREF, "",				"Make a dupe of this char")
-CCHARMETHOD(Equip,			0,					"",				"engage the equip triggers")
-CCHARMETHOD(EquipArmor,		0,					"",				"Equip my best armor (from pack)")
-CCHARMETHOD(EquipHalo,		CSCRIPTPROP_RETREF, "",				"Equip a light halo")
-//CCHARMETHOD(EquipLight,		0,					"",				"Equip a light in my pack")
-CCHARMETHOD(EquipWeapon,	0,					"",				"Equip my best weapon (from pack)")
-CCHARMETHOD(Face,			0,					"",				"(idir) Face this direction")
-CCHARMETHOD(Fame,			0,					"",				"Get/Set/Catagorize fame")
-CCHARMETHOD(FindEquip,		CSCRIPTPROP_DUPE,	"(ilayer)",		"FINDLAYER")	
-CCHARMETHOD(FindLayer,		CSCRIPTPROP_ARG1|CSCRIPTPROP_RETREF, "(ilayer)",		"Ref to object in layer")
-CCHARMETHOD(FixWeight,		CSCRIPTPROP_NARGS,	"",				"Re-evaluate the weights of all contained items")
-CCHARMETHOD(Forgive,		CSCRIPTPROP_NARGS,	"",				"Un-Jail")
-CCHARMETHOD(Go,				CSCRIPTPROP_DUPE|CSCRIPTPROP_ARG1S,	"",				"GOPLACE")
-CCHARMETHOD(GoChar,			CSCRIPTPROP_ARG1,	"",				"")
-CCHARMETHOD(GoCharId,		CSCRIPTPROP_ARG1,	"",				"")
-CCHARMETHOD(GoCli,			CSCRIPTPROP_ARG1,	"(i)",			"Go to enumerated clients")
-CCHARMETHOD(GoItemId,		CSCRIPTPROP_ARG1,	"(iItemid)",	"Go to sample of this item number")
-CCHARMETHOD(GoName,			CSCRIPTPROP_ARG1,	"(sName)",		"Go to char with this name")
-CCHARMETHOD(GoPlace,		CSCRIPTPROP_ARG1S,	"(sLocation)",  "Go to these coordinates or named location")
-CCHARMETHOD(GoSock,			CSCRIPTPROP_ARG1,	"(iSocket)",	"Go to client by socket number")
-CCHARMETHOD(GoType,			CSCRIPTPROP_ARG1,	"(iType)",		"Teleport to object of this type")
-CCHARMETHOD(GoUID,			CSCRIPTPROP_ARG1,	"(uid)",		"go to this uid")
-CCHARMETHOD(GuardCheck,		CSCRIPTPROP_NARGS,	"",				"Check the area for criminals")
-CCHARMETHOD(Hear,			CSCRIPTPROP_ARG1S,	"(sMsg)",		"Hear this message")
-CCHARMETHOD(Hungry,			0,					"",				"Display text for hunger status")
-CCHARMETHOD(Invis,			0,					"(bool)",		"turn on/off invis mode")
-CCHARMETHOD(Invisible,		CSCRIPTPROP_DUPE,	"",				"INVIS")
-CCHARMETHOD(Invul,			0,					"(bool)",		"turn on/off invul mode")
-CCHARMETHOD(Invulnerable,	CSCRIPTPROP_DUPE,	"",				"INVUL")
-CCHARMETHOD(IsGM,			CSCRIPTPROP_NARGS,  "",				"is a GM")
-CCHARMETHOD(IsMyPet,		CSCRIPTPROP_NARGS,	"",				"is a pet of SRC")
-CCHARMETHOD(IsPlayer,		CSCRIPTPROP_NARGS,	"",				"is this char a player else NPC")
-CCHARMETHOD(IsVendor,		CSCRIPTPROP_NARGS,	"",				"is an NPC vendor")
-CCHARMETHOD(Jail,			0,					"",				"Send this char and all chars on account to jail")
-CCHARMETHOD(Karma,			0,					"",				"Get/Set/Catagorize Karma")
-CCHARMETHOD(Kill,			0,					"",				"kill this char immediately")
-CCHARMETHOD(MakeItem,		0,					"(iItemid)",	"Start skill based creation of item")
-CCHARMETHOD(Memory,			CSCRIPTPROP_RETREF, "",				"ref to memory of SRC")
-CCHARMETHOD(MemoryFind,		CSCRIPTPROP_RETREF, "(uid)",		"ref to memory of uid (or Src Default)")
-CCHARMETHOD(MemoryFindType,	CSCRIPTPROP_RETREF, "(iTypeFlags)",	"ref to memory of a type")
-CCHARMETHOD(NewbieSkill,	CSCRIPTPROP_NARG1,	"(iSkill)",		"Reload the newbie stuff for a skill")
-CCHARMETHOD(NewDupe,		CSCRIPTPROP_RETREF, "(uid)",		"dupe an item")
-CCHARMETHOD(NewItem,		CSCRIPTPROP_RETREF, "",				"i create a new item")
-CCHARMETHOD(NewNPC,			CSCRIPTPROP_RETREF, "",				"i create a new npc")
-CCHARMETHOD(OpenBank,		0,					"",				"open bank to SRC")
-CCHARMETHOD(OpenPack,		0,					"",				"open pack to SRC")
-CCHARMETHOD(Pardon,			0,					"",				"pardon from JAIL")
-CCHARMETHOD(Poison,			0,					"",				"Poison me")
-CCHARMETHOD(Poly,			0,					"",				"polymorph spell on me")
-CCHARMETHOD(PrivSet,		0,					"",				"Set my priv level")
-CCHARMETHOD(Remove,			0,					"",				"Delete me")
-CCHARMETHOD(Resurrect,		0,					"",				"Resurrect from the dead")
-CCHARMETHOD(Salute,			0,					"",				"Salute animation") //	salute to player
-CCHARMETHOD(ScriptLoad,		CSCRIPTPROP_NARG1,	"(sScriptBookName)", "Load and start a script book on this player")	
-CCHARMETHOD(Sex,			0,					"(stringmale,stringfemale)","return male string or female string")
-CCHARMETHOD(Skill,			0,					"",				"Start this skill")
-CCHARMETHOD(SkillBest,		0,					"",				"Get my best skill")
-CCHARMETHOD(SkillCheck,		0,					"(iSkillName,iVal)", "Make a skill check for this skill/level")
-CCHARMETHOD(SkillTotal,		0,					"",				"Total of all skills")	
-CCHARMETHOD(Sleep,			CSCRIPTPROP_RETREF, "",				"Lie down and sleep")
-CCHARMETHOD(Suicide,		0,					"",				"Death")
-CCHARMETHOD(SummonCage,		0,					"",				"Summon to SRC immobilized")	
-CCHARMETHOD(SummonDismiss,	0,					"",				"Dismiss back to summon point (and mobilize)")
-CCHARMETHOD(SummonTo,		0,					"",				"Summon to SRC")
-CCHARMETHOD(Underwear,		0,					"(bool)",		"toggle human underwear")
-CCHARMETHOD(Unequip,		0,					"(uid)",			"Unequip the equipped item") // engage the unequip triggers.
-CCHARMETHOD(Where,			CSCRIPTPROP_NARGS,	"",				"Display your location")
+//
+
+// ccharmethods.tbl
+
+//
+
+
+
+CCHARMETHOD(AFK,			0,					"(bOn)",		"Put char in AFK mode")
+
+CCHARMETHOD(AllSkills,		0,					"(ival)",		"set all skills to this")
+
+CCHARMETHOD(Anim,			0,					"(iAnim,[iAnimType,bBackward,iFrameDelay)]",	"show this animation")
+
+CCHARMETHOD(Attack,			0,					"([uid])",		"Attack SRC or uid")
+
+CCHARMETHOD(Bank,			CSCRIPTPROP_DUPE,	"([iLayer])",	"OPENBANK")
+
+CCHARMETHOD(Bark,			0,					"(iSoundID)",	"make this sound")
+
+CCHARMETHOD(Bounce,			0,					"(uid)",		"bounce this item into my pack")
+
+CCHARMETHOD(Bow,			0,					"",				"ANIM bow")
+
+CCHARMETHOD(CanCast,		0,					"(iSpell)",		"Can I cast this spell")	
+
+CCHARMETHOD(CanMake,		0,					"(id)",			"Can I make this item")
+
+CCHARMETHOD(Consume,		CSCRIPTPROP_ARG1S,	"(iQty idResource,[...])",	"Consume the list of resources")
+
+CCHARMETHOD(Control,		0,					"",				"swap bodies with SRC")
+
+CCHARMETHOD(Criminal,		0,					"(bOn)",		"Set/Clear criminal flag")
+
+CCHARMETHOD(Disconnect,		0,					"",				"Remove char from the visible world")	
+
+CCHARMETHOD(Dismount,		CSCRIPTPROP_RETREF, "",				"Get off horse")
+
+CCHARMETHOD(DrawMap,		0,					"(iDistance)",	"Create a map of my area")
+
+CCHARMETHOD(Drop,			0,					"(uid)",		"Drop this uid item")
+
+CCHARMETHOD(Dupe,			CSCRIPTPROP_RETREF, "",				"Make a dupe of this char")
+
+CCHARMETHOD(Equip,			0,					"",				"engage the equip triggers")
+
+CCHARMETHOD(EquipArmor,		0,					"",				"Equip my best armor (from pack)")
+
+CCHARMETHOD(EquipHalo,		CSCRIPTPROP_RETREF, "",				"Equip a light halo")
+
+//CCHARMETHOD(EquipLight,		0,					"",				"Equip a light in my pack")
+
+CCHARMETHOD(EquipWeapon,	0,					"",				"Equip my best weapon (from pack)")
+
+CCHARMETHOD(Face,			0,					"",				"(idir) Face this direction")
+
+CCHARMETHOD(Fame,			0,					"",				"Get/Set/Catagorize fame")
+
+CCHARMETHOD(FindEquip,		CSCRIPTPROP_DUPE,	"(ilayer)",		"FINDLAYER")	
+
+CCHARMETHOD(FindLayer,		CSCRIPTPROP_ARG1|CSCRIPTPROP_RETREF, "(ilayer)",		"Ref to object in layer")
+
+CCHARMETHOD(FixWeight,		CSCRIPTPROP_NARGS,	"",				"Re-evaluate the weights of all contained items")
+
+CCHARMETHOD(Forgive,		CSCRIPTPROP_NARGS,	"",				"Un-Jail")
+
+CCHARMETHOD(Go,				CSCRIPTPROP_DUPE|CSCRIPTPROP_ARG1S,	"",				"GOPLACE")
+
+CCHARMETHOD(GoChar,			CSCRIPTPROP_ARG1,	"",				"")
+
+CCHARMETHOD(GoCharId,		CSCRIPTPROP_ARG1,	"",				"")
+
+CCHARMETHOD(GoCli,			CSCRIPTPROP_ARG1,	"(i)",			"Go to enumerated clients")
+
+CCHARMETHOD(GoItemId,		CSCRIPTPROP_ARG1,	"(iItemid)",	"Go to sample of this item number")
+
+CCHARMETHOD(GoName,			CSCRIPTPROP_ARG1,	"(sName)",		"Go to char with this name")
+
+CCHARMETHOD(GoPlace,		CSCRIPTPROP_ARG1S,	"(sLocation)",  "Go to these coordinates or named location")
+
+CCHARMETHOD(GoSock,			CSCRIPTPROP_ARG1,	"(iSocket)",	"Go to client by socket number")
+
+CCHARMETHOD(GoType,			CSCRIPTPROP_ARG1,	"(iType)",		"Teleport to object of this type")
+
+CCHARMETHOD(GoUID,			CSCRIPTPROP_ARG1,	"(uid)",		"go to this uid")
+
+CCHARMETHOD(GuardCheck,		CSCRIPTPROP_NARGS,	"",				"Check the area for criminals")
+
+CCHARMETHOD(Hear,			CSCRIPTPROP_ARG1S,	"(sMsg)",		"Hear this message")
+
+CCHARMETHOD(Hungry,			0,					"",				"Display text for hunger status")
+
+CCHARMETHOD(Invis,			0,					"(bool)",		"turn on/off invis mode")
+
+CCHARMETHOD(Invisible,		CSCRIPTPROP_DUPE,	"",				"INVIS")
+
+CCHARMETHOD(Invul,			0,					"(bool)",		"turn on/off invul mode")
+
+CCHARMETHOD(Invulnerable,	CSCRIPTPROP_DUPE,	"",				"INVUL")
+
+CCHARMETHOD(IsGM,			CSCRIPTPROP_NARGS,  "",				"is a GM")
+
+CCHARMETHOD(IsMyPet,		CSCRIPTPROP_NARGS,	"",				"is a pet of SRC")
+
+CCHARMETHOD(IsPlayer,		CSCRIPTPROP_NARGS,	"",				"is this char a player else NPC")
+
+CCHARMETHOD(IsVendor,		CSCRIPTPROP_NARGS,	"",				"is an NPC vendor")
+
+CCHARMETHOD(Jail,			0,					"",				"Send this char and all chars on account to jail")
+
+CCHARMETHOD(Karma,			0,					"",				"Get/Set/Catagorize Karma")
+
+CCHARMETHOD(Kill,			0,					"",				"kill this char immediately")
+
+CCHARMETHOD(MakeItem,		0,					"(iItemid)",	"Start skill based creation of item")
+
+CCHARMETHOD(Memory,			CSCRIPTPROP_RETREF, "",				"ref to memory of SRC")
+
+CCHARMETHOD(MemoryFind,		CSCRIPTPROP_RETREF, "(uid)",		"ref to memory of uid (or Src Default)")
+
+CCHARMETHOD(MemoryFindType,	CSCRIPTPROP_RETREF, "(iTypeFlags)",	"ref to memory of a type")
+
+CCHARMETHOD(NewbieSkill,	CSCRIPTPROP_NARG1,	"(iSkill)",		"Reload the newbie stuff for a skill")
+
+CCHARMETHOD(NewDupe,		CSCRIPTPROP_RETREF, "(uid)",		"dupe an item")
+
+CCHARMETHOD(NewItem,		CSCRIPTPROP_RETREF, "",				"i create a new item")
+
+CCHARMETHOD(NewNPC,			CSCRIPTPROP_RETREF, "",				"i create a new npc")
+
+CCHARMETHOD(OpenBank,		0,					"",				"open bank to SRC")
+
+CCHARMETHOD(OpenPack,		0,					"",				"open pack to SRC")
+
+CCHARMETHOD(Pardon,			0,					"",				"pardon from JAIL")
+
+CCHARMETHOD(Poison,			0,					"",				"Poison me")
+
+CCHARMETHOD(Poly,			0,					"",				"polymorph spell on me")
+
+CCHARMETHOD(PrivSet,		0,					"",				"Set my priv level")
+
+CCHARMETHOD(Remove,			0,					"",				"Delete me")
+
+CCHARMETHOD(Resurrect,		0,					"",				"Resurrect from the dead")
+
+CCHARMETHOD(Salute,			0,					"",				"Salute animation") //	salute to player
+
+CCHARMETHOD(ScriptLoad,		CSCRIPTPROP_NARG1,	"(sScriptBookName)", "Load and start a script book on this player")	
+
+CCHARMETHOD(Sex,			0,					"(stringmale,stringfemale)","return male string or female string")
+
+CCHARMETHOD(Skill,			0,					"",				"Start this skill")
+
+CCHARMETHOD(SkillBest,		0,					"",				"Get my best skill")
+
+CCHARMETHOD(SkillCheck,		0,					"(iSkillName,iVal)", "Make a skill check for this skill/level")
+
+CCHARMETHOD(SkillTotal,		0,					"",				"Total of all skills")	
+
+CCHARMETHOD(Sleep,			CSCRIPTPROP_RETREF, "",				"Lie down and sleep")
+
+CCHARMETHOD(Suicide,		0,					"",				"Death")
+
+CCHARMETHOD(SummonCage,		0,					"",				"Summon to SRC immobilized")	
+
+CCHARMETHOD(SummonDismiss,	0,					"",				"Dismiss back to summon point (and mobilize)")
+
+CCHARMETHOD(SummonTo,		0,					"",				"Summon to SRC")
+
+CCHARMETHOD(Underwear,		0,					"(bool)",		"toggle human underwear")
+
+CCHARMETHOD(Unequip,		0,					"(uid)",			"Unequip the equipped item") // engage the unequip triggers.
+
+CCHARMETHOD(Where,			CSCRIPTPROP_NARGS,	"",				"Display your location")
+

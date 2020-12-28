@@ -1,29 +1,58 @@
-//
-// cobjbaseprops.tbl
-//
-
-COBJBASEPROP(Age,			CSCRIPTPROP_READO, "How long ago created (in seconds)")
-COBJBASEPROP(BaseID,		CSCRIPTPROP_READO, "The DEF.DEFNAME defines the type of the item")
-COBJBASEPROP(Changer,		CSCRIPTPROP_READO, "UID of the last Account to change this")
-COBJBASEPROP(Color,			0,		"Hue or skin color")
-COBJBASEPROP(Create,		CSCRIPTPROP_UNUSED|CSCRIPTPROP_DUPE, "AGE")
-COBJBASEPROP(Def,			CSCRIPTPROP_DUPE, "TYPEDEF")
-COBJBASEPROP(Events,		CSCRIPTPROP_ARG1S,	"Attached event handlers")
-COBJBASEPROP(IsChar,		0,		"Is this a character")	
-COBJBASEPROP(IsItem,		0,		"Is this an item")
-COBJBASEPROP(MapPlane,		0,		"What map is this on (if top level)")
-COBJBASEPROP(Name,			0,		"Unique or type name")
-COBJBASEPROP(P,				CSCRIPTPROP_READO, "Location in the world")
-COBJBASEPROP(P_X,			CSCRIPTPROP_READO, "x Location in the world")
-COBJBASEPROP(P_Y,			CSCRIPTPROP_READO, "y Location in the world")
-COBJBASEPROP(P_Z,			CSCRIPTPROP_READO, "z Height in the world")
-COBJBASEPROP(Sector,		CSCRIPTPROP_RETREF, "ref to sector this is in")
-COBJBASEPROP(Serial,		CSCRIPTPROP_DUPE,	"UID")
-COBJBASEPROP(Tag,			CSCRIPTPROP_WRITEO|CSCRIPTPROP_ARG2, "Add/Set Tag")
-COBJBASEPROP(Timer,			0,		"Timer set to expire (sec)")
-COBJBASEPROP(TimerD,		0,		"High precision timer (in tenths of sec)")
-COBJBASEPROP(TopObj,		CSCRIPTPROP_RETREF,	"ref to top level object")
-COBJBASEPROP(TypeDef,		CSCRIPTPROP_RETREF, "ref to type def class")
-COBJBASEPROP(Value,			0,		"Appraised value (in gp)")
-COBJBASEPROP(Weight,		0,		"Weight of items (in stones)")
-COBJBASEPROP(Z,				CSCRIPTPROP_DUPE, "P_Z")
+//
+
+// cobjbaseprops.tbl
+
+//
+
+
+
+COBJBASEPROP(Age,			CSCRIPTPROP_READO, "How long ago created (in seconds)")
+
+COBJBASEPROP(BaseID,		CSCRIPTPROP_READO, "The DEF.DEFNAME defines the type of the item")
+
+COBJBASEPROP(Changer,		CSCRIPTPROP_READO, "UID of the last Account to change this")
+
+COBJBASEPROP(Color,			0,		"Hue or skin color")
+
+COBJBASEPROP(Create,		CSCRIPTPROP_UNUSED|CSCRIPTPROP_DUPE, "AGE")
+
+COBJBASEPROP(Def,			CSCRIPTPROP_DUPE, "TYPEDEF")
+
+COBJBASEPROP(Events,		CSCRIPTPROP_ARG1S,	"Attached event handlers")
+
+COBJBASEPROP(IsChar,		0,		"Is this a character")	
+
+COBJBASEPROP(IsItem,		0,		"Is this an item")
+
+COBJBASEPROP(MapPlane,		0,		"What map is this on (if top level)")
+
+COBJBASEPROP(Name,			0,		"Unique or type name")
+
+COBJBASEPROP(P,				CSCRIPTPROP_READO, "Location in the world")
+
+COBJBASEPROP(P_X,			CSCRIPTPROP_READO, "x Location in the world")
+
+COBJBASEPROP(P_Y,			CSCRIPTPROP_READO, "y Location in the world")
+
+COBJBASEPROP(P_Z,			CSCRIPTPROP_READO, "z Height in the world")
+
+COBJBASEPROP(Sector,		CSCRIPTPROP_RETREF, "ref to sector this is in")
+
+COBJBASEPROP(Serial,		CSCRIPTPROP_DUPE,	"UID")
+
+COBJBASEPROP(Tag,			CSCRIPTPROP_WRITEO|CSCRIPTPROP_ARG2, "Add/Set Tag")
+
+COBJBASEPROP(Timer,			0,		"Timer set to expire (sec)")
+
+COBJBASEPROP(TimerD,		0,		"High precision timer (in tenths of sec)")
+
+COBJBASEPROP(TopObj,		CSCRIPTPROP_RETREF,	"ref to top level object")
+
+COBJBASEPROP(TypeDef,		CSCRIPTPROP_RETREF, "ref to type def class")
+
+COBJBASEPROP(Value,			0,		"Appraised value (in gp)")
+
+COBJBASEPROP(Weight,		0,		"Weight of items (in stones)")
+
+COBJBASEPROP(Z,				CSCRIPTPROP_DUPE, "P_Z")
+

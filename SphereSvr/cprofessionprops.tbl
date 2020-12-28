@@ -1,7 +1,14 @@
-//
-// cprofessionprops.tbl
-//
-
-CPROFESSIONPROP(Name,		0, "")
-CPROFESSIONPROP(SkillSum,	0, "")
-CPROFESSIONPROP(StatSum,	0, "")
+//
+
+// cprofessionprops.tbl
+
+//
+
+
+
+CPROFESSIONPROP(Name,		0, "")
+
+CPROFESSIONPROP(SkillSum,	0, "")
+
+CPROFESSIONPROP(StatSum,	0, "")
+

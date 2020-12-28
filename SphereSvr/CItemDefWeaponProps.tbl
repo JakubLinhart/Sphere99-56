@@ -1,12 +1,24 @@
-//
-// citemdefweaponprops.tbl
-//
-
-CITEMDEFWEAPONPROP(Armor,		0,	"Armor Range")
-CITEMDEFWEAPONPROP(ArmorHi,		0,	"Armor Hi value in range")
-CITEMDEFWEAPONPROP(ArmorLo,		0,	"Armor Lo value in range")
-CITEMDEFWEAPONPROP(Att,			CSCRIPTPROP_DUPE|CSCRIPTPROP_UNUSED, "Dam")
-CITEMDEFWEAPONPROP(Dam,			0,	"Damage Range")
-CITEMDEFWEAPONPROP(DamageHi,	0,	"Damage Hi value in range")
-CITEMDEFWEAPONPROP(DamageLo,	0,	"Damage Lo value in range")
-CITEMDEFWEAPONPROP(Speed,		0,	"Speed rating for the item")	
+//
+
+// citemdefweaponprops.tbl
+
+//
+
+
+
+CITEMDEFWEAPONPROP(Armor,		0,	"Armor Range")
+
+CITEMDEFWEAPONPROP(ArmorHi,		0,	"Armor Hi value in range")
+
+CITEMDEFWEAPONPROP(ArmorLo,		0,	"Armor Lo value in range")
+
+CITEMDEFWEAPONPROP(Att,			CSCRIPTPROP_DUPE|CSCRIPTPROP_UNUSED, "Dam")
+
+CITEMDEFWEAPONPROP(Dam,			0,	"Damage Range")
+
+CITEMDEFWEAPONPROP(DamageHi,	0,	"Damage Hi value in range")
+
+CITEMDEFWEAPONPROP(DamageLo,	0,	"Damage Lo value in range")
+
+CITEMDEFWEAPONPROP(Speed,		0,	"Speed rating for the item")	
+

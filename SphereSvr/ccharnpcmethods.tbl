@@ -1,19 +1,38 @@
-//
-// ccharnpcmethods.tbl
-//
-
-CCHARNPCMETHOD(Buy,			0, "")	
-CCHARNPCMETHOD(Bye,			0, "")	
-CCHARNPCMETHOD(Flee,		0, "Run away from current target")	
-CCHARNPCMETHOD(Hire,		0, "")	
-CCHARNPCMETHOD(Leave,		0, "FLEE")		
-CCHARNPCMETHOD(PetRetrieve,	0, "")	
-CCHARNPCMETHOD(PetStable,	0, "")		
-CCHARNPCMETHOD(R,			0, "")	
-CCHARNPCMETHOD(Restock,		0, "")	
-CCHARNPCMETHOD(Run,			0, "")	
-CCHARNPCMETHOD(Sell,		0, "")	
-CCHARNPCMETHOD(Shrink,		0, "Convert self to Figurine")	
-CCHARNPCMETHOD(Train,		0, "")	
-CCHARNPCMETHOD(W,			0, "")	
-CCHARNPCMETHOD(Walk,		0, "Walk in this direction")	
+//
+
+// ccharnpcmethods.tbl
+
+//
+
+
+
+CCHARNPCMETHOD(Buy,			0, "")	
+
+CCHARNPCMETHOD(Bye,			0, "")	
+
+CCHARNPCMETHOD(Flee,		0, "Run away from current target")	
+
+CCHARNPCMETHOD(Hire,		0, "")	
+
+CCHARNPCMETHOD(Leave,		0, "FLEE")		
+
+CCHARNPCMETHOD(PetRetrieve,	0, "")	
+
+CCHARNPCMETHOD(PetStable,	0, "")		
+
+CCHARNPCMETHOD(R,			0, "")	
+
+CCHARNPCMETHOD(Restock,		0, "")	
+
+CCHARNPCMETHOD(Run,			0, "")	
+
+CCHARNPCMETHOD(Sell,		0, "")	
+
+CCHARNPCMETHOD(Shrink,		0, "Convert self to Figurine")	
+
+CCHARNPCMETHOD(Train,		0, "")	
+
+CCHARNPCMETHOD(W,			0, "")	
+
+CCHARNPCMETHOD(Walk,		0, "Walk in this direction")	
+

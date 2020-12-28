@@ -1,30 +1,60 @@
-//
-// cregionprops.tbl
-//
-
-CREGIONPROP(Announce,		0, "Announce text to all who enter")
-CREGIONPROP(Arena,			0, "FLAGS PVP is not criminal here")
-CREGIONPROP(Buildable,		0, "FLAGS can build here")
-CREGIONPROP(Class,			0, "general type code for region")	
-CREGIONPROP(ColdChance,		CSCRIPTPROP_WRITEO, "Set the change of cold for the region")
-CREGIONPROP(Flags,			0, "bitmask of prop flags")
-CREGIONPROP(FlagSafe,		0, "FLAGS No harm is done here")
-CREGIONPROP(Gate,			0, "FLAGS gate spell does works here")
-CREGIONPROP(Group,			CSCRIPTPROP_UNUSED|CSCRIPTPROP_WRITEO, "Name of the grouping")
-CREGIONPROP(Guarded,		0, "FLAGS guards will attack criminals")
-CREGIONPROP(Magic,			0, "FLAGS All magic banned here")
-CREGIONPROP(MagicDamage,	0, "FLAGS just no bad magic here")
-CREGIONPROP(MapPlane,		0, "Region is specific to a map plane")
-CREGIONPROP(Mark,			0, "recall in teleport as well")
-CREGIONPROP(Name,			0, "Region name")
-CREGIONPROP(NoBuild,		0, "FLAGS cannot build here")	
-CREGIONPROP(NoDecay,		0, "FLAGS")
-CREGIONPROP(NoPVP,			0, "FLAGS")
-CREGIONPROP(P,				0, "center point of the region")
-CREGIONPROP(RainChance,		CSCRIPTPROP_WRITEO, "Set the chance of rain for the whole region")
-CREGIONPROP(Recall,			0, "recall out allowed")
-CREGIONPROP(RecallIn,		0, "FLAGS")
-CREGIONPROP(RecallOut,		0, "FLAGS")
-CREGIONPROP(Rect,			CSCRIPTPROP_WRITEO, "rectangle making up the area")
-CREGIONPROP(Type,			CSCRIPTPROP_UNUSED|CSCRIPTPROP_DUPE, "UID")
-CREGIONPROP(Underground,	0, "FLAGS Does not rain or have daylight")
+//
+
+// cregionprops.tbl
+
+//
+
+
+
+CREGIONPROP(Announce,		0, "Announce text to all who enter")
+
+CREGIONPROP(Arena,			0, "FLAGS PVP is not criminal here")
+
+CREGIONPROP(Buildable,		0, "FLAGS can build here")
+
+CREGIONPROP(Class,			0, "general type code for region")	
+
+CREGIONPROP(ColdChance,		CSCRIPTPROP_WRITEO, "Set the change of cold for the region")
+
+CREGIONPROP(Flags,			0, "bitmask of prop flags")
+
+CREGIONPROP(FlagSafe,		0, "FLAGS No harm is done here")
+
+CREGIONPROP(Gate,			0, "FLAGS gate spell does works here")
+
+CREGIONPROP(Group,			CSCRIPTPROP_UNUSED|CSCRIPTPROP_WRITEO, "Name of the grouping")
+
+CREGIONPROP(Guarded,		0, "FLAGS guards will attack criminals")
+
+CREGIONPROP(Magic,			0, "FLAGS All magic banned here")
+
+CREGIONPROP(MagicDamage,	0, "FLAGS just no bad magic here")
+
+CREGIONPROP(MapPlane,		0, "Region is specific to a map plane")
+
+CREGIONPROP(Mark,			0, "recall in teleport as well")
+
+CREGIONPROP(Name,			0, "Region name")
+
+CREGIONPROP(NoBuild,		0, "FLAGS cannot build here")	
+
+CREGIONPROP(NoDecay,		0, "FLAGS")
+
+CREGIONPROP(NoPVP,			0, "FLAGS")
+
+CREGIONPROP(P,				0, "center point of the region")
+
+CREGIONPROP(RainChance,		CSCRIPTPROP_WRITEO, "Set the chance of rain for the whole region")
+
+CREGIONPROP(Recall,			0, "recall out allowed")
+
+CREGIONPROP(RecallIn,		0, "FLAGS")
+
+CREGIONPROP(RecallOut,		0, "FLAGS")
+
+CREGIONPROP(Rect,			CSCRIPTPROP_WRITEO, "rectangle making up the area")
+
+CREGIONPROP(Type,			CSCRIPTPROP_UNUSED|CSCRIPTPROP_DUPE, "UID")
+
+CREGIONPROP(Underground,	0, "FLAGS Does not rain or have daylight")
+

@@ -1,10 +1,20 @@
-//
-// csectorprops.tbl
-//
-
-CSECTORPROP(ColdChance,	CSCRIPTPROP_RETVAL, "The chance of freeze in this sector")
-CSECTORPROP(Light,		CSCRIPTPROP_RETVAL, "(0-20) Light level")
-CSECTORPROP(LocalLight,	CSCRIPTPROP_DUPE|CSCRIPTPROP_RETVAL, "LIGHT")
-CSECTORPROP(RainChance,	CSCRIPTPROP_RETVAL, "The chance of rain in this sector")
-CSECTORPROP(Season,		CSCRIPTPROP_RETVAL, "What is the current season here.")
-CSECTORPROP(Weather,	CSCRIPTPROP_RETVAL, "What is the current weather here.")
+//
+
+// csectorprops.tbl
+
+//
+
+
+
+CSECTORPROP(ColdChance,	CSCRIPTPROP_RETVAL, "The chance of freeze in this sector")
+
+CSECTORPROP(Light,		CSCRIPTPROP_RETVAL, "(0-20) Light level")
+
+CSECTORPROP(LocalLight,	CSCRIPTPROP_DUPE|CSCRIPTPROP_RETVAL, "LIGHT")
+
+CSECTORPROP(RainChance,	CSCRIPTPROP_RETVAL, "The chance of rain in this sector")
+
+CSECTORPROP(Season,		CSCRIPTPROP_RETVAL, "What is the current season here.")
+
+CSECTORPROP(Weather,	CSCRIPTPROP_RETVAL, "What is the current weather here.")
+

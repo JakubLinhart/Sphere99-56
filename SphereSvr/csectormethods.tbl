@@ -1,19 +1,38 @@
-//
-// csectormethods.tbl
-//
-
-CSECTORMETHOD(AllChars,		CSCRIPTPROP_NARG1,	"Command all chars in sector")
-CSECTORMETHOD(AllClients,	CSCRIPTPROP_NARG1,	"Command all clients in sector")
-CSECTORMETHOD(AllItems,		CSCRIPTPROP_NARG1,	"Command all items in sector")
-CSECTORMETHOD(Complexity,	CSCRIPTPROP_RETVAL, "[(sClassification)] is the complexity of the area this type")
-CSECTORMETHOD(Dry,			CSCRIPTPROP_NARGS,	"Stop rain or snow")
-CSECTORMETHOD(IsDark,		CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "dark as in cave or night")
-CSECTORMETHOD(IsNightTime,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "local night time of day")
-CSECTORMETHOD(LocalTime,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "Local Game Time")	
-CSECTORMETHOD(LocalTOD,		CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "Local time as int")
-CSECTORMETHOD(MoonLight,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "Get Level of current moon light")
-CSECTORMETHOD(MoonPhase,	CSCRIPTPROP_RETVAL,					  "(iMoon) Get phase of moon")
-CSECTORMETHOD(Rain,			CSCRIPTPROP_NARGS, "Make rain")
-CSECTORMETHOD(Respawn,		0, "Respawn all spawns in sector")
-CSECTORMETHOD(Restock,		0, "Restock all vendors in sector")
-CSECTORMETHOD(Snow,			CSCRIPTPROP_NARGS, "Make snow")
+//
+
+// csectormethods.tbl
+
+//
+
+
+
+CSECTORMETHOD(AllChars,		CSCRIPTPROP_NARG1,	"Command all chars in sector")
+
+CSECTORMETHOD(AllClients,	CSCRIPTPROP_NARG1,	"Command all clients in sector")
+
+CSECTORMETHOD(AllItems,		CSCRIPTPROP_NARG1,	"Command all items in sector")
+
+CSECTORMETHOD(Complexity,	CSCRIPTPROP_RETVAL, "[(sClassification)] is the complexity of the area this type")
+
+CSECTORMETHOD(Dry,			CSCRIPTPROP_NARGS,	"Stop rain or snow")
+
+CSECTORMETHOD(IsDark,		CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "dark as in cave or night")
+
+CSECTORMETHOD(IsNightTime,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "local night time of day")
+
+CSECTORMETHOD(LocalTime,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "Local Game Time")	
+
+CSECTORMETHOD(LocalTOD,		CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "Local time as int")
+
+CSECTORMETHOD(MoonLight,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS, "Get Level of current moon light")
+
+CSECTORMETHOD(MoonPhase,	CSCRIPTPROP_RETVAL,					  "(iMoon) Get phase of moon")
+
+CSECTORMETHOD(Rain,			CSCRIPTPROP_NARGS, "Make rain")
+
+CSECTORMETHOD(Respawn,		0, "Respawn all spawns in sector")
+
+CSECTORMETHOD(Restock,		0, "Restock all vendors in sector")
+
+CSECTORMETHOD(Snow,			CSCRIPTPROP_NARGS, "Make snow")
+

@@ -1,27 +1,54 @@
-//
-// citemdefprops.tbl
-//
-
-CITEMDEFPROP(DispId,		CSCRIPTPROP_READO, "Base Artwork id")
-CITEMDEFPROP(DupeItem,		CSCRIPTPROP_WRITEO, "")
-CITEMDEFPROP(DupeList,		0, "List of alternate artwork id's for this")
-CITEMDEFPROP(Dye,			0, "Can Dye")
-CITEMDEFPROP(Flip,			0, "Can Flip")
-CITEMDEFPROP(Id,			0, "Unique item Id")
-CITEMDEFPROP(Layer,			0, "Layer on which this would be equipped")
-CITEMDEFPROP(Repair,		0, "Can be repaired (also based on type)")
-CITEMDEFPROP(Replicate,		0, "Can replicate with skill make")
-CITEMDEFPROP(ReqStr,		0, "STR required to use if weapon/armor")
-CITEMDEFPROP(ResMake,		CSCRIPTPROP_DUPE, "RESOURCENAMES")
-CITEMDEFPROP(Resources2,	CSCRIPTPROP_WRITEO|CSCRIPTPROP_UNUSED, "NA alternate resources")
-CITEMDEFPROP(Resources3,	CSCRIPTPROP_WRITEO|CSCRIPTPROP_UNUSED, "NA alternate resources")
-CITEMDEFPROP(Skill,			CSCRIPTPROP_WRITEO|CSCRIPTPROP_UNUSED, "NA For weapon usage type")
-CITEMDEFPROP(SkillMake,		0, "Skills and Non consumables required to make this")
-CITEMDEFPROP(TData1,		0, "Type specific data for item type")
-CITEMDEFPROP(TData2,		0, "Type specific data for item type")
-CITEMDEFPROP(TData3,		0, "Type specific data for item type")
-CITEMDEFPROP(TData4,		0, "Type specific data for item type")
-CITEMDEFPROP(TwoHands,		0, "Needs 2 hands to use")
-CITEMDEFPROP(Type,			0, "Base DClick Action Type")
-CITEMDEFPROP(Value,			0, "Base value of a single instance (in gp)")
-CITEMDEFPROP(Weight,		0, "Base weight of a single instance (in stones)")
+//
+
+// citemdefprops.tbl
+
+//
+
+
+
+CITEMDEFPROP(DispId,		CSCRIPTPROP_READO, "Base Artwork id")
+
+CITEMDEFPROP(DupeItem,		CSCRIPTPROP_WRITEO, "")
+
+CITEMDEFPROP(DupeList,		0, "List of alternate artwork id's for this")
+
+CITEMDEFPROP(Dye,			0, "Can Dye")
+
+CITEMDEFPROP(Flip,			0, "Can Flip")
+
+CITEMDEFPROP(Id,			0, "Unique item Id")
+
+CITEMDEFPROP(Layer,			0, "Layer on which this would be equipped")
+
+CITEMDEFPROP(Repair,		0, "Can be repaired (also based on type)")
+
+CITEMDEFPROP(Replicate,		0, "Can replicate with skill make")
+
+CITEMDEFPROP(ReqStr,		0, "STR required to use if weapon/armor")
+
+CITEMDEFPROP(ResMake,		CSCRIPTPROP_DUPE, "RESOURCENAMES")
+
+CITEMDEFPROP(Resources2,	CSCRIPTPROP_WRITEO|CSCRIPTPROP_UNUSED, "NA alternate resources")
+
+CITEMDEFPROP(Resources3,	CSCRIPTPROP_WRITEO|CSCRIPTPROP_UNUSED, "NA alternate resources")
+
+CITEMDEFPROP(Skill,			CSCRIPTPROP_WRITEO|CSCRIPTPROP_UNUSED, "NA For weapon usage type")
+
+CITEMDEFPROP(SkillMake,		0, "Skills and Non consumables required to make this")
+
+CITEMDEFPROP(TData1,		0, "Type specific data for item type")
+
+CITEMDEFPROP(TData2,		0, "Type specific data for item type")
+
+CITEMDEFPROP(TData3,		0, "Type specific data for item type")
+
+CITEMDEFPROP(TData4,		0, "Type specific data for item type")
+
+CITEMDEFPROP(TwoHands,		0, "Needs 2 hands to use")
+
+CITEMDEFPROP(Type,			0, "Base DClick Action Type")
+
+CITEMDEFPROP(Value,			0, "Base value of a single instance (in gp)")
+
+CITEMDEFPROP(Weight,		0, "Base weight of a single instance (in stones)")
+

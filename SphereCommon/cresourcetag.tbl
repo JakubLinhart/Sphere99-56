@@ -1,62 +1,124 @@
-//
-// cresourcetag.tbl
-// CSCRIPTPROP_PRIV = private name pool = not a global resource id name
-
-CRESOURCETAG(Account,		0, "Define an account instance")
-CRESOURCETAG(AccountMgr,	0, "Define how accounts are managed")
-CRESOURCETAG(Area,			0, "Complex region. (w/extra tags)")
-CRESOURCETAG(BlockEMail,	CSCRIPTPROP_STATIC, "A list of email addresses we will not accept.")
-CRESOURCETAG(BlockIP,		CSCRIPTPROP_STATIC, "A list of IP's to block.")
-CRESOURCETAG(Book,			0, "A book or a page from a book.")
-CRESOURCETAG(CharDef,		0, "Define a char type. (overlap with SPAWN)")
-CRESOURCETAG(Comment,		CSCRIPTPROP_STATIC, "A commented out block type.")
-CRESOURCETAG(DefNames,		CSCRIPTPROP_STATIC, "Just add a bunch of new defs and equivs str/values")
-CRESOURCETAG(Dialog,		0, "A scriptable gump dialog, text or handler block.")
-//CRESOURCETAG(Economy,		0, "override the prices of a bunch of items.")
-CRESOURCETAG(EMailMsg,		0, "define an email msg that could be sent to an account.")
-CRESOURCETAG(Events,		0, "char Event handler block with the trigger type in it. ON=@Death etc.")
-CRESOURCETAG(Function,		0, "Define a new command verb script that applies to a char.")
-CRESOURCETAG(GMPage,		0, "A GM page. (SAVED in World)")
-CRESOURCETAG(Help,			0, "Command help blocks. (read in as needed)")
-CRESOURCETAG(ItemDef,		0, "Define an item type. (overlap with TEMPLATE)")
-CRESOURCETAG(Location,		0, "Ignore this AXIS data.")
-CRESOURCETAG(Map,			0, "Define info about the mapx.mul files")
-//CRESOURCETAG(MapPath,		0, "Walk or travel path through the world for NPC's.")
-CRESOURCETAG(Menu,			0, "General scriptable menus.")
-CRESOURCETAG(MoonGates,		CSCRIPTPROP_STATIC, "Define where the moongates are.")
-CRESOURCETAG(Multi,			0, "Multis, items that for multiple items - house / ship etc")
-CRESOURCETAG(Names,			0, "A pool of possible names for a NPC types. (read as needed)")
-CRESOURCETAG(Newbie,		0, "Triggers to execute on Player creation (based on skills selected)")
-CRESOURCETAG(NotoTitles,	CSCRIPTPROP_STATIC, "(SI) Define the noto titles used.")
-CRESOURCETAG(Obscene,		CSCRIPTPROP_STATIC, "A list of obscene words that may be filtered.")
-CRESOURCETAG(PLevel,		0, "Define the list of commands that a PLEVEL can access. (or not access)")
-CRESOURCETAG(Profession,	0, "Define specifics for a char with this profession. (ex. skill caps)")
-CRESOURCETAG(Quest,			0, "NA Define a sub plot in the world")
-CRESOURCETAG(RaceClass,		0, "General race params about creature types. regen rates, etc")
-CRESOURCETAG(RegionResource,0, "Define an Ore type within REGIONTYPE")
-CRESOURCETAG(RegionType,	0, "Triggers etc. that can be assigned to a AREA (but not ROOM)")
-CRESOURCETAG(Resources,		CSCRIPTPROP_STATIC, "list of all the resource files we should index !")
-CRESOURCETAG(Room,			0, "Non-complex region. (no extra tags)")
-CRESOURCETAG(Runes,			CSCRIPTPROP_STATIC, "Define list of the magic runes.")
-//CRESOURCETAG(Schedule,		0, "A list of times things can happen in an AREA.")
-CRESOURCETAG(Scroll,		0, "SCROLL_GUEST=message scroll sent to player at guest login. SCROLL_MOTD, SCROLL_NEWBIE, SCROLL_TIP_*")
-CRESOURCETAG(Sector,		0, "Make changes to a sector. (SAVED in World)")
-CRESOURCETAG(Server,		0, "Define a peer sphere server we should link to. (SAVED in World)")
-CRESOURCETAG(Servers,		CSCRIPTPROP_STATIC, "List a number of servers in 3 line format. (Phase this out)")
-CRESOURCETAG(Skill,			0, "Define attributes for a skill (how fast it raises etc)")
-CRESOURCETAG(SkillMenu,		0, "A menu that is attached to a skill. special arguments over other menus.")
-CRESOURCETAG(Spawn,			0, "Define a list of NPC's and how often they may spawn.")
-CRESOURCETAG(Speech,		0, "A speech block with ON=*blah* in it.")
-CRESOURCETAG(Spell,			0, "Define a magic spell effect. (0-64 are reserved)")
-CRESOURCETAG(Sphere,		CSCRIPTPROP_STATIC, "Main Server INI block")
-CRESOURCETAG(Starts,		CSCRIPTPROP_STATIC, "(SI) List of starting locations for newbies.")
-CRESOURCETAG(Stat,			0, "Stats elements like KARMA,STR,DEX,FOOD,FAME,CRIMINAL etc. Used for resource and desire scripts.")
-CRESOURCETAG(Teleport,		0, "Define a single teleport")
-CRESOURCETAG(Teleporters,	CSCRIPTPROP_STATIC, "Where are the teleporters in the world ? dungeon transports etc.")
-CRESOURCETAG(Template,		0, "Define lists of possible items. (for filling loot etc)")
-CRESOURCETAG(TypeDef,		0, "Define a trigger block for a WORLDITEM m_type.")
-CRESOURCETAG(TypeDefs,		CSCRIPTPROP_STATIC, "List of built in TYPEDEF DEFNAMES")
-CRESOURCETAG(VarNames,		CSCRIPTPROP_STATIC, "Block of scripting variables")
-CRESOURCETAG(WebPage,		0, "Define a web page template.")
-CRESOURCETAG(WorldChar,		0, "RES_CHAR Define instance of char in the world. (SAVED in World)")
-CRESOURCETAG(WorldItem,		0, "RES_ITEM Define instance of item in the world. (SAVED in World)")
+//
+
+// cresourcetag.tbl
+
+// CSCRIPTPROP_PRIV = private name pool = not a global resource id name
+
+
+
+CRESOURCETAG(Account,		0, "Define an account instance")
+
+CRESOURCETAG(AccountMgr,	0, "Define how accounts are managed")
+
+CRESOURCETAG(Area,			0, "Complex region. (w/extra tags)")
+
+CRESOURCETAG(BlockEMail,	CSCRIPTPROP_STATIC, "A list of email addresses we will not accept.")
+
+CRESOURCETAG(BlockIP,		CSCRIPTPROP_STATIC, "A list of IP's to block.")
+
+CRESOURCETAG(Book,			0, "A book or a page from a book.")
+
+CRESOURCETAG(CharDef,		0, "Define a char type. (overlap with SPAWN)")
+
+CRESOURCETAG(Comment,		CSCRIPTPROP_STATIC, "A commented out block type.")
+
+CRESOURCETAG(DefNames,		CSCRIPTPROP_STATIC, "Just add a bunch of new defs and equivs str/values")
+
+CRESOURCETAG(Dialog,		0, "A scriptable gump dialog, text or handler block.")
+
+//CRESOURCETAG(Economy,		0, "override the prices of a bunch of items.")
+
+CRESOURCETAG(EMailMsg,		0, "define an email msg that could be sent to an account.")
+
+CRESOURCETAG(Events,		0, "char Event handler block with the trigger type in it. ON=@Death etc.")
+
+CRESOURCETAG(Function,		0, "Define a new command verb script that applies to a char.")
+
+CRESOURCETAG(GMPage,		0, "A GM page. (SAVED in World)")
+
+CRESOURCETAG(Help,			0, "Command help blocks. (read in as needed)")
+
+CRESOURCETAG(ItemDef,		0, "Define an item type. (overlap with TEMPLATE)")
+
+CRESOURCETAG(Location,		0, "Ignore this AXIS data.")
+
+CRESOURCETAG(Map,			0, "Define info about the mapx.mul files")
+
+//CRESOURCETAG(MapPath,		0, "Walk or travel path through the world for NPC's.")
+
+CRESOURCETAG(Menu,			0, "General scriptable menus.")
+
+CRESOURCETAG(MoonGates,		CSCRIPTPROP_STATIC, "Define where the moongates are.")
+
+CRESOURCETAG(Multi,			0, "Multis, items that for multiple items - house / ship etc")
+
+CRESOURCETAG(Names,			0, "A pool of possible names for a NPC types. (read as needed)")
+
+CRESOURCETAG(Newbie,		0, "Triggers to execute on Player creation (based on skills selected)")
+
+CRESOURCETAG(NotoTitles,	CSCRIPTPROP_STATIC, "(SI) Define the noto titles used.")
+
+CRESOURCETAG(Obscene,		CSCRIPTPROP_STATIC, "A list of obscene words that may be filtered.")
+
+CRESOURCETAG(PLevel,		0, "Define the list of commands that a PLEVEL can access. (or not access)")
+
+CRESOURCETAG(Profession,	0, "Define specifics for a char with this profession. (ex. skill caps)")
+
+CRESOURCETAG(Quest,			0, "NA Define a sub plot in the world")
+
+CRESOURCETAG(RaceClass,		0, "General race params about creature types. regen rates, etc")
+
+CRESOURCETAG(RegionResource,0, "Define an Ore type within REGIONTYPE")
+
+CRESOURCETAG(RegionType,	0, "Triggers etc. that can be assigned to a AREA (but not ROOM)")
+
+CRESOURCETAG(Resources,		CSCRIPTPROP_STATIC, "list of all the resource files we should index !")
+
+CRESOURCETAG(Room,			0, "Non-complex region. (no extra tags)")
+
+CRESOURCETAG(Runes,			CSCRIPTPROP_STATIC, "Define list of the magic runes.")
+
+//CRESOURCETAG(Schedule,		0, "A list of times things can happen in an AREA.")
+
+CRESOURCETAG(Scroll,		0, "SCROLL_GUEST=message scroll sent to player at guest login. SCROLL_MOTD, SCROLL_NEWBIE, SCROLL_TIP_*")
+
+CRESOURCETAG(Sector,		0, "Make changes to a sector. (SAVED in World)")
+
+CRESOURCETAG(Server,		0, "Define a peer sphere server we should link to. (SAVED in World)")
+
+CRESOURCETAG(Servers,		CSCRIPTPROP_STATIC, "List a number of servers in 3 line format. (Phase this out)")
+
+CRESOURCETAG(Skill,			0, "Define attributes for a skill (how fast it raises etc)")
+
+CRESOURCETAG(SkillMenu,		0, "A menu that is attached to a skill. special arguments over other menus.")
+
+CRESOURCETAG(Spawn,			0, "Define a list of NPC's and how often they may spawn.")
+
+CRESOURCETAG(Speech,		0, "A speech block with ON=*blah* in it.")
+
+CRESOURCETAG(Spell,			0, "Define a magic spell effect. (0-64 are reserved)")
+
+CRESOURCETAG(Sphere,		CSCRIPTPROP_STATIC, "Main Server INI block")
+
+CRESOURCETAG(Starts,		CSCRIPTPROP_STATIC, "(SI) List of starting locations for newbies.")
+
+CRESOURCETAG(Stat,			0, "Stats elements like KARMA,STR,DEX,FOOD,FAME,CRIMINAL etc. Used for resource and desire scripts.")
+
+CRESOURCETAG(Teleport,		0, "Define a single teleport")
+
+CRESOURCETAG(Teleporters,	CSCRIPTPROP_STATIC, "Where are the teleporters in the world ? dungeon transports etc.")
+
+CRESOURCETAG(Template,		0, "Define lists of possible items. (for filling loot etc)")
+
+CRESOURCETAG(TypeDef,		0, "Define a trigger block for a WORLDITEM m_type.")
+
+CRESOURCETAG(TypeDefs,		CSCRIPTPROP_STATIC, "List of built in TYPEDEF DEFNAMES")
+
+CRESOURCETAG(VarNames,		CSCRIPTPROP_STATIC, "Block of scripting variables")
+
+CRESOURCETAG(WebPage,		0, "Define a web page template.")
+
+CRESOURCETAG(WorldChar,		0, "RES_CHAR Define instance of char in the world. (SAVED in World)")
+
+CRESOURCETAG(WorldItem,		0, "RES_ITEM Define instance of item in the world. (SAVED in World)")
+

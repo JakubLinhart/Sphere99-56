@@ -1,8 +1,16 @@
-//
-// craceclassprops.tbl
-//
-
-//CRACECLASSPROP(BloodColor,	0, "The race bleeds this color")
-CRACECLASSPROP(BodyParts,	0, "")
-//CRACECLASSPROP(MountId,	0, "" )
-CRACECLASSPROP(Regen,		CSCRIPTPROP_WRITEO|CSCRIPTPROP_NARG2, "Regen rate of stats")
+//
+
+// craceclassprops.tbl
+
+//
+
+
+
+//CRACECLASSPROP(BloodColor,	0, "The race bleeds this color")
+
+CRACECLASSPROP(BodyParts,	0, "")
+
+//CRACECLASSPROP(MountId,	0, "" )
+
+CRACECLASSPROP(Regen,		CSCRIPTPROP_WRITEO|CSCRIPTPROP_NARG2, "Regen rate of stats")
+

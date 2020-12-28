@@ -1,8 +1,16 @@
-//
-// ccharplayermethods.tbl
-// route these to Account 
-
-CCHARPLAYERMETHOD(EMail,		0, "Set a players email address")
-CCHARPLAYERMETHOD(Kick,			0, "Kick player off server for some time")
-CCHARPLAYERMETHOD(Password,		0, "Set a players account password")
-CCHARPLAYERMETHOD(SkillLock,	CSCRIPTPROP_ARG1,	"Set/Get how should each skill progress")
+//
+
+// ccharplayermethods.tbl
+
+// route these to Account 
+
+
+
+CCHARPLAYERMETHOD(EMail,		0, "Set a players email address")
+
+CCHARPLAYERMETHOD(Kick,			0, "Kick player off server for some time")
+
+CCHARPLAYERMETHOD(Password,		0, "Set a players account password")
+
+CCHARPLAYERMETHOD(SkillLock,	CSCRIPTPROP_ARG1,	"Set/Get how should each skill progress")
+

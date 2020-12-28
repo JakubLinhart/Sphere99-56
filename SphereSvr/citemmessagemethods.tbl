@@ -1,6 +1,12 @@
-//
-// citemmessagemethods.tbl
-//
-CITEMMESSAGEMETHOD(Body,	CSCRIPTPROP_DUPE|CSCRIPTPROP_ARG1,	"Page")
-CITEMMESSAGEMETHOD(Erase,	CSCRIPTPROP_RETNUL,	"Delete all pages" )
-CITEMMESSAGEMETHOD(Page,	CSCRIPTPROP_ARG1,	"Get/Set pages (1 based)")
+//
+
+// citemmessagemethods.tbl
+
+//
+
+CITEMMESSAGEMETHOD(Body,	CSCRIPTPROP_DUPE|CSCRIPTPROP_ARG1,	"Page")
+
+CITEMMESSAGEMETHOD(Erase,	CSCRIPTPROP_RETNUL,	"Delete all pages" )
+
+CITEMMESSAGEMETHOD(Page,	CSCRIPTPROP_ARG1,	"Get/Set pages (1 based)")
+

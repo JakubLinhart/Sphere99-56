@@ -1,5 +1,10 @@
-//
-// CRaceClassMethods.tbl
-//
-
-CRACECLASSMETHOD(Regen,CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG1,"Regen rate of stats")
+//
+
+// CRaceClassMethods.tbl
+
+//
+
+
+
+CRACECLASSMETHOD(Regen,CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG1,"Regen rate of stats")
+

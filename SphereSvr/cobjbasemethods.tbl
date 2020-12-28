@@ -1,53 +1,106 @@
-//
-// cobjbasemethods.tbl
-//
-
-COBJBASEMETHOD(ColorDlg,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","Put up color select dialog")
-COBJBASEMETHOD(Damage,		CSCRIPTPROP_ARG3,						"(iDamage,iSourceFlags,uidSourceChar)","do me some damage")
-COBJBASEMETHOD(DClick,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,   "","Act as if SRC dclicked on this")
-COBJBASEMETHOD(Dialog,		CSCRIPTPROP_ARG1,						"(uidDialog)","put up dialog to SRC with this base")
-COBJBASEMETHOD(Distance,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS,	"","distance from SRC") // distance to the source.
-COBJBASEMETHOD(DistanceFrom,CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARG1,	"(uid)","distance from uid")
-COBJBASEMETHOD(Edit,		0,										"[sSelectCommand]","List contents")
-COBJBASEMETHOD(Effect,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG2,	"(iType,iItemID [,iSpeedSec,iLoop,fExplode])","Display effect on this object")
-COBJBASEMETHOD(Emote,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S,	"","Speak emote from this object")
-COBJBASEMETHOD(Fix,			CSCRIPTPROP_NARGS,						"","Make sure my Z coord is ok")
-COBJBASEMETHOD(Flip,		CSCRIPTPROP_RETNUL,						"(sDir)","Flip this to an alternate view (if possible)")
-COBJBASEMETHOD(Hit,			CSCRIPTPROP_ARG3,						"(iDamage,iSourceFlags,uidSourceChar)","get hit by source")
-COBJBASEMETHOD(Info,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"",	"Put up info dialog on this")
-COBJBASEMETHOD(InpDlg,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARG2,	"(sPropName,iSize)","Put up input dialog on this")	
-COBJBASEMETHOD(IsEvent,		CSCRIPTPROP_ARG1,						"(sEventName)","is this event attached")
-COBJBASEMETHOD(IsNearType,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG2,	"(itype,idist)","near this type item?")
-COBJBASEMETHOD(M,			CSCRIPTPROP_DUPE,						"","MOVE")
-COBJBASEMETHOD(Menu,		0,										"","Put up menu for this")
-COBJBASEMETHOD(Message,		CSCRIPTPROP_ARG1S,						"","Put up message at object for Src")
-COBJBASEMETHOD(Move,		CSCRIPTPROP_ARG1S,						"(iDir,[iDist])","move in this direction")
-COBJBASEMETHOD(MoveTo,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S,	"(x,y,z)","Move to this point")
-COBJBASEMETHOD(NudgeDown,	CSCRIPTPROP_RETNUL,						"(iZDiff)","Move the Z")
-COBJBASEMETHOD(NudgeUp,		CSCRIPTPROP_RETNUL,						"(iZDiff)","Move the Z")
-COBJBASEMETHOD(P,			CSCRIPTPROP_DUPE,					"","MOVETO")
-COBJBASEMETHOD(Props,		CSCRIPTPROP_DUPE|CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","INFO")
-COBJBASEMETHOD(Remove,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,"","Delete from the world")
-COBJBASEMETHOD(RemoveFromView,CSCRIPTPROP_NARGS,				"","Just remove from view of all clients")
-COBJBASEMETHOD(Say,			CSCRIPTPROP_DUPE,					"","Speak")
-COBJBASEMETHOD(SayU,		CSCRIPTPROP_DUPE,					"","SpeakU")
-COBJBASEMETHOD(SayUA,		CSCRIPTPROP_DUPE,					"","SpeakUA")
-COBJBASEMETHOD(Sfx,			CSCRIPTPROP_DUPE,					"","Sound")
-COBJBASEMETHOD(Sound,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARG1, "(iSound)","Generate sound effect from this object")
-COBJBASEMETHOD(Speak,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S, "","Speak this text")	
-COBJBASEMETHOD(SpeakU,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S, "","Speak this UTF8 text")
-COBJBASEMETHOD(SpeakUA,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG5, "(iColor, iMode, iFont, sLang, sText)","Speak this UTF8 text with args")
-COBJBASEMETHOD(SpellEffect,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1, "(ispell, istrength, fnoresist)","Have this spell effect on me")
-COBJBASEMETHOD(SrcCanSee,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS,	"","src can see this")
-COBJBASEMETHOD(SrcCanSeeLOS,CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS,	"","src can see this")
-COBJBASEMETHOD(SrcFollow,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","SRC follows this")
-COBJBASEMETHOD(Tag,			CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1,	"(tagname[,args])",	"Get/Set Tags")
-COBJBASEMETHOD(Target,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S, "","src targets this to something else")
-COBJBASEMETHOD(TargetG,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S, "","src targets this to something else (allow ground)")
-COBJBASEMETHOD(Try,			CSCRIPTPROP_ARG1S,						"","Put up dialog to modify this command")
-COBJBASEMETHOD(TryP,		CSCRIPTPROP_NARG2,						"","do something only if i have correct priv level")
-COBJBASEMETHOD(Tweak,		CSCRIPTPROP_DUPE|CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS, "","INFO")	
-COBJBASEMETHOD(Update,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","update this to all clients")
-COBJBASEMETHOD(UpdateX,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","remove from clients then update")
-COBJBASEMETHOD(UseItem,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,   "","SRC use this item")
-COBJBASEMETHOD(Z,			CSCRIPTPROP_ARG1,						"(iZ)","Set Z Height")
+//
+
+// cobjbasemethods.tbl
+
+//
+
+
+
+COBJBASEMETHOD(ColorDlg,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","Put up color select dialog")
+
+COBJBASEMETHOD(Damage,		CSCRIPTPROP_ARG3,						"(iDamage,iSourceFlags,uidSourceChar)","do me some damage")
+
+COBJBASEMETHOD(DClick,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,   "","Act as if SRC dclicked on this")
+
+COBJBASEMETHOD(Dialog,		CSCRIPTPROP_ARG1,						"(uidDialog)","put up dialog to SRC with this base")
+
+COBJBASEMETHOD(Distance,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS,	"","distance from SRC") // distance to the source.
+
+COBJBASEMETHOD(DistanceFrom,CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARG1,	"(uid)","distance from uid")
+
+COBJBASEMETHOD(Edit,		0,										"[sSelectCommand]","List contents")
+
+COBJBASEMETHOD(Effect,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG2,	"(iType,iItemID [,iSpeedSec,iLoop,fExplode])","Display effect on this object")
+
+COBJBASEMETHOD(Emote,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S,	"","Speak emote from this object")
+
+COBJBASEMETHOD(Fix,			CSCRIPTPROP_NARGS,						"","Make sure my Z coord is ok")
+
+COBJBASEMETHOD(Flip,		CSCRIPTPROP_RETNUL,						"(sDir)","Flip this to an alternate view (if possible)")
+
+COBJBASEMETHOD(Hit,			CSCRIPTPROP_ARG3,						"(iDamage,iSourceFlags,uidSourceChar)","get hit by source")
+
+COBJBASEMETHOD(Info,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"",	"Put up info dialog on this")
+
+COBJBASEMETHOD(InpDlg,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARG2,	"(sPropName,iSize)","Put up input dialog on this")	
+
+COBJBASEMETHOD(IsEvent,		CSCRIPTPROP_ARG1,						"(sEventName)","is this event attached")
+
+COBJBASEMETHOD(IsNearType,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG2,	"(itype,idist)","near this type item?")
+
+COBJBASEMETHOD(M,			CSCRIPTPROP_DUPE,						"","MOVE")
+
+COBJBASEMETHOD(Menu,		0,										"","Put up menu for this")
+
+COBJBASEMETHOD(Message,		CSCRIPTPROP_ARG1S,						"","Put up message at object for Src")
+
+COBJBASEMETHOD(Move,		CSCRIPTPROP_ARG1S,						"(iDir,[iDist])","move in this direction")
+
+COBJBASEMETHOD(MoveTo,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S,	"(x,y,z)","Move to this point")
+
+COBJBASEMETHOD(NudgeDown,	CSCRIPTPROP_RETNUL,						"(iZDiff)","Move the Z")
+
+COBJBASEMETHOD(NudgeUp,		CSCRIPTPROP_RETNUL,						"(iZDiff)","Move the Z")
+
+COBJBASEMETHOD(P,			CSCRIPTPROP_DUPE,					"","MOVETO")
+
+COBJBASEMETHOD(Props,		CSCRIPTPROP_DUPE|CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","INFO")
+
+COBJBASEMETHOD(Remove,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,"","Delete from the world")
+
+COBJBASEMETHOD(RemoveFromView,CSCRIPTPROP_NARGS,				"","Just remove from view of all clients")
+
+COBJBASEMETHOD(Say,			CSCRIPTPROP_DUPE,					"","Speak")
+
+COBJBASEMETHOD(SayU,		CSCRIPTPROP_DUPE,					"","SpeakU")
+
+COBJBASEMETHOD(SayUA,		CSCRIPTPROP_DUPE,					"","SpeakUA")
+
+COBJBASEMETHOD(Sfx,			CSCRIPTPROP_DUPE,					"","Sound")
+
+COBJBASEMETHOD(Sound,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARG1, "(iSound)","Generate sound effect from this object")
+
+COBJBASEMETHOD(Speak,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S, "","Speak this text")	
+
+COBJBASEMETHOD(SpeakU,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S, "","Speak this UTF8 text")
+
+COBJBASEMETHOD(SpeakUA,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG5, "(iColor, iMode, iFont, sLang, sText)","Speak this UTF8 text with args")
+
+COBJBASEMETHOD(SpellEffect,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1, "(ispell, istrength, fnoresist)","Have this spell effect on me")
+
+COBJBASEMETHOD(SrcCanSee,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS,	"","src can see this")
+
+COBJBASEMETHOD(SrcCanSeeLOS,CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS,	"","src can see this")
+
+COBJBASEMETHOD(SrcFollow,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","SRC follows this")
+
+COBJBASEMETHOD(Tag,			CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1,	"(tagname[,args])",	"Get/Set Tags")
+
+COBJBASEMETHOD(Target,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S, "","src targets this to something else")
+
+COBJBASEMETHOD(TargetG,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1S, "","src targets this to something else (allow ground)")
+
+COBJBASEMETHOD(Try,			CSCRIPTPROP_ARG1S,						"","Put up dialog to modify this command")
+
+COBJBASEMETHOD(TryP,		CSCRIPTPROP_NARG2,						"","do something only if i have correct priv level")
+
+COBJBASEMETHOD(Tweak,		CSCRIPTPROP_DUPE|CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS, "","INFO")	
+
+COBJBASEMETHOD(Update,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","update this to all clients")
+
+COBJBASEMETHOD(UpdateX,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"","remove from clients then update")
+
+COBJBASEMETHOD(UseItem,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,   "","SRC use this item")
+
+COBJBASEMETHOD(Z,			CSCRIPTPROP_ARG1,						"(iZ)","Set Z Height")
+

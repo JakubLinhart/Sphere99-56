@@ -1,15 +1,29 @@
-//
-// ccharnpcprops.tbl
-//
-
-CCHARNPCPROP(ActPri,		0, "NPC action priority level")
-CCHARNPCPROP(Brain,			0, "NPC brain type")
-CCHARNPCPROP(HomeDist,		0, "(iDist) NPC Wander distance from home")
-CCHARNPCPROP(Knowledge,		CSCRIPTPROP_DUPE, "SPEECH")
-CCHARNPCPROP(Need,			0, "NPC resource need")
-CCHARNPCPROP(NeedName,		0, "NPC text description of need")
-CCHARNPCPROP(NPC,			CSCRIPTPROP_DUPE, "BRAIN")
-CCHARNPCPROP(Speech,		0, "NPC speech script blocks")
-CCHARNPCPROP(VendCap,		0, "NPC vendor")
-CCHARNPCPROP(VendGold,		0, "NPC vendor")
+//
+
+// ccharnpcprops.tbl
+
+//
+
+
+
+CCHARNPCPROP(ActPri,		0, "NPC action priority level")
+
+CCHARNPCPROP(Brain,			0, "NPC brain type")
+
+CCHARNPCPROP(HomeDist,		0, "(iDist) NPC Wander distance from home")
+
+CCHARNPCPROP(Knowledge,		CSCRIPTPROP_DUPE, "SPEECH")
+
+CCHARNPCPROP(Need,			0, "NPC resource need")
+
+CCHARNPCPROP(NeedName,		0, "NPC text description of need")
+
+CCHARNPCPROP(NPC,			CSCRIPTPROP_DUPE, "BRAIN")
+
+CCHARNPCPROP(Speech,		0, "NPC speech script blocks")
+
+CCHARNPCPROP(VendCap,		0, "NPC vendor")
+
+CCHARNPCPROP(VendGold,		0, "NPC vendor")
+
  

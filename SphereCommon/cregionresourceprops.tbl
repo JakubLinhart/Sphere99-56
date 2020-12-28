@@ -1,18 +1,9 @@
 //
-
 // cregionresourceprops.tbl
-
 //
 
-
-
 CREGIONRESOURCEPROP(Amount,		0, "")
-
 CREGIONRESOURCEPROP(Reap,		0, "")
-
 CREGIONRESOURCEPROP(ReapAmount,	0, "")
-
 CREGIONRESOURCEPROP(Regen,		0, "How fast to regen this")
-
 CREGIONRESOURCEPROP(Skill,		0, "Skill required to reap this")
-

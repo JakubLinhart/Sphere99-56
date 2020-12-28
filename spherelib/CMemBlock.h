@@ -153,6 +153,19 @@ public:
         m_dwLength = dwSizeNew;
         MemLink(pDataNew);
     }
+    bool IsValidOffset(const void* pTest)
+    {
+        if (!IsValid())
+            return false;
+        BYTE* pTestData = (BYTE*)pTest;
+        if (pTestData < GetData())
+            return false;
+        if (pTestData - GetData() > m_dwLength)
+            return false;
+
+        return true;
+    }
+
 };
 
 

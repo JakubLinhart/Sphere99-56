@@ -48,6 +48,9 @@
       <UniqueIdentifier>{8941e9ae-e11c-43d9-a555-49c57e23c9b9}</UniqueIdentifier>
       <Extensions>tbl</Extensions>
     </Filter>
+    <Filter Include="Missing">
+      <UniqueIdentifier>{a50d6e32-3981-4eb4-a79a-a8bb19092f03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CBackTask.cpp">
@@ -335,6 +338,9 @@
     <ClCompile Include="..\SphereIRC\SCache.cpp">
       <Filter>IRC Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Missing\CScriptProp.cpp">
+      <Filter>Missing</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpherePublic.h">
@@ -450,6 +456,12 @@
     </ClInclude>
     <ClInclude Include="..\SphereIRC\SCache.h">
       <Filter>IRC Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptProp.h">
+      <Filter>Missing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Missing\missing.h">
+      <Filter>Missing</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

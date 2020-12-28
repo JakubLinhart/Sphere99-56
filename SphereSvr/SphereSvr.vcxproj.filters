@@ -517,6 +517,9 @@
     <ClInclude Include="..\spherelib\CScriptObj.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
+    <ClInclude Include="..\spherelib\cstring2.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="spheresvr.rc">

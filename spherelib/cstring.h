@@ -9,6 +9,16 @@
 
 #include "common.h"
 
+class CString
+{
+public:
+	CString(LPCTSTR pStr);
+	operator LPCTSTR() const
+	{
+		throw "Not implemented";
+	}
+};
+
 /**
 * @brief Custom String implementation.
 */

@@ -599,6 +599,7 @@
     <ClInclude Include="..\spherelib\CScriptExecContext.h" />
     <ClInclude Include="..\spherelib\CScriptObj.h" />
     <ClInclude Include="..\spherelib\cstring.h" />
+    <ClInclude Include="..\spherelib\cstring2.h" />
     <ClInclude Include="..\spherelib\CThread.h" />
     <ClInclude Include="..\SphereLib\spherelib.h" />
     <ClInclude Include="CChat.h" />

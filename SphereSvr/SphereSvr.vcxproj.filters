@@ -511,9 +511,6 @@
     <ClInclude Include="..\spherelib\CArray.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\spherelib\CResourceBase.h">
-      <Filter>SphereLib</Filter>
-    </ClInclude>
     <ClInclude Include="..\spherelib\CScriptObj.h">
       <Filter>SphereLib</Filter>
     </ClInclude>

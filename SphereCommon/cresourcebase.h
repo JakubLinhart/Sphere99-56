@@ -78,6 +78,18 @@ public:
 	bool IsResourceMatchAll( CObjBase* pObj ) const;
 };
 
+class CResourceDef : public CScriptObj
+{
+public:
+	LPCTSTR GetResourceName() const;
+};
+
+#define CResourceLinkPtr CResourceLink*
+class CResourceLink : public CResourceDef
+{
+
+};
+
 //***********************************************************
 
 class CResourceRefArray : public CGRefArray<CResourceLink>

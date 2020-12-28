@@ -1,5 +1,6 @@
 #pragma once
 #include "CRefPtr.h"
+#include "CArray.h"
 #include "cstring.h"
 #include "CScript.h"
 #include "CResourceObj.h"

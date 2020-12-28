@@ -64,7 +64,7 @@ struct CSphereUIDBase
 
 	// If this is a ref to a game object the top 2 bits are just flags.
 
-
+#define UID_INDEX_CLEAR	0x00000000
 
 #define RID_F_RESOURCE	0x80000000	// ALSO: pileable or special macro flag passed to client.
 

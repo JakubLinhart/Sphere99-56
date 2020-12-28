@@ -3536,25 +3536,6 @@ enum FONT_TYPE
 
 };
 
-
-enum DIR_TYPE	// Walking directions. m_dir
-{
-	DIR_INVALID = -1,
-
-	DIR_N = 0,
-	DIR_NE,
-	DIR_E,
-	DIR_SE,
-	DIR_S,
-	DIR_SW,
-	DIR_W,
-	DIR_NW,
-	DIR_QTY,		// Also means "Center"
-
-	DIR_ANIM_QTY = 5	// Seems we only need 5 pics for an anim, assume ALL bi-symetrical creatures
-};
-
-
 enum SKILL_TYPE	// List of skill numbers (things that can be done at a given time)
 
 {
@@ -4903,7 +4884,7 @@ public:
 
 // Map definition.
 
-
+#define SPHEREMAP_QTY				255
 
 #define SPHEREMAP_BLOCK_SIZE		8       // Base width/height size of a block.
 
@@ -4921,6 +4902,8 @@ typedef WORD PNT_X_TYPE;
 typedef WORD PNT_Y_TYPE;
 typedef signed char PNT_Z_TYPE;
 typedef unsigned char MAPPLANE_TYPE;
+
+#define MAPPLANE_DEF 0
 
 // Map 0
 
@@ -4952,7 +4935,16 @@ typedef unsigned char MAPPLANE_TYPE;
 
 #define PLAYER_PLATFORM_STEP 5
 
-
+extern class CMapList
+{
+public:
+	int m_sizex[SPHEREMAP_QTY];
+	int m_sizey[SPHEREMAP_QTY];
+	int m_sectorsize[SPHEREMAP_QTY];
+	bool m_maps[SPHEREMAP_QTY];			// list of supported maps
+	int m_mapnum[SPHEREMAP_QTY];			// real map number (0 for 0 and 1, 2 for 2, and so on) - file name
+	int m_mapid[SPHEREMAP_QTY];			// map id used by the client
+} g_MapList;
 
 struct CMulMapMeter	// 3 bytes (map0.mul)
 

@@ -3,15 +3,23 @@
 struct CGRect			// Basic rectangle. (May not be on the map)
 {
 public:
-	int left;		// West	 x=0
-	int top;		// North y=0
-	int right;	// East	( NON INCLUSIVE !)
-	int bottom;	// South ( NON INCLUSIVE !)
+	int m_left;		// West	 x=0
+	int m_top;		// North y=0
+	int m_right;	// East	( NON INCLUSIVE !)
+	int m_bottom;	// South ( NON INCLUSIVE !)
+	int m_map;
 
 public:
-	int Width() const { return(right - left); }
-	int Height() const { return(bottom - top); }
+	int Width() const { return(m_right - m_left); }
+	int Height() const { return(m_bottom - m_top); }
 
+	void SetRectEmpty()
+	{
+		m_left = m_top = 0;	// 0x7ffe
+		m_right = m_bottom = 0;
+		m_map = 0;
+	}
+	
 	virtual void NormalizeRect()
 	{
 		if (m_bottom < m_top)
@@ -40,5 +48,18 @@ public:
 			m_right = cx;
 		if (m_bottom > cy)
 			m_bottom = cy;
+	}
+};
+
+class CGRegion
+{
+public:
+	CGRect m_rectUnion;	// The union rectangle.
+	CGTypedArray<CGRect, const CGRect&> m_Rects;
+
+	void EmptyRegion()
+	{
+		m_rectUnion.SetRectEmpty();
+		m_Rects.Empty();
 	}
 };

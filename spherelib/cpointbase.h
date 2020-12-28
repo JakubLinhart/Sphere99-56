@@ -19,4 +19,4 @@ public:
 	void Set(const POINT pt);
 	void Set(const POINTS pt);
 	void v_Set(CGVariant& vVal);
-}
+};

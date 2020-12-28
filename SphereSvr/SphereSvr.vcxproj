@@ -587,6 +587,7 @@
     <ClInclude Include="..\SphereIRC\SCache.h" />
     <ClInclude Include="..\spherelib\CArray.h" />
     <ClInclude Include="..\spherelib\CExpression.h" />
+    <ClInclude Include="..\spherelib\cfile.h" />
     <ClInclude Include="..\spherelib\common.h" />
     <ClInclude Include="..\spherelib\cpointbase.h" />
     <ClInclude Include="..\spherelib\CRefPtr.h" />

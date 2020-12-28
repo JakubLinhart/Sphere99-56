@@ -51,6 +51,9 @@
     <Filter Include="Missing">
       <UniqueIdentifier>{a50d6e32-3981-4eb4-a79a-a8bb19092f03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SphereLib">
+      <UniqueIdentifier>{eef1048b-e3c1-4eba-9116-bbd1ba283294}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CBackTask.cpp">
@@ -341,6 +344,12 @@
     <ClCompile Include="..\Missing\CScriptProp.cpp">
       <Filter>Missing</Filter>
     </ClCompile>
+    <ClCompile Include="..\spherelib\CPointBase.cpp">
+      <Filter>SphereLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\spherelib\cstring.cpp">
+      <Filter>SphereLib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpherePublic.h">
@@ -462,6 +471,39 @@
     </ClInclude>
     <ClInclude Include="..\Missing\missing.h">
       <Filter>Missing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\common.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\cpointbase.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CRefPtr.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\cregion.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CScriptableInterface.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\cstring.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CScript.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CResourceObj.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CThread.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CScriptExecContext.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CScriptConsole.h">
+      <Filter>SphereLib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

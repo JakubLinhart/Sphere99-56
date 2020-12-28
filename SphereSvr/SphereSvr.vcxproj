@@ -494,6 +494,8 @@
     <ClCompile Include="..\SphereIRC\IRCTools.cpp" />
     <ClCompile Include="..\SphereIRC\IRCWhoWas.cpp" />
     <ClCompile Include="..\SphereIRC\SCache.cpp" />
+    <ClCompile Include="..\spherelib\CPointBase.cpp" />
+    <ClCompile Include="..\spherelib\cstring.cpp" />
     <ClCompile Include="CBackTask.cpp" />
     <ClCompile Include="CChar.cpp" />
     <ClCompile Include="ccharact.cpp" />
@@ -583,6 +585,17 @@
     <ClInclude Include="..\SphereIRC\IRCTools.h" />
     <ClInclude Include="..\SphereIRC\IRCWhoWas.h" />
     <ClInclude Include="..\SphereIRC\SCache.h" />
+    <ClInclude Include="..\spherelib\common.h" />
+    <ClInclude Include="..\spherelib\cpointbase.h" />
+    <ClInclude Include="..\spherelib\CRefPtr.h" />
+    <ClInclude Include="..\spherelib\cregion.h" />
+    <ClInclude Include="..\spherelib\CResourceObj.h" />
+    <ClInclude Include="..\spherelib\CScript.h" />
+    <ClInclude Include="..\spherelib\CScriptableInterface.h" />
+    <ClInclude Include="..\spherelib\CScriptConsole.h" />
+    <ClInclude Include="..\spherelib\CScriptExecContext.h" />
+    <ClInclude Include="..\spherelib\cstring.h" />
+    <ClInclude Include="..\spherelib\CThread.h" />
     <ClInclude Include="..\SphereLib\spherelib.h" />
     <ClInclude Include="CChat.h" />
     <ClInclude Include="cclient.h" />

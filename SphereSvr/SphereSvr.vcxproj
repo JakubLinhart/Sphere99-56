@@ -591,11 +591,13 @@
     <ClInclude Include="..\spherelib\cpointbase.h" />
     <ClInclude Include="..\spherelib\CRefPtr.h" />
     <ClInclude Include="..\spherelib\cregion.h" />
+    <ClInclude Include="..\spherelib\CResourceBase.h" />
     <ClInclude Include="..\spherelib\CResourceObj.h" />
     <ClInclude Include="..\spherelib\CScript.h" />
     <ClInclude Include="..\spherelib\CScriptableInterface.h" />
     <ClInclude Include="..\spherelib\CScriptConsole.h" />
     <ClInclude Include="..\spherelib\CScriptExecContext.h" />
+    <ClInclude Include="..\spherelib\CScriptObj.h" />
     <ClInclude Include="..\spherelib\cstring.h" />
     <ClInclude Include="..\spherelib\CThread.h" />
     <ClInclude Include="..\SphereLib\spherelib.h" />

@@ -422,7 +422,7 @@ public:
 template<class TYPE, class ARG_TYPE, class KEY_TYPE>
 struct CGSortedArray : public CGTypedArray<TYPE, ARG_TYPE>
 {
-	int CGSortedArray<TYPE, KEY_TYPE>::FindKeyNear(KEY_TYPE key, int& iCompareRes) const
+	int FindKeyNear(KEY_TYPE key, int& iCompareRes) const
 	{
 		// Do a binary search for the key.
 		// RETURN: index

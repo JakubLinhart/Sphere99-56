@@ -371,4 +371,7 @@ class CGVariant
 
 };
 
+// extern TCHAR * Str_GetTemporary(int amount = 1);
+extern TCHAR* Str_GetTemp();
+
 #endif _INC_CSTRING_H

@@ -1,4 +1,5 @@
-#include "common.h"
+#include "spherelib.h"
+#include "..\SphereSvr\stdafx.h"
 
 /**
 * @brief Default memory alloc size for CGString.
@@ -441,4 +442,18 @@ void CGString::Init()
 	m_iLength = 0;
 	m_pchData = new TCHAR[m_iMaxLength + 1];
 	m_pchData[m_iLength] = 0;
+}
+
+//***************************************************************************
+// String global functions.
+
+static int		Str_iTemp = 0;
+static TCHAR	Str_szTemp;
+
+TCHAR* Str_GetTemp(void)
+{
+	// Some scratch string space, random uses
+	if (++Str_iTemp >= 8)
+		Str_iTemp = 0;
+	return(Str_szTemp);
 }

@@ -1,0 +1,13 @@
+//
+// ccharplayerprops.tbl
+//
+
+CCHARPLAYERPROP(Deaths,		CSCRIPTPROP_RETVAL,					"How many deaths")
+//CCHARPLAYERPROP(ExpLevel,	0,					"")
+CCHARPLAYERPROP(Kills,		CSCRIPTPROP_RETVAL,					"How many PVP murders")	
+CCHARPLAYERPROP(LastUsed,	CSCRIPTPROP_RETVAL, 					"Time since this char was last played")
+CCHARPLAYERPROP(Plot1,		CSCRIPTPROP_UNUSED|CSCRIPTPROP_RETVAL,	"OBSOLETE") // phase these out!
+CCHARPLAYERPROP(Plot2,		CSCRIPTPROP_UNUSED|CSCRIPTPROP_RETVAL,	"OBSOLETE") // phase these out!
+CCHARPLAYERPROP(Profession,	CSCRIPTPROP_RETREF, "Ref to the chosen Profession")
+CCHARPLAYERPROP(SkillLock,	CSCRIPTPROP_WRITEO|CSCRIPTPROP_NARG2,	"Set how should each skill progress")
+ 

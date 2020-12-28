@@ -1,0 +1,19 @@
+//
+// cservevents.tbl
+//
+
+CSERVEVENT(Startup,			0, "")
+CSERVEVENT(Shutdown,		0, "")
+CSERVEVENT(LoadBegin,		0, "")
+CSERVEVENT(LoadStatus,		0, "")	// Arg1=int percent
+CSERVEVENT(LoadDone,		0, "")
+CSERVEVENT(ModeChange,		0, "")
+CSERVEVENT(SaveStatus,		0, "")	// Arg1=int percent
+//CSERVEVENT(ScriptError,	0, "Fired when an error occurs in scripts")	// Arg1=int percent
+CSERVEVENT(ServerMsg,		0, "")		// Arg1=CComBSTR msg(pStr)
+CSERVEVENT(GarbageStatus,	0, "")	// Arg1=int percent
+CSERVEVENT(ClientAttach,	0, "")	// Arg1=int socket
+CSERVEVENT(ClientChange,	0, "")	// Arg1=int socket
+CSERVEVENT(ClientDetach,	0, "")	// Arg1=int socket
+CSERVEVENT(TestStatus,		0, "")
+ 

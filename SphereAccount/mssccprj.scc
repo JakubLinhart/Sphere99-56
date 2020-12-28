@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[SphereAccount.dsp]
+SCC_Aux_Path = "D:\InetPub\GrayWorldS"
+SCC_Project_Name = "$/SphereAccount", SICAAAAA
+
+[sphereaccount.vcproj]
+SCC_Aux_Path = "D:\InetPub\GrayWorldS"
+SCC_Project_Name = "$/SphereAccount", SICAAAAA

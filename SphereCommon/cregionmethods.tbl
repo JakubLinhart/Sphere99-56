@@ -1,0 +1,12 @@
+//
+// cregionmethods.tbl
+//
+
+//CREGIONMETHOD(AllChars,		CSCRIPTPROP_NARG1,	"Command all chars in region")
+CREGIONMETHOD(AllClients,	CSCRIPTPROP_NARG1,	"Command all clients in region")
+//CREGIONMETHOD(AllItems,		CSCRIPTPROP_NARG1,	"Command all items in region")
+CREGIONMETHOD(IsComplex,	CSCRIPTPROP_NARGS, "Is this a [AREA]")
+CREGIONMETHOD(IsMulti,		CSCRIPTPROP_NARGS, "Is this region a house/boat")
+CREGIONMETHOD(IsSimple,		CSCRIPTPROP_NARGS, "Is this a [ROOM]")
+CREGIONMETHOD(Sectors,		CSCRIPTPROP_ARG1, "Command all sectors in region")
+

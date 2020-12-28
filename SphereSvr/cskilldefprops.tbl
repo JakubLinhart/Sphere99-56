@@ -1,0 +1,19 @@
+//
+// cskilldefprops.tbl
+//
+
+CSKILLDEFPROP(AdvRate,		0, "")
+CSKILLDEFPROP(Bonus_Dex,	0, "")
+CSKILLDEFPROP(Bonus_Int,	0, "")
+CSKILLDEFPROP(Bonus_Str,	0, "")
+CSKILLDEFPROP(BonusStats,	0, "")
+CSKILLDEFPROP(Delay,		0, "")
+CSKILLDEFPROP(Effect,		0, "")
+CSKILLDEFPROP(Key,			0, "")
+CSKILLDEFPROP(PromptMsg,	0, "")
+CSKILLDEFPROP(Stat_Dex,		0, "")
+CSKILLDEFPROP(Stat_Int,		0, "")
+CSKILLDEFPROP(Stat_Str,		0, "")
+CSKILLDEFPROP(Title,		0, "")
+CSKILLDEFPROP(Values,		0, "")
+

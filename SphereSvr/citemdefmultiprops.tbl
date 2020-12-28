@@ -1,0 +1,7 @@
+//
+// citemdefmultiprops.tbl
+//
+CITEMDEFMULTIPROP(Component,	0,	"")
+CITEMDEFMULTIPROP(MultiRegion,	0,	"")
+CITEMDEFMULTIPROP(RegionFlags,	0,	"")
+CITEMDEFMULTIPROP(TSpeech,		0,	"")

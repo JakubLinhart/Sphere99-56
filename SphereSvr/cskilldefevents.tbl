@@ -1,0 +1,13 @@
+//
+// cSkillDefEvents.tbl
+//
+
+CSKILLDEFEVENT(Abort,		0, "skill action cancelled for some reason" )
+// CSKILLDEFEVENT(CheckSuccess,0, "skill check success override")
+CSKILLDEFEVENT(Fail,		0, "we failed the skill check")
+CSKILLDEFEVENT(MakeItem,	0, "succcess at making an item specificly")
+CSKILLDEFEVENT(Select,		0, "selecting params for the skill")
+CSKILLDEFEVENT(Start,		0, "skill action starting")
+CSKILLDEFEVENT(Stroke,		0, "skill is in the process")
+CSKILLDEFEVENT(Success,		0, "skill complete success")
+

@@ -1,0 +1,31 @@
+//
+// cchardefprops.tbl
+//
+
+CCHARDEFPROP(Anim,			0, "(#) The allowed animation actions for this char")
+CCHARDEFPROP(Armor,			0, "Natural Ability to absorb damage")
+CCHARDEFPROP(Attack,		0, "(#lo,#hi) range of base attack damage")
+CCHARDEFPROP(Aversions,		CSCRIPTPROP_UNUSED, "NA")
+CCHARDEFPROP(BloodColor,	0, "(#) color of the creatures blood (-1=none)")
+CCHARDEFPROP(Dam,			CSCRIPTPROP_DUPE, "ATTACK")
+CCHARDEFPROP(Desires,		0, "What to I want")
+CCHARDEFPROP(Dex,			0, "(#) base dex for this creature (used for polymorph)")
+CCHARDEFPROP(DispId,		0, "(#) The base artwork resource id for this creatures body")
+CCHARDEFPROP(DispIdDec,		0, "DispId except in decimal")
+CCHARDEFPROP(FoodType,		0, "(#,#,...) List the things this creature eats.")
+CCHARDEFPROP(HireDayWage,	0, "(#) How much to hire this creature per game day")
+CCHARDEFPROP(Icon,			0, "(#) Item id for use as an icon to represent this creature")
+CCHARDEFPROP(Id,			CSCRIPTPROP_DUPE, "DISPID")
+CCHARDEFPROP(Job,			0, "What is my job title")
+CCHARDEFPROP(MaxFood,		0, "Total amount of food I can eat")
+CCHARDEFPROP(MountId,		0, "(#) mount icon to use if this creature is mountable")
+CCHARDEFPROP(Race,			CSCRIPTPROP_RETREF, "# = specific RACECLASS for this creature")
+CCHARDEFPROP(RaceGroup,		CSCRIPTPROP_RETREF, "# = general RACECLASS group for this creature")	
+CCHARDEFPROP(ResDispId,		0, "(#) Alternate base body for low resource clients")	
+CCHARDEFPROP(ResLevel,		0, "(#) Resource level required to have body art")
+CCHARDEFPROP(Shelter,		CSCRIPTPROP_UNUSED, "NA")
+CCHARDEFPROP(Sound,			0, "(#) start of range of sounds this makes")
+CCHARDEFPROP(Str,			0, "(#) base str for this creature (used for polymorph)")
+CCHARDEFPROP(TEvents,		0, "(#,#,...) List of EVENT handlers to +add or -remove")
+CCHARDEFPROP(TSpeech,		0, "(#,#,...) List of SPEECH handlers to +add or -remove")
+ 

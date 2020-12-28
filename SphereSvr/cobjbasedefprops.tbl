@@ -1,0 +1,10 @@
+//
+// cobjbasedefprops.tbl
+//
+	
+COBJBASEDEFPROP(BaseId,			0, "DEFNAME or id for this")
+COBJBASEDEFPROP(Can,			0, "Can Flags")
+COBJBASEDEFPROP(Height,			0, "Z height required")
+COBJBASEDEFPROP(Name,			0, "Name for this type of thing")
+COBJBASEDEFPROP(ResourceNames,	CSCRIPTPROP_READO, "Text description of resources used to make this")
+COBJBASEDEFPROP(Resources,		0, "DEFNAME list of resources used to make this")

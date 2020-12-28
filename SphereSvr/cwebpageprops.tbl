@@ -1,0 +1,9 @@
+//
+// cwebpageprops.tbl
+//
+
+CWEBPAGEPROP(PLevel,		0, "what priv level does one need to be to view this page")
+CWEBPAGEPROP(WebPageDst,	0, "for periodic generated pages")
+CWEBPAGEPROP(WebPageFile,	0, "save as WEBPAGEDST")
+CWEBPAGEPROP(WebPageSrc,	0, "the source name of the web page")
+CWEBPAGEPROP(WebPageUpdate,	0, "how often to generate a page ? (in seconds)")

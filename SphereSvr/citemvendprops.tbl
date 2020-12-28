@@ -1,0 +1,8 @@
+//
+// citemvendprops.tbl
+//
+
+CITEMVENDPROP(BuyPrice,		CSCRIPTPROP_UNUSED, "obsolete")	// ignore this.
+CITEMVENDPROP(Price,		0, "Hard set base vendor price (in gp)")
+CITEMVENDPROP(Quality,		0, "{0 100} skill level used to make this")
+CITEMVENDPROP(SellPrice,	CSCRIPTPROP_UNUSED, "obsolete")	// ignore this.

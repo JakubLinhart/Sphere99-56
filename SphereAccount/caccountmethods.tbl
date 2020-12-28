@@ -1,0 +1,15 @@
+//
+// caccountmethods.tbl
+//
+
+CACCOUNTMETHOD(Block,		CSCRIPTPROP_RETNUL,						"[nMinutes]",		"adjust how long account is blocked for")
+CACCOUNTMETHOD(Char,		CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1,	"[n]",				"enumerate refs to the account chars")
+CACCOUNTMETHOD(Delete,		CSCRIPTPROP_RETNUL,						"[bAll]",			"delete all chars and the account")
+CACCOUNTMETHOD(EmailPass,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"",					"email me my password")	
+CACCOUNTMETHOD(EmailSend,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS|CSCRIPTPROP_ARG1,	"(rEmailID)",		"schedule an email")
+CACCOUNTMETHOD(Export,		CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1,	"(sFilename)",		"write the account and chars to file")
+CACCOUNTMETHOD(Kick,		CSCRIPTPROP_RETNUL,						"(nMinutes)",		"kick this account off server for nMinutes")
+CACCOUNTMETHOD(SetEmail,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS|CSCRIPTPROP_ARG1,	"(sEmailAddress)",	"change the email address (with feedback)")
+CACCOUNTMETHOD(SetPassword,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS|CSCRIPTPROP_ARG1,	"(sPassword)",		"change my password")
+CACCOUNTMETHOD(Status,		CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS,	"",					"describe account status")
+CACCOUNTMETHOD(Tag,			CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1,	"(tagname[,args])",	"Get/Set Tags")

@@ -1,72 +1,36 @@
 //
-
 // citemstonemethods.tbl
-
 //
-
 //CITEMSTONEMETHOD(AcceptCandidate,		0, "")
-
 CITEMSTONEMETHOD(ApplyToJoin,			0, "Applies to join")
-
 CITEMSTONEMETHOD(AtWar,					CSCRIPTPROP_ARG1, "List of groups we are at war with" )
-
 CITEMSTONEMETHOD(Bans,					CSCRIPTPROP_ARG1, "List of those banned from this group" )
-
 CITEMSTONEMETHOD(Candidates,			CSCRIPTPROP_ARG1, "List of candidates to the group")
-
 //CITEMSTONEMETHOD(ChangeAlign,			0, "")
-
 CITEMSTONEMETHOD(Charter,				CSCRIPTPROP_ARG1, "Get/Set the line sof the charter")
-
 //CITEMSTONEMETHOD(DeclareFealty,			0, "")
-
 //CITEMSTONEMETHOD(DeclarePeace,			0, "")
-
 //CITEMSTONEMETHOD(DeclareWar,			0, "")
-
 //CITEMSTONEMETHOD(DismissMember,			0, "")
-
 CITEMSTONEMETHOD(ElectMaster,			0, "Check the guild for consistancy and votes for master")
-
 //CITEMSTONEMETHOD(GrantTitle,			0, "")
-
 CITEMSTONEMETHOD(JoinAsMember,			0, "Add as member directly")
-
 //CITEMSTONEMETHOD(MasterMenu,			0, "")
-
 CITEMSTONEMETHOD(Members,				CSCRIPTPROP_ARG1, "Member of the group" )
-
 //CITEMSTONEMETHOD(Recruit,				0, "")
-
 //CITEMSTONEMETHOD(RefuseCandidate,		0, "")
-
 //CITEMSTONEMETHOD(Resign,				0, "")
-
 //CITEMSTONEMETHOD(ReturnMainMenu,		0, "")
-
 //CITEMSTONEMETHOD(SetAbbreviation,		0, "")
-
 //CITEMSTONEMETHOD(SetCharter,			0, "")
-
 //CITEMSTONEMETHOD(SetGMTitle,			0, "")
-
 //CITEMSTONEMETHOD(SetName,				0, "")
-
 //CITEMSTONEMETHOD(Teleport,			0, "")
-
 CITEMSTONEMETHOD(TheyDeclared,			CSCRIPTPROP_ARG1, "List of groups that have delcared war on us" )
-
 //CITEMSTONEMETHOD(ToggleAbbreviation,	0, "")
-
 //CITEMSTONEMETHOD(ViewCandidates,		0, "")
-
 //CITEMSTONEMETHOD(ViewCharter,			0, "")	
-
 //CITEMSTONEMETHOD(ViewEnemys,			0, "")
-
 //CITEMSTONEMETHOD(ViewRoster,			0, "")
-
 //CITEMSTONEMETHOD(ViewThreats,			0, "")
-
 CITEMSTONEMETHOD(WeDeclared,			CSCRIPTPROP_ARG1, "List of groups we have declared war on" )
-

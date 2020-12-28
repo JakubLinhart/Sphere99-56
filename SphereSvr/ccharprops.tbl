@@ -1,70 +1,35 @@
 //
-
 // ccharprops.tbl
-
 //
 
-
-
 CCHARPROP(AC,			0,			"Displayed average armor class")
-
 CCHARPROP(Account,		CSCRIPTPROP_RETREF, "ref to the account [if player]")
-
 CCHARPROP(AccountName,	0,			 "name of the account [if player]")
-
 CCHARPROP(Act,			CSCRIPTPROP_RETREF, "ref to action target")
-
 CCHARPROP(ActArg1,		0,			"Arg depending on current action")
-
 CCHARPROP(ActArg2,		0,			"Arg depending on current action")
-
 CCHARPROP(ActArg3,		0,			"Arg depending on current action")
-
 CCHARPROP(Action,		0,			"Current action type")
-
 CCHARPROP(BankBalance,	0,			"Total gold in my bank")
-
 CCHARPROP(Body,			0,			"Body artwork id")
-
 CCHARPROP(Dir,			0,			"Direction facing")
-
 CCHARPROP(Flags,		0,			"Mask of flags")	
-
 CCHARPROP(Font,			0,			"Speech font")
-
 CCHARPROP(GuildAbbrev,	0,			"My abbrev in Guild I belong to")
-
 CCHARPROP(GuildMem,		CSCRIPTPROP_READO|CSCRIPTPROP_RETREF,	"Ref for Guild I belong to")
-
 CCHARPROP(Home,			0,			"My home point")
-
 CCHARPROP(Id,			0,			"Id of the body type")
-
 CCHARPROP(Nightsight,	0,			"Nightsight flag")
-
 CCHARPROP(NPC,			0,			"NPC brain type (if NPC)")
-
 CCHARPROP(OBody,		0,			"Original body type")
-
 CCHARPROP(OSkin,		0,			"Original skin color")
-
 CCHARPROP(P,			0,			"Current location point")
-
 CCHARPROP(Profile,		CSCRIPTPROP_UNUSED,	"TAG.Profile")
-
 CCHARPROP(Region,		CSCRIPTPROP_RETREF, "(uMaskType) uid for current region")
-
 CCHARPROP(SpeechColor,	0,			"Color of my speech text")
-
 CCHARPROP(Stone,		0,			"Turned to stone flag")
-
 CCHARPROP(Title,		CSCRIPTPROP_UNUSED,	"TAG.TITLE seperate title i may have")
-
 CCHARPROP(TownAbbrev,	0,			"My abbrev in Town I belong to")	
-
 CCHARPROP(TownMem,		CSCRIPTPROP_READO|CSCRIPTPROP_RETREF,	"Ref for Town I belong to")
-
 CCHARPROP(WeightMax,	0,			"Max weight i could carry (in stones)")
-
-
 

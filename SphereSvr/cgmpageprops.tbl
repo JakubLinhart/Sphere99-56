@@ -1,20 +1,10 @@
 //
-
 // cgmpageprops.tbl
-
 //
 
-
-
 CGMPAGEPROP(Account,		0, "")
-
 CGMPAGEPROP(AccountName,	0, "")
-
 CGMPAGEPROP(P,				0, "")
-
 CGMPAGEPROP(Reason,			0, "")
-
 CGMPAGEPROP(Status,			0, "")
-
 CGMPAGEPROP(Time,			0, "")
-

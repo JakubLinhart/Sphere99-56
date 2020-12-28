@@ -1,90 +1,45 @@
 //
-
 // CCharEvents.TBL
-
 // define all the events that may be triggered from a CChar
-
 //
 
-
-
 CCHAREVENT(Create,			0, "Newly created (not in the world yet)")
-
 CCHAREVENT(Death,			0, "I just got killed")
-
 CCHAREVENT(DeathCorpse,		0, "Corpse has been created (for loot) (argo=corpse)")
-
 CCHAREVENT(Destroy,			0, "Permanently gone")
-
 CCHAREVENT(EnvironChange,	0, "my environment changed somehow (light,weather,season,region)" )
 
-
-
 CCHAREVENT(GetHit,			0, "I just got hit")
-
 CCHAREVENT(Hit,				0, "I just hit someone (TARG)")
-
 CCHAREVENT(HitMiss,			0, "I just missed")
-
 CCHAREVENT(HitTry,			0, "I am trying to hit someone. starting swing")
-
-
 
 #include "citemevents.tbl"
 
-
-
 CCHAREVENT(LogIn,			0, "Client logs in")
-
 CCHAREVENT(LogOut,			0, "Client logs out")
 
-
-
 CCHAREVENT(NPCAcceptItem,	0, "i've been given an item i like (according to DESIRES) (argo=item)")
-
 CCHAREVENT(NPCHearGreeting,	0, "i have been spoken to for the first time. (no memory of previous hearing)")
-
 CCHAREVENT(NPCHearNeed,		0, "i heard someone mention something i need.")
-
 CCHAREVENT(NPCHearUnknown,	0, "I heard something i don't understand (args=speech)")
-
 CCHAREVENT(NPCRefuseItem,	0, "i've been given an item i don't want (argo=item)")
-
 CCHAREVENT(NPCRestock,		0, "restock this npc")
-
 //CCHAREVENT(NPCSeeAction,	0, "")
-
 CCHAREVENT(NPCSeeNewPlayer,	0, "i see u for the first time. (in 20 minutes) (check memory time) (src=player)")
-
 CCHAREVENT(NPCSeeWantItem,	0, "i see something good. (argo=item)")
 
-
-
 CCHAREVENT(PersonalSpace,	0, "i just got stepped on")
-
 CCHAREVENT(ReceiveItem,		0, "I was just handed an item (Not yet checked if i want it) (argo=item)")
-
-
 
 #include "cskilldefevents.tbl"	// SKTRIG_QTY
 
-
-
 CCHAREVENT(SpellCast,		0, "Char is casting a spell")
-
 CCHAREVENT(SpellEffect,		0, "A spell just hit me")
-
 CCHAREVENT(Step,			0, "i took a step (expensive)")
 
-
-
 CCHAREVENT(UserButton,		0, "someone pressed one of the many gump buttons associated with this char. (Stats,Skills,Profile)")
-
 CCHAREVENT(UserClick,		0, "I got clicked on by someone")
-
 CCHAREVENT(UserDClick,		0, "someone has dclicked on me")
-
 CCHAREVENT(UserToolTip,		0, "someone did tool tips on me")
-
-
 

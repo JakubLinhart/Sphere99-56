@@ -1,56 +1,28 @@
 //
-
 // cclientprops.tbl
-
 //
 
-
-
 CCLIENTPROP(Account,		CSCRIPTPROP_READO|CSCRIPTPROP_RETREF, "Ref to account object")
-
 CCLIENTPROP(AllMove,		0,					"I can move all items")
-
 CCLIENTPROP(AllShow,		0,					"Show offline chars and invis items")
-
 CCLIENTPROP(Client3D,		CSCRIPTPROP_READO,	"Does this client support 3d")
-
 CCLIENTPROP(ClientCrypt,	CSCRIPTPROP_READO,	"Crypt version for the client")		
-
 CCLIENTPROP(ClientRes,		CSCRIPTPROP_READO,	"Resource level for the client")
-
 CCLIENTPROP(ClientVer,		CSCRIPTPROP_READO,	"Protocol version for the client")
-
 CCLIENTPROP(Debug,			0,					"Is in debug mode?")
-
 CCLIENTPROP(Detail,			0,					"Is in detail mode?")
-
 CCLIENTPROP(GM,				0,					"Is GM?")
-
 CCLIENTPROP(GMPageP,		CSCRIPTPROP_RETREF, "Ref to last GM page")
-
 CCLIENTPROP(HearAll,		0,					"Is in Hearall mode?")
-
 CCLIENTPROP(Listen,			0,					"")
-
 CCLIENTPROP(PrivHide,		0,					"")
-
 CCLIENTPROP(PrivShow,		0,					"Inverse of PRIVHIDE")
-
 CCLIENTPROP(T,				CSCRIPTPROP_DUPE,	"TARG")
-
 CCLIENTPROP(Targ,			CSCRIPTPROP_RETREF,	"object ref argument of the target")
-
 CCLIENTPROP(TargP,			0,					"Point argument to target")
-
 CCLIENTPROP(TargProp,		CSCRIPTPROP_RETREF, "Prop ref argument to target")
-
 CCLIENTPROP(TargPrv,		CSCRIPTPROP_RETREF, "prev ref argument to target")
-
 CCLIENTPROP(TargTxt,		0,					"text argument to target")
-
 CCLIENTPROP(TargUID,		CSCRIPTPROP_RETREF, "object uid argument to target")
-
 CCLIENTPROP(TProp,			CSCRIPTPROP_DUPE|CSCRIPTPROP_RETREF, "TARGPROP")
-
 CCLIENTPROP(TPrv,			CSCRIPTPROP_DUPE|CSCRIPTPROP_RETREF,	"TARGPRV")
-

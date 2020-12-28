@@ -1,32 +1,16 @@
 //
-
 // caccountmgrmethods.tbl
-
 //
 
-
-
 CACCOUNTMGRMETHOD(Account,	CSCRIPTPROP_UNUSED,	"",						"na")
-
 CACCOUNTMGRMETHOD(Add,		CSCRIPTPROP_ARG2,						"(sName,sPassword)",	"Add a new account")
-
 CACCOUNTMGRMETHOD(AddEmail,	CSCRIPTPROP_ARG2,						"(sName,sEmail)",		"Add new account, email password" )
-
 CACCOUNTMGRMETHOD(EmailPass,CSCRIPTPROP_ARG1,						"(sEmail)",				"email me my password")
-
 CACCOUNTMGRMETHOD(EoF,		CSCRIPTPROP_UNUSED,	"",						"na") // EOF not allow as name
-
 // CACCOUNTMGRMETHOD(FindChat,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG1,	"(sChatName)",		"Find the account with this chat name")
-
 // CACCOUNTMGRMETHOD(FindEmail,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG1,	"(sEmail)",			"Find the account with this email")
-
 // CACCOUNTMGRMETHOD(FindName,	CSCRIPTPROP_RETVAL|CSCRIPTPROP_ARG1,	"(sName)",			"Find the account with this name")
-
 // CACCOUNTMGRMETHOD(List,		CSCRIPTPROP_RETNUL,						"",						"List accounts out to the console")
-
 CACCOUNTMGRMETHOD(Qty,		CSCRIPTPROP_RETVAL|CSCRIPTPROP_NARGS,	"",						"How many accounts")
-
 CACCOUNTMGRMETHOD(Unused,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_ARG1,	"(iDays[,vCommand])",	"List or command all accounts not used in iDays")
-
 CACCOUNTMGRMETHOD(Update,	CSCRIPTPROP_RETNUL|CSCRIPTPROP_NARGS,	"",						"save accounts to file")
-

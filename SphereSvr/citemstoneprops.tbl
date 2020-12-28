@@ -1,46 +1,23 @@
 //
-
 // citemstoneprops.tbl
-
 //
 
-
-
 CITEMSTONEPROP(Abbrev,				CSCRIPTPROP_RETVAL, "Guilds abbrev")
-
 CITEMSTONEPROP(Align,				CSCRIPTPROP_RETVAL, "Align Number")
-
 CITEMSTONEPROP(AlignName,			CSCRIPTPROP_RETVAL, "Align Name")
-
 CITEMSTONEPROP(AlignType,			CSCRIPTPROP_DUPE,	"ALIGNNAME")
-
 CITEMSTONEPROP(AtWar,				CSCRIPTPROP_WRITEO, "Guilds we are actually at war with. (mutual)")
-
 CITEMSTONEPROP(Bans,				CSCRIPTPROP_WRITEO, "Bans from this guild")
-
 CITEMSTONEPROP(Candidates,			CSCRIPTPROP_WRITEO, "Candidates from this guild")
-
 CITEMSTONEPROP(Charter,				CSCRIPTPROP_WRITEO|CSCRIPTPROP_NARG2, "Set the charter")
-
 CITEMSTONEPROP(DailyDues,			CSCRIPTPROP_RETVAL, "daily dues for guild members")
-
 CITEMSTONEPROP(Master,				CSCRIPTPROP_RETVAL, "uid of the current master")
-
 CITEMSTONEPROP(MasterGenderTitle,	CSCRIPTPROP_RETVAL, "gender title for master/mistress")
-
 CITEMSTONEPROP(MasterName,			CSCRIPTPROP_RETVAL, "Name of the current master")
-
 CITEMSTONEPROP(MasterTitle,			CSCRIPTPROP_RETVAL, "Masters given title")
-
 CITEMSTONEPROP(Member,				CSCRIPTPROP_UNUSED|CSCRIPTPROP_RETVAL, "Old member add style")
-
 CITEMSTONEPROP(Members,				CSCRIPTPROP_WRITEO, "Members/Resigns from this guild")
-
 CITEMSTONEPROP(SrcAbbrevStatus,		CSCRIPTPROP_RETVAL|CSCRIPTPROP_READO, "SRC have abbrev on?")
-
 CITEMSTONEPROP(SrcLoyalTo,			CSCRIPTPROP_RETVAL, "Who is SRC loyal to?")
-
 CITEMSTONEPROP(WebPage,				CSCRIPTPROP_RETVAL, "Guilds web URL")
-
 CITEMSTONEPROP(WeDeclared,			CSCRIPTPROP_WRITEO, "Guilds we declared war on")
-

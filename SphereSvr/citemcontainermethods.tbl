@@ -1,14 +1,7 @@
 //
-
 // citemcontainermethods.tbl
-
 //
 
-
-
 CITEMCONTAINERMETHOD(FixWeight,		0, "Retest the weight of this item and contents")
-
 CITEMCONTAINERMETHOD(MakeKey,		0, "")
-
 CITEMCONTAINERMETHOD(Open,			0, "Open gump for this container")
-

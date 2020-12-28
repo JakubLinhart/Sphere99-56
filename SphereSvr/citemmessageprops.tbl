@@ -1,14 +1,7 @@
 //
-
 // citemmessageprops.tbl
-
 //
-
 CITEMMESSAGEPROP(Author,	CSCRIPTPROP_RETVAL,	"Who wrote this")
-
 CITEMMESSAGEPROP(Body,		CSCRIPTPROP_WRITEO,	"Append pages")
-
 CITEMMESSAGEPROP(Pages,		CSCRIPTPROP_READO,	"Number of pages") 
-
 CITEMMESSAGEPROP(Title,		CSCRIPTPROP_RETVAL,	"same as NAME")
-

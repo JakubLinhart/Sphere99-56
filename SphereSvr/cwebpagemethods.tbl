@@ -1,20 +1,10 @@
 //
-
 // cwebpagemethods.tbl
-
 //
 
-
-
 CWEBPAGEMETHOD(ClientList,	CSCRIPTPROP_ARG1,	"make a table of all the clients")
-
 CWEBPAGEMETHOD(GMPageList,	CSCRIPTPROP_ARG1,	"make a table of the gm pages")
-
 CWEBPAGEMETHOD(GuildList,	CSCRIPTPROP_ARG1,	"make a table of the guilds")
-
 CWEBPAGEMETHOD(ServList,	CSCRIPTPROP_ARG2,	"make a name sorted list of the servers")
-
 CWEBPAGEMETHOD(TownList,	CSCRIPTPROP_ARG1,	"make a table of the towns")
-
 CWEBPAGEMETHOD(WebPage,		0,  "feed a web page to the client")
-

@@ -1,40 +1,20 @@
 //
-
 // cspelldefprops.tbl
-
 //
 
-
-
 CSPELLDEFPROP(CastTime,		0, "")
-
 CSPELLDEFPROP(Duration,		0, "")
-
 CSPELLDEFPROP(Effect,		0, "")
-
 CSPELLDEFPROP(EffectId,		0, "")
-
 CSPELLDEFPROP(Flags,		0, "")
-
 CSPELLDEFPROP(ManaUse,		0, "")
-
 CSPELLDEFPROP(Name,			0, "")
-
 CSPELLDEFPROP(PromptMsg,	0, "prompt if FLAGS indicates a target needed")
-
 CSPELLDEFPROP(Resources,	0, "")
-
 CSPELLDEFPROP(RuneItem,		0, "")
-
 CSPELLDEFPROP(Runes,		0, "")
-
 CSPELLDEFPROP(ScrollItem,	0, "")
-
 CSPELLDEFPROP(SkillReq,		0, "")
-
 CSPELLDEFPROP(Sound,		0, "")
-
 CSPELLDEFPROP(Value,		0, "adjust price for items with this spell effect")
-
-
 

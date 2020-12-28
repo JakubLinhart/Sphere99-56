@@ -1,6 +1,6 @@
-//
-// caccountmgrprops.tbl
-//
-
-//CACCOUNTMGRPROP(DBKeyName,		0,	"Database key for the NAME")
-//CACCOUNTMGRPROP(DBKeyPLevel,	0,	"Database key for the PLEVEL")
+//
+// caccountmgrprops.tbl
+//
+
+//CACCOUNTMGRPROP(DBKeyName,		0,	"Database key for the NAME")
+//CACCOUNTMGRPROP(DBKeyPLevel,	0,	"Database key for the PLEVEL")

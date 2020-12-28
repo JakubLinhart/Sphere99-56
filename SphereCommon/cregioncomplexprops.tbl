@@ -1,22 +1,11 @@
 //
-
 // cregioncomplexprops.tbl
-
 //
 
-
-
 #ifdef SPHERE_SVR
-
 CREGIONCOMPLEXPROP(Events,		CSCRIPTPROP_ARG1S, "REGIONTYPE event handlers")
-
 CREGIONCOMPLEXPROP(Multi,		CSCRIPTPROP_READO|CSCRIPTPROP_NARGS, "Ref to the multi")
-
 CREGIONCOMPLEXPROP(Resources,	CSCRIPTPROP_ARG1S, "REGIONTYPE natural resource blocks")
-
 CREGIONCOMPLEXPROP(Tag,			CSCRIPTPROP_WRITEO|CSCRIPTPROP_NARG2, "Set Tags")
-
 #endif
-
-
 

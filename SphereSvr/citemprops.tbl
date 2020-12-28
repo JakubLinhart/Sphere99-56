@@ -1,64 +1,32 @@
 //
-
 // citemprops.tbl
-
 //
 
-
-
 CITEMPROP(AddSpell,		0, "Add spell (if spellbook)")
-
 CITEMPROP(Amount,		0, "Quantity in this pile")	
-
 CITEMPROP(Attr,			CSCRIPTPROP_WRITEO|CSCRIPTPROP_NARG1, "Set Attribute flags")	
-
 CITEMPROP(Cont,			CSCRIPTPROP_RETREF, "ref to the container this is in")	
-
 CITEMPROP(DispId,		0, "display artwork id")	
-
 CITEMPROP(DispIdDec,	0, "DISPID in decimal")	
-
 CITEMPROP(Hitpoints,	0, "durability of breakable item")
-
 CITEMPROP(Hits,			CSCRIPTPROP_DUPE, "HITPOINTS")	
-
 CITEMPROP(HitsMax,		0, "max durability of breakable item")	
-
 CITEMPROP(Id,			0, "TYPEDEF.ID")	
-
 CITEMPROP(Layer,		0, "layer this is equipped on")
-
 CITEMPROP(Link,			CSCRIPTPROP_RETREF, "ref Link this item to some other")	
-
 CITEMPROP(MORE,			CSCRIPTPROP_DUPE, "MORE1")
-
 CITEMPROP(MORE1,		0, "Type specific value")		
-
 CITEMPROP(MORE1H,		0, "MORE1 high word")	
-
 CITEMPROP(MORE1L,		0, "MORE1 low word")	
-
 CITEMPROP(MORE2,		0, "Type specific value")	
-
 CITEMPROP(MORE2H,		0, "MORE2 high word")	
-
 CITEMPROP(MORE2L,		0, "MORE2 low word")	
-
 CITEMPROP(MOREM,		0, "MOREP.MAPPLANE")	
-
 CITEMPROP(MOREP,		0, "Type specific point")	
-
 CITEMPROP(MOREX,		0, "MOREP.X")	
-
 CITEMPROP(MOREY,		0, "MOREP.Y")	
-
 CITEMPROP(MOREZ,		0, "MOREP.Z")	
-
 CITEMPROP(Movable,		0, "could a player carry this")	
-
 CITEMPROP(P,			0, "The location point in the world or container")	
-
 CITEMPROP(Region,		CSCRIPTPROP_RETREF, "Ref to the region it is in")	
-
 CITEMPROP(Type,			0, "item usage type (DClick action)")	
-

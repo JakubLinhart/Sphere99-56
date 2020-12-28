@@ -1,16 +1,8 @@
 //
-
 // citemmultiprops.tbl
-
 //
 
-
-
 CITEMMULTIPROP(Ban,		CSCRIPTPROP_WRITEO|CSCRIPTPROP_ARG1, "array of banned people")
-
 CITEMMULTIPROP(CoOwner,	CSCRIPTPROP_WRITEO|CSCRIPTPROP_ARG1, "array of co-owners")
-
 CITEMMULTIPROP(Friend,	CSCRIPTPROP_WRITEO|CSCRIPTPROP_ARG1, "array of friends")
-
 CITEMMULTIPROP(Region,	CSCRIPTPROP_RETREF, "the region bounding this structure")
-

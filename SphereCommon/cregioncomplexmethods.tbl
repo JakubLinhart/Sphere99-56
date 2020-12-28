@@ -1,10 +1,5 @@
 //
-
 // cregioncomplexmethods.tbl
-
 //
 
-
-
 CREGIONCOMPLEXMETHOD(Tag,	CSCRIPTPROP_RETREF|CSCRIPTPROP_ARG1, "Get/Set Tags")
-

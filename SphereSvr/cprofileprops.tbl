@@ -1,34 +1,17 @@
 //
-
 // cprofileprops.tbl
-
 //
 
-
-
 CPROFILEPROP(Idle,		0, "Time given back to the OS")
-
 CPROFILEPROP(Overhead,  0, "Time spent in overhead processing")
-
 CPROFILEPROP(Debug,		0, "Time spent in debug processing")
-
 CPROFILEPROP(IRC,		0, "Time spend processing the IRC")
-
 CPROFILEPROP(NetworkRx, 0, "Time spent getting data from the network")
-
 CPROFILEPROP(Clients,	0, "Time spent processing clients")
-
 CPROFILEPROP(NetworkTx,	0, "Time spent transmitting")
-
 CPROFILEPROP(Chars,		0, "Time spent processing chars")
-
 CPROFILEPROP(Items,		0, "Time spent processing items")
-
 CPROFILEPROP(NPCAI,		0, "Time spent on NPC AI")
-
 CPROFILEPROP(Scripts,	0, "Time spent processing scripts")
-
 CPROFILEPROP(DataTx,	0, "Amount of data transmitted")
-
 CPROFILEPROP(DataRx,	0, "Amount of data received")
-

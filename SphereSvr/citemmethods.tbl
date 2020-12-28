@@ -1,28 +1,14 @@
 //
-
 // citemmethods.tbl
-
 //
 
-
-
 CITEMMETHOD(Attr,		0,					"Get/Set Catagorize Attribute flags")	
-
 CITEMMETHOD(Bounce,		CSCRIPTPROP_NARGS,	"put this in SRC pack")	
-
 CITEMMETHOD(Consume,	0,					"([iQty]) SRC consumes this")	
-
 CITEMMETHOD(Decay,		CSCRIPTPROP_NARG1,	"(iTenths) Set the decay time")		
-
 CITEMMETHOD(Drop,		CSCRIPTPROP_NARGS,	"SRC drops this")	
-
 CITEMMETHOD(Dupe,		0,					"(iQty) Dupe this n times")	
-
 CITEMMETHOD(Equip,		CSCRIPTPROP_NARGS,	"equip this on SRC")	// engage the equip triggers.
-
 CITEMMETHOD(Unequip,	CSCRIPTPROP_DUPE|CSCRIPTPROP_NARGS, "BOUNCE")	// engage the unequip triggers.
-
 CITEMMETHOD(Use,		0,					"SRC uses this")
-
-
 

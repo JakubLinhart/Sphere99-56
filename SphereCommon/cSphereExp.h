@@ -23,9 +23,6 @@ enum RES_TYPE	// all the script resource blocks we know how to deal with !
 #define RES_DIALOG_BUTTON			2
 #define RES_NEWBIE_MALE_DEFAULT		(10000+1)	// just an unused number for the range.
 #define RES_NEWBIE_FEMALE_DEFAULT	(10000+2)
-#define UID_INDEX WORD
-#define HASH_INDEX WORD
-#define HASH_COMPARE(a, b) (a>b)
 
 struct CSphereUIDBase
 {

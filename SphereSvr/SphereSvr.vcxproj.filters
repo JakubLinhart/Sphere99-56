@@ -463,9 +463,6 @@
     <ClInclude Include="..\spherelib\cpointbase.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\spherelib\CRefPtr.h">
-      <Filter>SphereLib</Filter>
-    </ClInclude>
     <ClInclude Include="..\spherelib\cregion.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
@@ -506,6 +503,12 @@
       <Filter>SphereLib</Filter>
     </ClInclude>
     <ClInclude Include="..\spherelib\CValueRange.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CMemBlock.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\crefobj.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
   </ItemGroup>

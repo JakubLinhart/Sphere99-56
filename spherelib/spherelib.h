@@ -1,6 +1,6 @@
 #pragma once
 #include "common.h"
-#include "CRefPtr.h"
+#include "crefobj.h"
 #include "CArray.h"
 #include "cstring.h"
 #include "CScript.h"

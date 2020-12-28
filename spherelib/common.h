@@ -17,3 +17,11 @@
 #ifndef COUNTOF
 #define COUNTOF(a)	(sizeof(a)/sizeof((a)[0]))
 #endif
+
+#define UID_INDEX DWORD
+#define HASH_INDEX DWORD
+#define HASH_COMPARE(a, b) (a>b)
+
+#ifndef _1BITMASK
+#define _1BITMASK(b)    (((size_t)1) << (b))
+#endif

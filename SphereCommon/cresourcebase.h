@@ -102,10 +102,6 @@ class CResourceLink : public CResourceDef
 {
 };
 
-#define CResourceObjPtr CResourceObj*
-class CResourceObj : public CResourceDef
-{
-};
 //***********************************************************
 
 class CResourceRefArray : public CGRefArray<CResourceLink>

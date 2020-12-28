@@ -424,9 +424,6 @@
     <ClInclude Include="..\SphereAccount\caccountbase.h">
       <Filter>SphereAccount</Filter>
     </ClInclude>
-    <ClInclude Include="..\SphereLib\spherelib.h">
-      <Filter>SphereProto</Filter>
-    </ClInclude>
     <ClInclude Include="..\SphereCommon\spheremul.h">
       <Filter>SphereProto</Filter>
     </ClInclude>
@@ -503,6 +500,9 @@
       <Filter>SphereLib</Filter>
     </ClInclude>
     <ClInclude Include="..\spherelib\CScriptConsole.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SphereLib\spherelib.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
   </ItemGroup>

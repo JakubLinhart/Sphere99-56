@@ -1,2 +1,9 @@
 #pragma once
 #include "CRefPtr.h"
+#include "cstring.h"
+#include "CScript.h"
+#include "CResourceObj.h"
+#include "CScriptableInterface.h"
+#include "CScriptExecContext.h"
+#include "CThread.h"
+#include "CScriptConsole.h"

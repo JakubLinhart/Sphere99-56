@@ -360,3 +360,5 @@ class CGVariant
 {
 
 };
+
+#endif _INC_CSTRING_H

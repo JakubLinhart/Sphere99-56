@@ -128,7 +128,7 @@ private:
 	CString GetResourceName( int iIndex ) const
 	{
 		// look up the name of the fragment given it's index.
-		CResourceLinkPtr pResourceLink = ConstElementAt( iIndex );
+		CResourceLinkPtr pResourceLink = &ConstElementAt( iIndex );
 		ASSERT(pResourceLink);
 		return( pResourceLink->GetResourceName());
 	}

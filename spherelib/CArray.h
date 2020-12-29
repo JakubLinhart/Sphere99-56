@@ -204,6 +204,10 @@ public:
 	* @brief Get the total element that fits in allocated mem.
 	* @return get the total element that fits in allocated mem.
 	*/
+	int GetSize() const	// same thing just for compatibility
+	{
+		return m_nCount;
+	}
 	size_t GetRealCount() const;
 	/**
 	* @brief Check if index is valid for this array.
@@ -283,7 +287,7 @@ public:
 	* @return Element in nIndex position.
 	*/
 	TYPE& ElementAt(size_t nIndex);
-	TYPE ConstElementAt(size_t nIndex) const;
+	TYPE& ConstElementAt(size_t nIndex) const;
 	/**
 	* @brief get a reference to the nth element.
 	*

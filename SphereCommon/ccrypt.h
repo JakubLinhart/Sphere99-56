@@ -88,6 +88,70 @@ public:
 	BYTE  CodeNewByte(BYTE code);
 };
 
+class CCryptBase
+{
+	// The old rotary encrypt/decrypt interface.
+private:
+	bool m_fInit;
+	bool m_fIgnition;		// Did ignition turn off the crypt ?
+	int m_iClientVersion;
+
+protected:
+	DWORD m_MasterHi;
+	DWORD m_MasterLo;
+
+	DWORD m_CryptMaskHi;
+	DWORD m_CryptMaskLo;
+
+	DWORD m_seed;	// seed ip we got from the client.
+
+public:
+	CCryptBase();
+	int GetClientVer() const
+	{
+		return(m_iClientVersion);
+	}
+	TCHAR* WriteClientVer(TCHAR* pStr) const;
+
+	bool SetClientVerEnum(int iVer);
+	bool SetClientVer(LPCTSTR pszVersion);
+	void SetClientVer(const CCryptBase& crypt)
+	{
+		m_fInit = false;
+		m_iClientVersion = crypt.m_iClientVersion;
+		m_fIgnition = crypt.m_fIgnition;
+		m_MasterHi = crypt.m_MasterHi;
+		m_MasterLo = crypt.m_MasterLo;
+	}
+
+	bool GetClientIgnition() const
+	{
+		return m_fIgnition;
+	}
+	void SetClientIgnition(bool fIgnition)
+	{
+		m_fIgnition = fIgnition;
+	}
+
+	bool IsInit() const
+	{
+		return(m_fInit);
+	}
+	bool IsValid() const
+	{
+		return(m_iClientVersion >= 0);
+	}
+
+	void Init(DWORD dwIP);
+	virtual void Init()
+	{
+		ASSERT(m_fInit);
+		Init(m_seed);
+	}
+	void Decrypt(BYTE* pOutput, const BYTE* pInput, int iLen);
+	void Encrypt(BYTE* pOutput, const BYTE* pInput, int iLen);
+};
+
 struct CCrypt : public CCryptBase
 {
 	// Basic blowfish stuff.

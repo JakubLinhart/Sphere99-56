@@ -150,6 +150,11 @@ inline void CGObListRec::RemoveSelf()       // remove myself from my parent list
 	ASSERT(GetParent() == NULL);
 }
 
+template<class TYPE>
+class CGObListType : public CGObList
+{
+};
+
 ///////////////////////////////////////////////////////////
 // CGTypedArray<class TYPE, class ARG_TYPE>
 

@@ -91,7 +91,7 @@ public:
 	}
 };
 
-class CResourceTriggered
+class CResourceTriggered : public CResourceDef
 {
 public:
 	CResourceTriggered(CSphereUID rid);

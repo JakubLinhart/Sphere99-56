@@ -519,3 +519,20 @@ struct CHashArray : public CGSortedArray< TYPE, const TYPE&, HASH_INDEX>
 		return index > index2;
 	}
 };
+
+struct CGStringArray : public CGTypedArray<CGString, const CGString&>
+{
+};
+
+struct CUIDRefArray : public CGRefArray<CResourceObj>
+{
+};
+
+struct CUIDArray
+{
+};
+
+template<class TYPE, class KEY_TYPE>
+struct CGRefSortArray
+{
+};

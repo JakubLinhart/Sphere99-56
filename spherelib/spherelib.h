@@ -1,8 +1,8 @@
 #pragma once
 #include "common.h"
 #include "crefobj.h"
-#include "CArray.h"
 #include "cstring.h"
+#include "CArray.h"
 #include "CScript.h"
 #include "CScriptObj.h"
 #include "CResourceObj.h"

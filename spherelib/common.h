@@ -4,6 +4,15 @@
 #define MAX max
 #define IMULDIV(a,b,c) (((a)*(b))/(c))	// windows MulDiv will round ! 
 
+#ifndef _UNICODE		// _WIN32
+#define TCHAR			char
+#define LPCTSTR			LPCSTR
+#define LPCWSTR			LPCSTR
+#endif  // _UNICODE _WIN32
+#ifndef _TEXT
+#define _TEXT(x)		(TCHAR *)x
+#endif	// _TEXT
+
 // use to indicate that a function uses printf-style arguments, allowing GCC
 // to validate the format string and arguments:
 // a = 1-based index of format string

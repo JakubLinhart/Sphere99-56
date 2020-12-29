@@ -114,5 +114,12 @@ struct CSocketAddressIP : public in_addr
 	}
 };
 
+struct CSocketNamedAddr
+{
+};
+
+class CGSocket
+{
+};
 
 #endif

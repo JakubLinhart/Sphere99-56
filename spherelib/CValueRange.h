@@ -65,7 +65,7 @@ public:
 	void v_Get(CGVariant& vVal);
 
 public:
-	CValueRangeInt()
+	CValueRangeByte()
 	{
 		Init();
 	}

@@ -584,6 +584,7 @@
     <ClInclude Include="..\SphereIRC\IRCWhoWas.h" />
     <ClInclude Include="..\SphereIRC\SCache.h" />
     <ClInclude Include="..\spherelib\CArray.h" />
+    <ClInclude Include="..\spherelib\CAssoc.h" />
     <ClInclude Include="..\spherelib\CAtom.h" />
     <ClInclude Include="..\spherelib\CExpression.h" />
     <ClInclude Include="..\spherelib\cfile.h" />
@@ -597,6 +598,8 @@
     <ClInclude Include="..\spherelib\CScriptConsole.h" />
     <ClInclude Include="..\spherelib\CScriptExecContext.h" />
     <ClInclude Include="..\spherelib\CScriptObj.h" />
+    <ClInclude Include="..\spherelib\CSocket.h" />
+    <ClInclude Include="..\spherelib\carraysort.h" />
     <ClInclude Include="..\spherelib\cstring.h" />
     <ClInclude Include="..\spherelib\cstring2.h" />
     <ClInclude Include="..\spherelib\CThread.h" />

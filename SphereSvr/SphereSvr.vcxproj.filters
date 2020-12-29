@@ -517,6 +517,15 @@
     <ClInclude Include="..\spherelib\CAtom.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
+    <ClInclude Include="..\spherelib\CSocket.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\carraysort.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CAssoc.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="spheresvr.rc">

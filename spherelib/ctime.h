@@ -7,7 +7,8 @@
 
 #include <time.h>
 
-class CServTimeBase
+#define CServTimeBase CServTime
+class CServTime
 {
 #undef GetCurrentTime
 #define TICK_PER_SEC 10
@@ -19,7 +20,7 @@ public:
     {
         return m_lPrivateTime;
         }
-    int GetTimeDiff(const CServTimeBase& time) const
+    int GetTimeDiff(const CServTime& time = GetCurrentTime()) const
     {
         return(m_lPrivateTime - time.m_lPrivateTime);
     }
@@ -35,48 +36,48 @@ public:
     {
         return(m_lPrivateTime ? true : false);
     }
-    CServTimeBase operator+(int iTimeDiff) const
+    CServTime operator+(int iTimeDiff) const
     {
-        CServTimeBase time;
+        CServTime time;
         time.m_lPrivateTime = m_lPrivateTime + iTimeDiff;
         return(time);
     }
-    CServTimeBase operator-(int iTimeDiff) const
+    CServTime operator-(int iTimeDiff) const
     {
-        CServTimeBase time;
+        CServTime time;
         time.m_lPrivateTime = m_lPrivateTime - iTimeDiff;
         return(time);
     }
-    int operator-(CServTimeBase time) const
+    int operator-(CServTime time) const
     {
         return(m_lPrivateTime - time.m_lPrivateTime);
     }
-    bool operator==(CServTimeBase time) const
+    bool operator==(CServTime time) const
     {
         return(m_lPrivateTime == time.m_lPrivateTime);
     }
-    bool operator!=(CServTimeBase time) const
+    bool operator!=(CServTime time) const
     {
         return(m_lPrivateTime != time.m_lPrivateTime);
     }
-    bool operator<(CServTimeBase time) const
+    bool operator<(CServTime time) const
     {
         return(m_lPrivateTime < time.m_lPrivateTime);
     }
-    bool operator>(CServTimeBase time) const
+    bool operator>(CServTime time) const
     {
         return(m_lPrivateTime > time.m_lPrivateTime);
     }
-    bool operator<=(CServTimeBase time) const
+    bool operator<=(CServTime time) const
     {
         return(m_lPrivateTime <= time.m_lPrivateTime);
     }
-    bool operator>=(CServTimeBase time) const
+    bool operator>=(CServTime time) const
     {
         return(m_lPrivateTime >= time.m_lPrivateTime);
     }
-    static CServTimeBase GetCurrentTime();
-    };
+    static CServTime GetCurrentTime();
+};
 
 #ifdef _AFXDLL
 

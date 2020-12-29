@@ -28,6 +28,9 @@
 #define _1BITMASK(b)    (((size_t)1) << (b))
 #endif
 
+#define ISWHITESPACE(ch)		 (isspace(ch)||(ch)==0xa0)	// isspace
+#define GETNONWHITESPACE( pStr ) while ( ISWHITESPACE( (pStr)[0] )) { (pStr)++; }
+
 class CServTime
 {
 #undef GetCurrentTime

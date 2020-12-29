@@ -18,11 +18,18 @@ public:
         m_Pointer(p) {}
     ~CReferenceCounted() { delete m_Pointer; }
     T& operator*() { return *m_Pointer; }
-    T* get() { return m_Pointer; }
+    T* GetRefObj() { return m_Pointer; }
     void reference() { m_ReferenceCount++; }
-    void dereference() { m_ReferenceCount--; }
+    void ReleaseRefObj() { m_ReferenceCount--; }
     int  norefs() { return !m_ReferenceCount; }
     int  refcount() { return m_ReferenceCount; }
+    bool IsValidRefObj()
+    {
+        return m_ReferenceCount > 0; // ???
+    }
+    virtual void UnLink()
+    {
+    }
 };
 
 #define PTR_CAST(a,b) static_cast<a*>(b)

@@ -7,6 +7,77 @@
 
 #include <time.h>
 
+class CServTimeBase
+{
+#undef GetCurrentTime
+#define TICK_PER_SEC 10
+    // A time stamp in the server/game world.
+public:
+    long m_lPrivateTime;
+public:
+    long GetTimeRaw() const
+    {
+        return m_lPrivateTime;
+        }
+    int GetTimeDiff(const CServTimeBase& time) const
+    {
+        return(m_lPrivateTime - time.m_lPrivateTime);
+    }
+    void Init()
+    {
+        m_lPrivateTime = 0;
+    }
+    void InitTime(long lTimeBase)
+    {
+        m_lPrivateTime = lTimeBase;
+    }
+    bool IsTimeValid() const
+    {
+        return(m_lPrivateTime ? true : false);
+    }
+    CServTimeBase operator+(int iTimeDiff) const
+    {
+        CServTimeBase time;
+        time.m_lPrivateTime = m_lPrivateTime + iTimeDiff;
+        return(time);
+    }
+    CServTimeBase operator-(int iTimeDiff) const
+    {
+        CServTimeBase time;
+        time.m_lPrivateTime = m_lPrivateTime - iTimeDiff;
+        return(time);
+    }
+    int operator-(CServTimeBase time) const
+    {
+        return(m_lPrivateTime - time.m_lPrivateTime);
+    }
+    bool operator==(CServTimeBase time) const
+    {
+        return(m_lPrivateTime == time.m_lPrivateTime);
+    }
+    bool operator!=(CServTimeBase time) const
+    {
+        return(m_lPrivateTime != time.m_lPrivateTime);
+    }
+    bool operator<(CServTimeBase time) const
+    {
+        return(m_lPrivateTime < time.m_lPrivateTime);
+    }
+    bool operator>(CServTimeBase time) const
+    {
+        return(m_lPrivateTime > time.m_lPrivateTime);
+    }
+    bool operator<=(CServTimeBase time) const
+    {
+        return(m_lPrivateTime <= time.m_lPrivateTime);
+    }
+    bool operator>=(CServTimeBase time) const
+    {
+        return(m_lPrivateTime >= time.m_lPrivateTime);
+    }
+    static CServTimeBase GetCurrentTime();
+    };
+
 #ifdef _AFXDLL
 
 struct CGTime : public CTime		// why dupe this ?

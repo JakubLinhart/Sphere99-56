@@ -364,6 +364,8 @@ public:
 	* @return true if index is valid, false otherwise.
 	*/
 	bool IsValidIndex(size_t i) const;
+
+	TYPE* operator[](size_t nIndex) const;
 public:
 	CGRefArray() { };
 	virtual ~CGRefArray() { };

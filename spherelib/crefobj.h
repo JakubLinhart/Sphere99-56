@@ -30,5 +30,6 @@ public:
     }
     T& operator*() { return *m_pointer; }
     T* operator->() { return m_pointer; }
+    operator T* () const { return m_pointer; }
     operator bool() const { return m_pointer != 0; }
 };

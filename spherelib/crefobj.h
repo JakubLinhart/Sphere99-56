@@ -25,6 +25,7 @@ public:
     int  refcount() { return m_ReferenceCount; }
 };
 
+#define CNewPtr CRefPtr
 template <class T>
 class CRefPtr
 {
@@ -80,6 +81,10 @@ public:
     }
     T& operator*() { return m_Object->operator*(); }
     T* operator->() { return m_Object->get(); }
+};
+
+class CRefObjDef
+{
 };
 
 #define CResourceObjPtr CResourceObj*

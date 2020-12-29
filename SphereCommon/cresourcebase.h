@@ -78,6 +78,7 @@ public:
 	bool IsResourceMatchAll( CObjBase* pObj ) const;
 };
 
+#define CResourceDefPtr CResourceDef*
 class CResourceDef : public CScriptObj
 {
 private:

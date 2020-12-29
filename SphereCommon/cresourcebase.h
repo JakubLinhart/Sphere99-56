@@ -151,4 +151,14 @@ public:
 #endif
 };
 
+#define CResourceScriptPtr CResourceScript*
+class CResourceScript : public CScript, public CMemDynamic
+{
+	// A script file containing resource, speech, motives or events handlers.
+	// NOTE: we should check periodically if this file has been altered externally ?
+
+protected:
+	DECLARE_MEM_DYNAMIC;
+};
+
 #endif // _INC_CRESOURCEBASE_H

@@ -12,5 +12,7 @@ class CScriptProp
 
 class CScript
 {
-
+public:
+	virtual bool ReadTextLine(bool fRemoveBlanks);	// looking for a section or reading strangly formated section. 
+	TCHAR* GetLineBuffer();
 };

@@ -173,156 +173,6 @@ int CTileItemType::GetAnimFrames()	// how many frames does this animate over ? (
 
 #endif
 
-bool CTileItemType::DrawItemDirect( CSurfaceDC & SurfDC, int sx, int sy, bool fCenter )
-{
-	// This is strangely faster than the surface blit !
-	// ARGS: sx,sy = middle, bottom start location.
-
-	WORD * pData = GetLoadData();	
-	if ( pData == NULL )
-		return( false );
-
-	assert( pData[0] != 0 );	// Art data size.
-	assert( pData[1] != 0xFFFF );	// Art Trigger.
-
-	int iWidth  = pData[2];
-	int iHeight = pData[3];
-	assert( iWidth && iHeight );
-
-	// center it.
-	if ( fCenter )
-	{
-		sy -= ( iHeight - TERRAIN_ART_WIDTH );	
-		sx -= ( iWidth / 2 );	// center it.
-	}
-
-	if ( ! SurfDC.SetClipSrc( sx, sy, iWidth, iHeight )) 
-		return false;
-
-	int yy = SurfDC.m_rClipSrc.top;
-	sy += yy;
-	int iHeightDraw = SurfDC.m_rClipSrc.Height();
-	yy += 4;
-
-	WORD * pDst = (WORD*) SurfDC.m_Dest.GetLinePtr(sy);
-	for ( ; iHeightDraw--; yy++ )
-	{
-		int index = 4+iHeight+pData[yy];
-		int xx = sx;
-		for(;;)
-		{
-			WORD usXOffset = pData[index++];
-			WORD usXBits   = pData[index++];
-			if ( ! usXBits )
-				break;	// go to next row.
-
-			assert( usXBits <= iWidth ); 
-			xx += usXOffset;
-
-			SurfDC.DrawXClip( xx, pDst, pData+index, usXBits );
-
-			index += usXBits;
-			xx += usXBits;
-		}
-		pDst = (WORD*) SurfDC.m_Dest.GetNextLine(pDst);
-	}
-
-	return( true );
-}
-
-#if 0
-
-void CTileItemType::DrawItemSetup()
-{
-	// render the mul data to a temporary surface first.
-
-	WORD * pData = GetLoadedData();	
-	assert( pData );
-	assert( pData[0] != 0 );	// Art data size.
-	assert( pData[1] != 0xFFFF );	// Art Trigger.
-
-	int iWidth  = pData[2];
-	int iHeight = pData[3];
-
-	m_Surf.CreateSurface( iWidth, iHeight );
-	m_Surf.Erase();
-
-	// center it.
-
-	int iHeightCount = iHeight;
-
-	for ( int y = 0; iHeightCount--; y++ )
-	{
-		int index = 4+iHeight+pData[4+y];
-		int x = 0;
-		for(;;)
-		{
-			WORD usXOffset = pData[index++];
-			WORD usXBits   = pData[index++];
-			if ( ! usXBits ) 
-				break;	// go to next row.
-
-			assert( usXBits <= iWidth ); 
-			x += usXOffset;
-
-			memcpy( m_Surf.m_Dest.GetPixPtr16( x, y ), pData+index, usXBits*2 );
-
-			index += usXBits;
-			x += usXBits;
-		}
-	}
-}
-
-bool CTileItemType::DrawItemPrepared( CSurfaceDC & SurfDC, int sx, int sy, DIR_TYPE dir )
-{
-	// ARGS: sx,sy = middle, bottom start location.
-	ASSERT( dir != DIR_NW )
-
-	if ( ! m_Surf.IsValid())
-	{
-		DrawSetup();
-	}
-
-	// center it.
-	sy -= ( m_Surf.GetHeight() - TERRAIN_ART_WIDTH );
-	sx -= ( m_Surf.GetWidth() / 2 );	// center it.
-
-	// rotate it.
-
-	return SurfDC.DrawTexture( (WORD*) m_Surf.GetLinePtr(0), 
-		m_Surf.GetWidth(), m_Surf.GetHeight(), m_Surf.GetWidth(),
-		rect.left+ishadowx, rect.m_bottom-ishadowy, 
-		rect.m_right+ishadowx, rect.m_bottom-ishadowy, 
-		rect.m_right, rect.m_bottom,
-		rect.left, rect.m_bottom );
-
-	// return SurfDC.Draw( sx, sy, m_Surf );
-
-}
-
-#endif
-
-bool CTileItemType::DrawItem( CSurfaceDC & SurfDC, int sx, int sy, HUE_TYPE wHue, DIR_TYPE dir )
-{
-	// Draw a colorized item.
-	// dir = flat items can be easily rotated.
-	// UFLAG3_CLOTH items are already sphere scale. others must be converted to sphere scale first.
-
-	if ( GetInfo()->m_flags & UFLAG3_CLOTH )
-	{
-		SurfDC.SetFilterCloth(true);
-	}
-
-	SurfDC.SetFilterHue( wHue );
-	bool fRet;
-
-	fRet = DrawItemDirect( SurfDC, sx, sy );
-
-	SurfDC.SetFilterHue();
-	SurfDC.SetFilterCloth(false);
-	return( fRet );
-}
-
 //////////////////////////////////////////////////////////////////////
 // -CTileTerrainType
 
@@ -402,49 +252,6 @@ void CTileTerrainType::DrawToTexture( WORD * pDst )
 	} while (iWidth);
 }
 
-bool CTileTerrainType::DrawTerrain( CSurfaceDC & SurfDC, int sx, int sy, DIR_TYPE dirtop )
-{
-	// Draw from the Upper left corner. = top point.
-	// dirtop = DIR_NW = default view.
-
-	if ( GetID() == TERRAIN_HOLE ) 
-		return( false );
-	if ( ! SurfDC.SetClipSrc( sx-TERRAIN_ART_HALF, sy, TERRAIN_ART_WIDTH, TERRAIN_ART_WIDTH )) 
-		return false;
-	// The terrain block is a diamond shape.
-
-	WORD * pData = GetLoadData();
-	if ( pData == NULL )
-		return( false );	// may be a valid case for this.
-
-	int iWidth = 2;
-	bool rbDown = true;
-
-	do
-	{
-		SurfDC.DrawXYClip( sx, sy, pData, iWidth );
-		pData += iWidth;	// WORD index.
-
-		if ( rbDown && iWidth >= TERRAIN_ART_WIDTH )
-		{
-			rbDown = false;
-		}
-		else if (rbDown)
-		{
-			sx--;
-			iWidth += 2;
-		}
-		else
-		{
-			sx++;
-			iWidth -= 2;
-		}
-		sy++;
-	} while (iWidth);
-
-	return( true );
-}
-
 //////////////////////////////////////////////////////////////////////
 // -CTileTextureType
 
@@ -518,34 +325,6 @@ bool CTileTextureType::Load()
 	return( true );
 }
 
-#ifdef SPHERE_MAKER 
-
-bool CTileTextureType::DrawSquare( CSurfaceDC & SurfDC, int sx, int sy )
-{
-	if ( ! SurfDC.SetClipSrc( sx, sy, m_iWidth, m_iWidth )) 
-		return false;
-
-	WORD * pData = GetLoadedData();	// We use bytes here !
-	assert( pData );
-
-	int iHeightDraw = SurfDC.m_rClipSrc.Height();
-	int iWidthDraw = SurfDC.m_rClipSrc.Width();
-
-	pData += ( SurfDC.m_rClipSrc.top * m_iWidth ) + SurfDC.m_rClipSrc.left;
-	WORD * pDst = SurfDC.m_Dest.GetPixPtr16( sx + SurfDC.m_rClipSrc.left, sy + SurfDC.m_rClipSrc.top );
-
-	while ( iHeightDraw-- )
-	{
-		SurfDC.Draw( pDst, pData, iWidthDraw );
-		pData += m_iWidth;
-		pDst = (WORD*) SurfDC.m_Dest.GetNextLine(pDst);
-	}
-
-	return( true );
-}
-
-#endif
-
 ////////////////////////////////////////
 // Gumps 
 
@@ -579,53 +358,6 @@ bool CTileGumpType::Load()
 	m_size.cy = Index.m_wVal3;
 	m_size.cx = Index.m_wVal4;
 	LoadMulData( VERFILE_GUMPART, Index );
-	return( true );
-}
-
-bool CTileGumpType::DrawGump( CSurfaceDC & SurfDC, int sx, int sy, HUE_TYPE wHue )
-{
-	WORD * pData = GetLoadData();	// Must be loaded to know how big it is.
-	if ( pData == NULL )
-		return( false );
-
-	if ( ! SurfDC.SetClipSrc( sx, sy, m_size.cx, m_size.cy )) 
-		return false;
-	SurfDC.SetFilterHue( wHue );
-
-	int y = SurfDC.m_rClipSrc.top;
-	sy += SurfDC.m_rClipSrc.top;
-	int iHeightDraw = SurfDC.m_rClipSrc.bottom;
-	ASSERT( iHeightDraw <= m_size.cy );
-
-	WORD * pDst = (WORD*) SurfDC.m_Dest.GetLinePtr( sy );
-	for ( ; y<iHeightDraw; y++ )
-	{
-		int index = ((DWORD*)pData)[y] * sizeof(COLOR_TYPE);
-		// int index = *((DWORD*)&pData[ y * 2 ]) * sizeof(COLOR_TYPE);
-
-#ifdef _DEBUG
-		assert( IsValidOffset(pData+index));
-#endif
-
-		for ( int x=0; x<m_size.cx; )
-		{
-			WORD wColor = pData[index++];
-			WORD wRun   = pData[index++];
-			if ( ! wColor )		// act like clear ?
-			{
-				x += wRun;
-				continue;
-			}
-			while ( wRun-- )
-			{
-				SurfDC.DrawXClip( sx+x, pDst, &wColor, 1 );
-				x++;
-			}
-		}
-		pDst = (WORD*) SurfDC.m_Dest.GetNextLine(pDst);
-	}
-
-	SurfDC.SetFilterHue();
 	return( true );
 }
 
@@ -765,96 +497,6 @@ CGRect CTileAnimType::GetDrawRect( int sx, int sy, int iFrame, DIR_TYPE dirRelat
 	return( rect );
 }
 
-bool CTileAnimType::DrawFrame( CSurfaceDC & SurfDC, int sx, int sy, HUE_TYPE wHue, int iFrame, DIR_TYPE dirRelative )
-{
-	// sx = center.
-	// AnimationGroup header
-	// WORD[256] Palette
-
-	DWORD dwFrameCount = GetFrameCount();	// check pData here.
-	if ( (DWORD) iFrame >= dwFrameCount )
-		return false;	
-
-	// DWORD[FrameCount] FrameOffset 
-	CUOAnimFrame * pHead = GetFrameHead( iFrame );
-
-	// Seek from the end of Palette plus FrameOffset[FrameNum] bytes to find the start of Frame
-
-	bool fFlipEW = ( dirRelative < DIR_SE );
-	int ex = sx;
-	int ey = sy;
-	GetDrawFrameOffset( pHead, fFlipEW, ex, ey );
-
-	if ( ! SurfDC.SetClipSrc( ex, ey, pHead->m_Width, pHead->m_Height )) 
-		return false;
-
-	SurfDC.SetFilterHue( wHue );
-	if ( wHue & HUE_UNDERWEAR )
-	{
-		SurfDC.SetFilterCloth(true);
-	}
-	if ( wHue & HUE_TRANSLUCENT )
-	{
-		SurfDC.SetFilter( FILTER_TRANSPARENT );
-	}
-
-	BYTE * pFrame = (BYTE *)(pHead + 1);
-	int PrevLineNum = 0xFF;
-
-	WORD * pData = GetLoadedData();
-
-	for(;;)
-	{
-		WORD wRowHeader = *((WORD*)(pFrame+0));
-		WORD wRowOfs = *((WORD*)(pFrame+2));
-		pFrame += 4;
-
-		if ( wRowHeader == 0x7FFF || wRowOfs == 0x7FFF ) 
-			break;
-
-		WORD wRunLength = wRowHeader & 0xFFF;
-		WORD wLineNum = wRowHeader >> 12;
-		// WORD wUnknown = wRowOfs & 0x3F;
-
-		if ( PrevLineNum != 0xFF && wLineNum != PrevLineNum ) 
-		{
-			ey++;
-		}
-		PrevLineNum = wLineNum;
-
-		if ( ! SurfDC.IsInsideClipY( ey ))
-		{
-			pFrame += wRunLength;
-			continue;
-		}
-
-		WORD * pDst = (WORD*) SurfDC.m_Dest.GetLinePtr( ey );
-
-		if ( fFlipEW )
-		{
-			int X = sx - (((signed short) wRowOfs ) >> 6 ); 
-			for ( int i=0; i<wRunLength; i++, X-- )
-			{
-				WORD wColor = pData[*pFrame++];	// get color from pallete
-				SurfDC.DrawXClip( X, pDst, &wColor, 1 );
-			}
-		}
-		else
-		{
-			int X = sx + (((signed short) wRowOfs ) >> 6 ); 
-			for ( int i=0; i<wRunLength; i++, X++ )
-			{
-				WORD wColor = pData[*pFrame++];	// get color from pallete
-				SurfDC.DrawXClip( X, pDst, &wColor, 1 );
-			}
-		}
-	}
-
-	SurfDC.SetFilterHue();
-	SurfDC.SetFilterCloth(false);
-	return( true );
-}
-
 //////////////////////////////////////////////////////////////////////
 // -CTileLightType
 
@@ -894,38 +536,6 @@ CGRect CTileLightType::GetDrawRect( int sx, int sy )
 	return( rect );
 }
 
-bool CTileLightType::DrawLight( CSurfaceDC & SurfDC, int sx, int sy )
-{
-	// This is just a simple x by y alpha pattern. (8 bits)
-	assert( m_size.cx );
-	assert( m_size.cy );
-
-	if ( ! SurfDC.SetClipSrc( sx, sy, m_size.cx, m_size.cy )) 
-		return false;
-
-	BYTE * pData = (BYTE *) GetLoadedData();	// We use bytes here !
-	assert( pData );
-
-	int iHeightDraw = SurfDC.m_rClipSrc.Height();
-	int iWidthDraw = SurfDC.m_rClipSrc.Width();
-
-	pData += ( SurfDC.m_rClipSrc.top * m_size.cx ) + SurfDC.m_rClipSrc.left;
-	WORD * pDst = SurfDC.m_Dest.GetPixPtr16( sx + SurfDC.m_rClipSrc.left, sy + SurfDC.m_rClipSrc.top );
-
-	while ( iHeightDraw-- )
-	{
-		for ( int i=0; i<iWidthDraw; i++ )
-		{
-			WORD lightlevel = MAKEWORD( 0, pData[i] );
-			SurfDC.Draw( pDst+i, &lightlevel, 1 );
-		}
-		pData += m_size.cx;
-		pDst = (WORD*) SurfDC.m_Dest.GetNextLine(pDst);
-	}
-
-	return( true );
-}
-
 ////////////////////////////////////////
 // -CTileFont
 
@@ -943,45 +553,6 @@ bool CTileFontChar::Load()
 	assert( Index.GetBlockLength() <= FONT_MAX_SIZE*FONT_MAX_SIZE*sizeof(COLOR_TYPE) );
 
 	LoadMulData( VERFILE_FONTS, Index );
-	return( true );
-}
-
-bool CTileFontChar::DrawFontChar( CSurfaceDC & SurfDC, int sx, int sy )
-{
-	// Draw a single char on the surface.
-	// x,y = bottom left
-
-	BYTE iHeight = GetHeight();
-	BYTE iWidth = GetWidth();
-	sy -= iHeight;
-	if ( ! SurfDC.SetClipSrc( sx, sy, iWidth, iHeight )) 
-		return true;	// not normal return i know.
-
-	// 0 = see thru color.
-	WORD * pData = GetLoadData();
-	if ( ! pData ) 
-		return( false );
-
-	for ( ; iHeight--; sy++ )
-	{
-		for ( int i=0; i<iWidth; )
-		{
-			if ( *pData )
-			{
-				int iRun = 1;
-				while ( iRun+i < iWidth && pData[iRun] )
-					iRun ++;
-				SurfDC.DrawXYClip( sx+i, sy, pData, iRun );
-				pData += iRun;
-				i += iRun;
-			}
-			else
-			{
-				pData ++;
-				i++;
-			}
-		}
-	}
 	return( true );
 }
 
@@ -1039,32 +610,6 @@ int CTileFont::GetWidth( const TCHAR *pszText ) const
 	return( cx );
 }
 
-void CTileFont::DrawText( CSurfaceDC & SurfDC, int x, int y, HUE_TYPE wHue, const TCHAR *pszText )
-{
-	// x,y = bottom left of the text.
-
-	ASSERT(pszText);
-
-	SurfDC.SetFilterHue( wHue );
-
-	for ( int i = 0; pszText[i]; i++ )
-	{
-		TCHAR ch = pszText[i] - ' ';
-		if ( ch < 0 ) 
-			continue;
-		assert( ch < FONT_MAX_CHARS );
-		if ( ! m_Char[ch].DrawFontChar( SurfDC, x, y ))
-		{
-			ch = 0;
-			m_Char[0].DrawFontChar( SurfDC, x, y ); // Draw a space instead ?
-		}
-
-		x += m_Char[ch].GetWidth();
-	}
-
-	SurfDC.SetFilterHue();
-}
-
 void CTileFont::UnLoad()
 {
 	for ( int i=0; i<COUNTOF(m_Char); i++ )
@@ -1092,22 +637,6 @@ void CMulFonts::UnLoad()
 	{
 		m_Font[i].UnLoad();	// Fonts
 	}
-}
-
-void CMulFonts::FontDrawUNICODE( CSurfaceDC & SurfDC, int x, int y, const WCHAR *pszText, HUE_TYPE wHue )
-{
-	// Draw the unicode font here.
-
-#if 0
-
-	HDC hDC = CreateCompatibleDC();
-
-	// Map the surface to the DC. DrawTextW
-
-	int iRet = TextOutW( hDC, x, y, pszText, wstrlen( pszText )); 	
-
-#endif
-
 }
 
 //////////////////////////////////////////////////////////////////////

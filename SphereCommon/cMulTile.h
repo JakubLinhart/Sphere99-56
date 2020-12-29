@@ -12,7 +12,6 @@
 
 #ifdef _WIN32
 
-#include "../SphereLib/CSurface.h"
 #ifdef SPHERE_CLIENT
 #include "../SphereLib/cdirectdraw.h"		// CDirectSurface
 #endif
@@ -133,8 +132,6 @@ private:
 	CNewPtr<CMulItemInfo> m_pInfo;	// info stuff loaded on demand.
 private:
 	bool Load();
-	//void DrawSetup();
-	//bool DrawPrepared( CSurfaceDC & SurfDC, int sx, int sy, DIR_TYPE dir );
 public:
 	WORD GetHeight() 
 	{
@@ -158,8 +155,6 @@ public:
 	const CMulItemInfo * GetInfo();
 
 	CGRect GetDrawRect( int x, int y );
-	bool DrawItemDirect( CSurfaceDC & SurfDC, int x, int y, bool fCenter = true );
-	bool DrawItem( CSurfaceDC & SurfDC, int x, int y, HUE_TYPE wHue, DIR_TYPE dir );
 
 	CTileItemType( HASH_INDEX dwHashIndex );
 	CTileItemType( ITEMID_TYPE id );
@@ -181,7 +176,6 @@ private:
 private:
 	bool LoadFromTerrain();
 	bool Load();
-	// bool Draw_Textured_Triangle( CSurfaceDC & SurfDC, const CTextureVert * pVert );
 public:
 	TERRAIN_TYPE GetID() const { return( (TERRAIN_TYPE) GetBaseIndex() ); }
 
@@ -190,19 +184,6 @@ public:
 		ASSERT( IsLoaded());
 		return( m_iWidth );
 	}
-
-	bool DrawWarp( CSurfaceDC & SurfDC,
-		int x1, int y1,
-		int x2, int y2,
-		int x3, int y3, 
-		int x4, int y4 )
-	{
-		if ( GetID() == TERRAIN_HOLE ) 
-			return( false );
-		return SurfDC.DrawTexture( GetLoadData(), m_iWidth, m_iWidth, m_iWidth, x1, y1, x2, y2, x3, y3, x4, y4 );
-	}
-
-	bool DrawSquare( CSurfaceDC & SurfDC, int x, int y );
 
 	CTileTextureType( HASH_INDEX dwHashIndex );
 	CTileTextureType( TERRAIN_TYPE id );
@@ -228,7 +209,6 @@ public:
 	TERRAIN_TYPE GetID() const { return( (TERRAIN_TYPE) GetBaseIndex() ); }
 
 	void DrawToTexture( WORD * pData );
-	bool DrawTerrain( CSurfaceDC & SurfDC, int x, int y, DIR_TYPE dirtop = DIR_NW );
 
 	CTileTerrainType( HASH_INDEX dwHashIndex );
 	CTileTerrainType( TERRAIN_TYPE id );
@@ -268,7 +248,6 @@ public:
 		ASSERT( IsLoaded());
 		return( m_size.cy ); 
 	}
-	bool DrawGump( CSurfaceDC & SurfDC, int x = 0, int y = 0, HUE_TYPE wHue = HUE_DEFAULT );
 
 	CTileGumpType( HASH_INDEX dwHashIndex );
 	CTileGumpType( GUMP_TYPE gump );
@@ -302,7 +281,6 @@ public:
 	LIGHT_PATTERN GetID() const { return( (LIGHT_PATTERN) GetBaseIndex() ); }
 
 	CGRect GetDrawRect( int x, int y );
-	bool DrawLight( CSurfaceDC & SurfDC, int x, int y );
 
 	CTileLightType( HASH_INDEX dwHashIndex );
 	CTileLightType( LIGHT_PATTERN light );
@@ -368,7 +346,6 @@ public:
 	}
 
 	CGRect GetDrawRect( int x, int y, int iFrame, DIR_TYPE dirrelative );
-	bool DrawFrame( CSurfaceDC & SurfDC, int x, int y, HUE_TYPE wHue, int iFrame, DIR_TYPE dirrelative );
 
 	DWORD GetID() const
 	{
@@ -430,7 +407,6 @@ public:
 		m_lOffset = lOffset;
 		m_Head = Hdr;
 	}
-	bool DrawFontChar( CSurfaceDC & SurfDC, int x, int y );
 
 	CTileFontChar() : CMulImageType( VERDATA_MAKE_HASH( VERFILE_FONTS, 0 ))	// id is not important
 	{
@@ -463,7 +439,6 @@ public:
 		return( rect );
 	}
 	void UnLoad();
-	void DrawText( CSurfaceDC & SurfDC, int x, int y, HUE_TYPE wHue, const TCHAR * pszText );
 	CTileFont()
 	{
 		m_size.cx = 0;
@@ -486,11 +461,6 @@ public:
 	{
 		return GetFont(f)->GetDrawRect( x, y, pszText );
 	}
-	void FontDraw( FONT_TYPE f, CSurfaceDC & SurfDC, int x, int y, const TCHAR *pszText, HUE_TYPE wHue = HUE_DEFAULT )
-	{
-		GetFont(f)->DrawText( SurfDC, x, y, wHue, pszText );
-	}
-	void FontDrawUNICODE( CSurfaceDC & SurfDC, int x, int y, const WCHAR *pszText, HUE_TYPE wHue = HUE_DEFAULT );
 
 	void Load();
 	void UnLoad();

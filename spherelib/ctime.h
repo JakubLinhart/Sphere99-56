@@ -8,6 +8,7 @@
 #include <time.h>
 
 #define CServTimeBase CServTime
+#define CServTimeMaster CServTime
 class CServTime
 {
 #undef GetCurrentTime

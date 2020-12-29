@@ -1,4 +1,4 @@
-#pragma once
+    #pragma once
 template <class T>
 class CReferenceCounted
 {
@@ -24,6 +24,9 @@ public:
     int  norefs() { return !m_ReferenceCount; }
     int  refcount() { return m_ReferenceCount; }
 };
+
+#define PTR_CAST(a,b) static_cast<a*>(b)
+#define REF_CAST(a,b) static_cast<CRefPtr<a>>(b)
 
 #define CNewPtr CRefPtr
 template <class T>

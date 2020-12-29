@@ -1,36 +1,4 @@
     #pragma once
-template <class T>
-class CReferenceCounted
-{
-private:
-    unsigned m_ReferenceCount;
-    T* m_Pointer;
-
-    // Copy construction and assignment will not be allowed:
-
-    template < class U>
-    CReferenceCounted<T>& operator=(const CReferenceCounted<U>& rhs);
-    template < class U>
-    CReferenceCounted(const CReferenceCounted<U>& rhs);
-public:
-    CReferenceCounted(T* p) :
-        m_ReferenceCount(1),
-        m_Pointer(p) {}
-    ~CReferenceCounted() { delete m_Pointer; }
-    T& operator*() { return *m_Pointer; }
-    T* GetRefObj() { return m_Pointer; }
-    void reference() { m_ReferenceCount++; }
-    void ReleaseRefObj() { m_ReferenceCount--; }
-    int  norefs() { return !m_ReferenceCount; }
-    int  refcount() { return m_ReferenceCount; }
-    bool IsValidRefObj()
-    {
-        return m_ReferenceCount > 0; // ???
-    }
-    virtual void UnLink()
-    {
-    }
-};
 
 #define PTR_CAST(a,b) static_cast<a*>(b)
 #define REF_CAST(a,b) static_cast<CRefPtr<a>>(b)
@@ -40,55 +8,27 @@ template <class T>
 class CRefPtr
 {
 private:
-    CReferenceCounted<T>* m_Object;
+    T* m_pointer;
 public:
-    CRefPtr() : m_Object(0) {}
-    CRefPtr(T* p) :                // Constructor
-        m_Object(new CReferenceCounted<T>(p)) {}
-    ~CRefPtr() {           // Destructor
-        if (m_Object) {
-            m_Object->dereference();
-            if (m_Object->norefs()) delete m_Object;
-
-        }
+    CRefPtr() : m_pointer(0) {}
+    CRefPtr(T* p) :
+        m_pointer(p) {}
+    ~CRefPtr()
+    {
     }
 
-    template < class U>
-    CRefPtr(const CRefPtr<U>& rhs) {  // Copy constructor.
-        m_Object = rhs.m_Object;
-        if (m_Object) {
-            m_Object->reference();
+    T* GetRefObj() const { return m_pointer; }
+    void ReleaseRefObj() {} // STUB
+    virtual void UnLink() {} // STUB
+    bool IsValidNewObj() const { return true; } // STUB
 
-        }
-    }
     CRefPtr& operator=(const CRefPtr& rhs)
     {                             // Assignment operator. 
         if (this == &rhs) return *this;
-        if (m_Object) {
-            m_Object->dereference();
-            if (m_Object->norefs()) delete m_Object;
-            m_Object = 0;
-        }
-        if (rhs.m_Object) {
-            m_Object = rhs.m_Object;
-            m_Object->reference();
-        }
+        m_pointer = rhs.m_pointer;
         return *this;
     }
-    int refcount() const {
-        if (m_Object) {
-            return m_Object->refcount();
-        }
-        else {
-            return -1;
-        }
-    }
-    // Operations:
-    //
-    template <class U>
-    int operator==(const CRefPtr<U>& rhs) {
-        return (m_Object == rhs.m_Object);
-    }
-    T& operator*() { return m_Object->operator*(); }
-    T* operator->() { return m_Object->get(); }
+    T& operator*() { return *m_pointer; }
+    T* operator->() { return m_pointer; }
+    operator bool() const { return m_pointer != 0; }
 };

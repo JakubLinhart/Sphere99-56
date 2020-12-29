@@ -3,6 +3,7 @@
 #include "crefobj.h"
 #include "cstring.h"
 #include "CArray.h"
+#include "cfile.h"
 #include "CScript.h"
 #include "CScriptObj.h"
 #include "CResourceObj.h"

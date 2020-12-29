@@ -234,7 +234,7 @@ public:
 	* @brief Check if file is open for write.
 	* @return true if file is open for write, false otherwise.
 	*/
-	bool IsWriteMode() const { return (m_uMode & OF_WRITE); }
+	bool IsModeWrite() const { return (m_uMode & OF_WRITE); }
 
 	/**
 	* @brief Check if file is open.

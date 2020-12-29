@@ -10,7 +10,7 @@ class CScriptProp
 
 };
 
-class CScript
+class CScript : public CFileText
 {
 public:
 	virtual bool ReadTextLine(bool fRemoveBlanks);	// looking for a section or reading strangly formated section. 

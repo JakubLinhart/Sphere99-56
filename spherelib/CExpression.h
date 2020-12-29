@@ -2,32 +2,37 @@
 
 #include "catom.h"
 
-class CVarDefBase : public CMemDynamic	// A variable from GRAYDEFS.SCP or other.
+#define CVarDefPtr CVarDef*
+class CVarDef : public CMemDynamic	// A variable from GRAYDEFS.SCP or other.
 {
 	// Similar to CScriptKey
 private:
 #define EXPRESSION_MAX_KEY_LEN SCRIPT_MAX_SECTION_LEN
 	const CAtomRef m_aKey;	// the key for sorting/ etc.
 public:
+	int GetInt();
+	DWORD GetDWORD();
 	LPCTSTR GetKey() const
 	{
 		return(m_aKey.GetStr());
 	}
-	CVarDefBase(LPCTSTR pszKey) :
+	CVarDef(LPCTSTR pszKey) :
 		m_aKey(pszKey)
 	{
 	}
 	virtual LPCTSTR GetValStr() const = 0;
 	virtual int GetValNum() const = 0;
-	virtual CVarDefBase* CopySelf() const = 0;
+	virtual CVarDef* CopySelf() const = 0;
 };
 
-struct CVarDefArray : public CGSortedArray<CVarDefBase*, const CVarDefBase&, CAtomRef>
+struct CVarDefArray : public CGSortedArray<CVarDef*, const CVarDef&, CAtomRef>
 {
+public:
+	CVarDefPtr FindKeyPtr(CAtomRef pName);
     // Sorted array
 protected:
-    int CompareKey(CAtomRef Key, CVarDefBase* pVar) const;
-    int Add(CVarDefBase* pVar);
+    int CompareKey(CAtomRef Key, CVarDef* pVar) const;
+    int Add(CVarDef* pVar);
 public:
     void Copy(const CVarDefArray* pArray);
 

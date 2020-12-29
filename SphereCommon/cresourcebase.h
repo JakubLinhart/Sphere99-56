@@ -90,6 +90,12 @@ public:
 	{
 		return(m_rid);
 	}
+
+	// unlink all this data. (tho don't delete the def as the pointer might still be used !)
+	virtual void UnLink()
+	{
+		// This does nothing in the CResourceDef case, Only in the CResourceLink case.
+	}
 };
 
 class CResourceTriggered : public CResourceDef

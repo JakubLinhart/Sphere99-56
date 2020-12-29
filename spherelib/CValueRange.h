@@ -24,6 +24,7 @@ public:
 	{	
 		return( static_cast<int>(m_iLo) + Calc_GetRandVal( GetRange()));
 	}
+	int GetMin() const { return m_iLo; }
 	int GetRandomLinear( int iPercent ) const;
 	void v_Set(CGVariant& vVal);
 	void v_Get(CGVariant& vVal);

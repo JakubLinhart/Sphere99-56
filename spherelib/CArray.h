@@ -278,7 +278,7 @@ public:
 	* @return Element in nIndex position.
 	*/
 	TYPE& ElementAt(size_t nIndex);
-	TYPE* ConstElementAt(size_t nIndex) const;
+	TYPE ConstElementAt(size_t nIndex) const;
 	/**
 	* @brief get a reference to the nth element.
 	*

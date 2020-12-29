@@ -25,3 +25,74 @@
 #ifndef _1BITMASK
 #define _1BITMASK(b)    (((size_t)1) << (b))
 #endif
+
+class CServTime
+{
+#undef GetCurrentTime
+#define TICK_PER_SEC 10
+    // A time stamp in the server/game world.
+public:
+    long m_lPrivateTime;
+public:
+    long GetTimeRaw() const
+    {
+        return m_lPrivateTime;
+    }
+    int GetTimeDiff(const CServTime& time) const
+    {
+        return(m_lPrivateTime - time.m_lPrivateTime);
+    }
+    void Init()
+    {
+        m_lPrivateTime = 0;
+    }
+    void InitTime(long lTimeBase)
+    {
+        m_lPrivateTime = lTimeBase;
+    }
+    bool IsTimeValid() const
+    {
+        return(m_lPrivateTime ? true : false);
+    }
+    CServTime operator+(int iTimeDiff) const
+    {
+        CServTime time;
+        time.m_lPrivateTime = m_lPrivateTime + iTimeDiff;
+        return(time);
+    }
+    CServTime operator-(int iTimeDiff) const
+    {
+        CServTime time;
+        time.m_lPrivateTime = m_lPrivateTime - iTimeDiff;
+        return(time);
+    }
+    int operator-(CServTime time) const
+    {
+        return(m_lPrivateTime - time.m_lPrivateTime);
+    }
+    bool operator==(CServTime time) const
+    {
+        return(m_lPrivateTime == time.m_lPrivateTime);
+    }
+    bool operator!=(CServTime time) const
+    {
+        return(m_lPrivateTime != time.m_lPrivateTime);
+    }
+    bool operator<(CServTime time) const
+    {
+        return(m_lPrivateTime < time.m_lPrivateTime);
+    }
+    bool operator>(CServTime time) const
+    {
+        return(m_lPrivateTime > time.m_lPrivateTime);
+    }
+    bool operator<=(CServTime time) const
+    {
+        return(m_lPrivateTime <= time.m_lPrivateTime);
+    }
+    bool operator>=(CServTime time) const
+    {
+        return(m_lPrivateTime >= time.m_lPrivateTime);
+    }
+    static CServTime GetCurrentTime();
+};

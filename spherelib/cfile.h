@@ -51,6 +51,8 @@
 #define NOFILE_HANDLE	HFILE_ERROR
 #endif
 
+#define FILE_POS_TYPE DWORD
+
 class CGrayError;
 #define CFileException CGrayError
 

@@ -13,3 +13,4 @@
 #include "CScriptExecContext.h"
 #include "CThread.h"
 #include "CScriptConsole.h"
+#include "ctime.h"

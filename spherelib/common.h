@@ -1,5 +1,7 @@
 #pragma once
 
+#define MIN min
+#define MAX max
 #define IMULDIV(a,b,c) (((a)*(b))/(c))	// windows MulDiv will round ! 
 
 // use to indicate that a function uses printf-style arguments, allowing GCC

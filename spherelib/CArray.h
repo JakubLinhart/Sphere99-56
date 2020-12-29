@@ -535,6 +535,6 @@ struct CUIDArray
 };
 
 template<class TYPE, class KEY_TYPE>
-struct CGRefSortArray : public CGSortedArray<TYPE, TYPE, KEY_TYPE>
+struct CGRefSortArray : public CGSortedArray<TYPE*, TYPE*, KEY_TYPE>
 {
 };

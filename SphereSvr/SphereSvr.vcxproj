@@ -584,6 +584,7 @@
     <ClInclude Include="..\SphereIRC\IRCWhoWas.h" />
     <ClInclude Include="..\SphereIRC\SCache.h" />
     <ClInclude Include="..\spherelib\CArray.h" />
+    <ClInclude Include="..\spherelib\CAtom.h" />
     <ClInclude Include="..\spherelib\CExpression.h" />
     <ClInclude Include="..\spherelib\cfile.h" />
     <ClInclude Include="..\spherelib\CMemBlock.h" />

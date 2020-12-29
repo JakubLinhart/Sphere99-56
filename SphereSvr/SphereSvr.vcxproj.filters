@@ -514,6 +514,9 @@
     <ClInclude Include="..\spherelib\ctime.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
+    <ClInclude Include="..\spherelib\CAtom.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="spheresvr.rc">

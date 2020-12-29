@@ -6,7 +6,6 @@
 #define _INC_CATOM_H
 
 #include "carray.h"
-#include <cstddef>
 
 class CAtomDef : public CGString
 {

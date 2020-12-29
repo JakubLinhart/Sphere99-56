@@ -92,23 +92,3 @@ public:
     T& operator*() { return m_Object->operator*(); }
     T* operator->() { return m_Object->get(); }
 };
-
-class CRefObjDef
-{
-};
-
-#define CResourceObjPtr CResourceObj*
-class CResourceObj
-{
-private:
-    HASH_INDEX m_dwHashIndex;
-
-public:
-    CResourceObj(HASH_INDEX dwHashIndex)
-    {
-        m_dwHashIndex = dwHashIndex;
-    }
-
-	int GetRefCount();
-    HASH_INDEX GetUIDIndex() const { return m_dwHashIndex; }
-};

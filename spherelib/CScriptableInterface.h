@@ -6,3 +6,4 @@
 #define CSCRIPT_EXEC_DEF void Exec
 #define CSCRIPT_CLASS_DEF1 void Exec
 #define CSCRIPT_CLASS_DEF2 void Exec
+#define DECLARE_LISTREC_TYPE(a)

@@ -526,15 +526,8 @@ struct CGStringArray : public CGTypedArray<CGString, const CGString&>
 {
 };
 
-struct CUIDRefArray : public CGRefArray<CResourceObj>
-{
-};
-
-struct CUIDArray
-{
-};
-
 template<class TYPE, class KEY_TYPE>
 struct CGRefSortArray : public CGSortedArray<TYPE*, TYPE*, KEY_TYPE>
 {
+
 };

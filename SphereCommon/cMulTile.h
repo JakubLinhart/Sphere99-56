@@ -432,10 +432,10 @@ public:
 	{
 		// x,y = bottom left of the text.
 		CGRect rect;
-		rect.left = x;
-		rect.top = y - GetHeight();
-		rect.right = x + GetWidth( pszText );
-		rect.bottom = y;
+		rect.m_left = x;
+		rect.m_top = y - GetHeight();
+		rect.m_right = x + GetWidth( pszText );
+		rect.m_bottom = y;
 		return( rect );
 	}
 	void UnLoad();

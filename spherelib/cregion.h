@@ -13,6 +13,31 @@ public:
 	int Width() const { return(m_right - m_left); }
 	int Height() const { return(m_bottom - m_top); }
 
+	operator RECT& ()
+	{
+		return(*((RECT*)(&m_left)));
+	}
+	operator RECT* ()
+	{
+		return((::RECT*)(&m_left));
+	}
+	operator const RECT& () const
+	{
+		return(*((RECT*)(&m_left)));
+	}
+	operator const RECT* () const
+	{
+		return((::RECT*)(&m_left));
+	}
+	CGRect& operator = (RECT rect)
+	{
+		m_left = rect.left;
+		m_top = rect.top;
+		m_right = rect.right;
+		m_bottom = rect.bottom;
+		return(*this);
+	}
+
 	void SetRectEmpty()
 	{
 		m_left = m_top = 0;	// 0x7ffe

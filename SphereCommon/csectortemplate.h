@@ -96,10 +96,10 @@ public:
 		// Get a rectangle for the sector.
 		CPointMap pt = GetBasePoint();
 		CRectMap rect;
-		rect.left = pt.m_x;
-		rect.top = pt.m_y;
-		rect.right = pt.m_x + SECTOR_SIZE_X;	// East
-		rect.bottom = pt.m_y + SECTOR_SIZE_Y;	// South
+		rect.m_left = pt.m_x;
+		rect.m_top = pt.m_y;
+		rect.m_right = pt.m_x + SECTOR_SIZE_X;	// East
+		rect.m_bottom = pt.m_y + SECTOR_SIZE_Y;	// South
 		return( rect );
 	}
 

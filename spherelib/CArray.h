@@ -330,7 +330,7 @@ public:
 * @brief An Array of pointers.
 */
 template<class TYPE>
-class CGRefArray : public CGTypedArray<TYPE, TYPE>
+class CGRefArray : public CGTypedArray<TYPE, TYPE*>
 {
 protected:
 	/**
@@ -530,4 +530,29 @@ template<class TYPE, class KEY_TYPE>
 struct CGRefSortArray : public CGSortedArray<TYPE*, TYPE*, KEY_TYPE>
 {
 
+};
+
+struct CUIDArray
+{
+	CGRefArray<CGObListRec> m_UIDs;	// all the UID's in the World. CChar and CItem.
+
+	DWORD GetUIDCount() const
+	{
+		return(m_UIDs.GetCount());
+	}
+#define UID_PLACE_HOLDER (CGObListRec*)0xFFFFFFFF
+	CGObListRec* FindUIDObj(DWORD dwIndex) const
+	{
+		if (!dwIndex || dwIndex >= GetUIDCount())
+			return(NULL);
+		if (m_UIDs[dwIndex] == UID_PLACE_HOLDER)	// unusable for now. (background save is going on)
+			return(NULL);
+		return(m_UIDs[dwIndex]);
+	}
+	void FreeUID(DWORD dwIndex)
+	{
+		// Can't free up the UID til after the save !
+		m_UIDs.SetAt(dwIndex, UID_PLACE_HOLDER);
+	}
+	DWORD AllocUID(DWORD dwIndex, CGObListRec* pObj);
 };

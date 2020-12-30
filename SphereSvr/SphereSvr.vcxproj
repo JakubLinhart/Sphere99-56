@@ -593,6 +593,7 @@
     <ClInclude Include="..\spherelib\common.h" />
     <ClInclude Include="..\spherelib\cpointbase.h" />
     <ClInclude Include="..\spherelib\CProfilerPerfMon.h" />
+    <ClInclude Include="..\spherelib\CQueueBytes.h" />
     <ClInclude Include="..\spherelib\crefobj.h" />
     <ClInclude Include="..\spherelib\cregion.h" />
     <ClInclude Include="..\spherelib\CScript.h" />

@@ -97,6 +97,8 @@ public:
 	{
 		// This does nothing in the CResourceDef case, Only in the CResourceLink case.
 	}
+
+	bool IsValidHeap() const;
 };
 
 class CResourceTriggered : public CResourceDef

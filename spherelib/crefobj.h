@@ -1,6 +1,7 @@
     #pragma once
 
 #define PTR_CAST(a,b) dynamic_cast<a*>(b)
+#define STATIC_CAST(a,b) static_cast<a*>(b)
 #define REF_CAST(a,b) CRefPtr<a>((a*)b.GetRefObj())
 
 #define CNewPtr CRefPtr

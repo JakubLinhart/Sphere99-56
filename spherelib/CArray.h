@@ -518,7 +518,7 @@ protected:
 template<class TYPE>
 struct CHashArray : public CGSortedArray< TYPE, const TYPE&, HASH_INDEX>
 {
-	int CompareKey(HASH_INDEX index, TYPE obj) const
+	int CompareKey(HASH_INDEX index, const TYPE& obj) const
 	{
 		HASH_INDEX index2 = obj.GetUIDIndex();
 		return index > index2;

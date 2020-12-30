@@ -31,11 +31,11 @@ public:
 	CVarDefPtr FindKeyPtr(CAtomRef pName);
     // Sorted array
 protected:
-    int CompareKey(CAtomRef Key, CVarDef* pVar) const;
+    int CompareKey(CAtomRef Key, const CVarDef& pVar) const;
     int Add(CVarDef* pVar);
 public:
     void Copy(const CVarDefArray* pArray);
-	int SetKeyVar(CAtomRef key, CGVariant& const val);
+	int SetKeyVar(CAtomRef key, const CGVariant& val);
 	int SetKeyStr(CAtomRef key, LPCTSTR value);
 	UID_INDEX FindKeyVar(CAtomRef key) const;
 	CGString FindKeyStr(CAtomRef key) const;

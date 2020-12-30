@@ -526,6 +526,12 @@
     <ClInclude Include="..\spherelib\CAssoc.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
+    <ClInclude Include="..\spherelib\CNTService.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\CProfilerPerfMon.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="spheresvr.rc">

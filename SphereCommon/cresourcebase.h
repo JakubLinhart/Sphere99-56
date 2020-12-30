@@ -167,4 +167,8 @@ protected:
 	DECLARE_MEM_DYNAMIC;
 };
 
+class CResourceLock : public CScript
+{
+};
+
 #endif // _INC_CRESOURCEBASE_H

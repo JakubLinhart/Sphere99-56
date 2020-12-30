@@ -1,7 +1,12 @@
 #pragma once
 
+class CStreamText
+{
+
+};
+
 // aka CTextConsole
-class CScriptConsole
+class CScriptConsole : public CStreamText
 {
 
 };

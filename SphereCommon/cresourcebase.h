@@ -85,6 +85,7 @@ private:
 	CSphereUID m_rid;		// the true resource id. (must be unique for the RES_TYPE)
 
 public:
+	CResourceDef(CSphereUID rid);
 	LPCTSTR GetResourceName() const;
 	CSphereUID GetUIDIndex() const
 	{
@@ -107,6 +108,8 @@ public:
 #define CResourceLinkPtr CResourceLink*
 class CResourceLink : public CResourceDef
 {
+public:
+	CResourceLink(CSphereUID rid);
 };
 
 class CResourceNamed : public CResourceLink

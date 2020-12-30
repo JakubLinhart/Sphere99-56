@@ -152,7 +152,8 @@ struct CLog : public CFileText, public CLogBase, public CThreadLockableObj
 #define	LOG_GROUP_CHEAT			0x04000
 #define LOG_GROUP_KILLS			0x08000	// Log player combat results.
 #define LOG_GROUP_HTTP			0x10000
-#define	LOG_GROUP_DEBUG			0x20000
+#define LOG_GROUP_SAVE			0x20000
+#define	LOG_GROUP_DEBUG			0x40000
 
 public:
 	CLog();

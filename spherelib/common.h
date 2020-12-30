@@ -61,10 +61,23 @@ enum LOGL_TYPE
 #define HRES_WRITE_FAULT -7
 #define HRES_INVALID_FUNCTION -8
 
+#define LOG_CR "\n"
+
+#define DEBUG_MSG(_x_)		g_pLog->EventEvent _x_
+#define DEBUG_TRACE(_x_)	g_pLog->EventTrace _x_
+#define DEBUG_ERR(_x_)		g_pLog->EventError _x_
+#define DEBUG_WARN(_x_)		g_pLog->EventWarn _x_
+
 class CLogBase
 {
-
+public:
+	void EventEvent(LPCTSTR pszFormat, ...) { throw "not implemented"; }
+	void EventTrace(LPCTSTR pszFormat, ...) { throw "not implemented"; }
+	void EventError(LPCTSTR pszFormat, ...) { throw "not implemented"; }
+	void EventWarn(LPCTSTR pszFormat, ...) { throw "not implemented"; }
 };
+
+extern CLogBase* g_pLog;
 
 class CGException
 {

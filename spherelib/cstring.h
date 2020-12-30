@@ -368,7 +368,9 @@ enum MATCH_TYPE
 
 class CGVariant
 {
-
+public:
+	CGVariant();
+	CGVariant(const UID_INDEX uid);
 };
 
 // extern TCHAR * Str_GetTemporary(int amount = 1);

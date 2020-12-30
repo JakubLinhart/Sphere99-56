@@ -35,6 +35,10 @@ protected:
     int Add(CVarDef* pVar);
 public:
     void Copy(const CVarDefArray* pArray);
+	int SetKeyVar(CAtomRef key, CGVariant& const val);
+	int SetKeyStr(CAtomRef key, LPCTSTR value);
+	UID_INDEX FindKeyVar(CAtomRef key) const;
+	CGString FindKeyStr(CAtomRef key) const;
 
     CVarDefArray& operator = (const CVarDefArray& array)
     {

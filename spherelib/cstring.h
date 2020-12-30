@@ -366,6 +366,9 @@ enum MATCH_TYPE
 	MATCH_PATTERN		///< bad pattern
 };
 
+extern int strcpylen(TCHAR* pDst, LPCTSTR pSrc);
+extern int strcpylen(TCHAR* pDst, LPCTSTR pSrc, int imaxlen);
+
 // extern TCHAR * Str_GetTemporary(int amount = 1);
 extern TCHAR* Str_GetTemp();
 

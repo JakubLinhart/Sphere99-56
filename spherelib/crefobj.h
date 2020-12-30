@@ -1,7 +1,7 @@
     #pragma once
 
 #define PTR_CAST(a,b) dynamic_cast<a*>(b)
-#define REF_CAST(a,b) b.Cast<a>()
+#define REF_CAST(a,b) CRefPtr<a>((a*)b.GetRefObj())
 
 #define CNewPtr CRefPtr
 template <class T>
@@ -15,9 +15,6 @@ public:
     ~CRefPtr()
     {
     }
-
-    template<class U>
-    CRefPtr<U> Cast() { return CRefPtr<U>(static_cast<U>(m_pointer)); }
 
     T* GetRefObj() const { return m_pointer; }
     void ReleaseRefObj() {} // STUB

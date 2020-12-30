@@ -10,6 +10,11 @@ class CScriptProp
 
 };
 
+class CScriptPropX
+{
+
+};
+
 class CScript : public CFileText
 {
 public:

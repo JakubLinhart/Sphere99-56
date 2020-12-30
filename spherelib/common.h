@@ -51,6 +51,16 @@ enum LOGL_TYPE
 	LOGL_TRACE = 6,	// low level debug trace.
 };
 
+#define HRES_INVALID_HANDLE -1
+#define HRES_PRIVILEGE_NOT_HELD -2
+#define HRES_BAD_ARGUMENTS -3
+#define HRES_INVALID_INDEX -4
+#define HRES_INTERNAL_ERROR -5
+#define HRES_BAD_ARG_QTY -5
+#define HRES_UNKNOWN_PROPERTY -6
+#define HRES_WRITE_FAULT -7
+#define HRES_INVALID_FUNCTION -8
+
 class CLogBase
 {
 

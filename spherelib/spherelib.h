@@ -18,3 +18,4 @@
 #include "CNTService.h"
 #include "CProfilerPerfMon.h"
 #include "CQueueBytes.h"
+#include "CSocket.h"

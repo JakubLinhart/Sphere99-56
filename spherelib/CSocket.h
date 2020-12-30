@@ -122,4 +122,17 @@ class CGSocket
 {
 };
 
+class CLogIP
+{
+	// Keep a log of recent ip's we have talked to.
+	// Prevent ping floods etc.
+};
+typedef CRefPtr<CLogIP> CLogIPPtr;
+
+class CLogIPArray
+{
+public:
+	CLogIPPtr FindLogIP(const CGSocket& socket);
+};
+
 #endif

@@ -22,18 +22,3 @@ class CRefObjDef
 {
 };
 
-#define CResourceObjPtr CResourceObj*
-class CResourceObj : public CScriptObj
-{
-private:
-	HASH_INDEX m_dwHashIndex;
-
-public:
-	CResourceObj(HASH_INDEX dwHashIndex)
-	{
-		m_dwHashIndex = dwHashIndex;
-	}
-
-	int GetRefCount();
-	HASH_INDEX GetUIDIndex() const { return m_dwHashIndex; }
-};

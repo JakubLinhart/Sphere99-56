@@ -825,7 +825,7 @@ public:
 
 public:
 	CSCRIPT_CLASS_DEF1();
-	enum P_TYPE
+	enum P_TYPE_
 	{
 #define CRACECLASSPROP(a,b,c) P_##a,
 #include "craceclassprops.tbl"

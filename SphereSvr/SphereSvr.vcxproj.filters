@@ -535,6 +535,9 @@
     <ClInclude Include="..\spherelib\CQueueBytes.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
+    <ClInclude Include="..\spherelib\CResourceObj.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="spheresvr.rc">

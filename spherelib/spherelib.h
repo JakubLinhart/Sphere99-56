@@ -19,3 +19,4 @@
 #include "CProfilerPerfMon.h"
 #include "CQueueBytes.h"
 #include "CSocket.h"
+#include "CResourceObj.h"

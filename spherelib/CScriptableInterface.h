@@ -14,14 +14,34 @@
 #define CSCRIPTPROP_READO	0x0800
 #define CSCRIPTPROP_WRITEO	0x1000
 
+#define VARTYPE_BOOL		0
+#define VARTYPE_CSTRING		1
+#define VARTYPE_INT			2
+#define VARTYPE_LPCTSTR		3
+#define VARTYPE_VOID		4
+#define VARTYPE_WORD		5
+
 #define DECLARE_LISTREC_REF(a)
 #define DECLARE_LISTREC_REF2(a)
 #define CSCRIPT_EXEC_DEF void Exec
-#define CSCRIPT_CLASS_DEF1 void Exec
-#define CSCRIPT_CLASS_DEF2(a)
 #define CSCRIPT_CLASS_IMP0(a,b,c)
-#define CSCRIPT_CLASS_IMP1(a,b,c,d,e)
 #define DECLARE_LISTREC_TYPE(a)
 #define CSCRIPT_PROP_IMP(a,b,c)
 #define CSCRIPT_PROPX_IMP(a,b,c)
 #define CSCRIPT_METHOD_IMP(a,b,c)
+
+#define CSCRIPT_CLASS_DEF1(...) \
+	int s_FindMyPropKey(LPCTSTR pszKey); \
+	int s_FindMyMethodKey(LPCTSTR pszKey);
+
+#define CSCRIPT_CLASS_IMP1(CLASS_NAME,b,c,d,e) \
+	int C##CLASS_NAME::s_FindMyPropKey(LPCTSTR pszKey) { throw "not implemented"; } \
+	int C##CLASS_NAME::s_FindMyMethodKey(LPCTSTR pszKey) { throw "not implemented"; }
+
+#define CSCRIPT_CLASS_DEF2(...) \
+	int s_FindMyPropKey(LPCTSTR pszKey); \
+	int s_FindMyMethodKey(LPCTSTR pszKey);
+
+#define CSCRIPT_CLASS_IMP2(CLASS_NAME,b,c,d,e) \
+	int C##CLASS_NAME::s_FindMyPropKey(LPCTSTR pszKey) { throw "not implemented"; } \
+	int C##CLASS_NAME::s_FindMyMethodKey(LPCTSTR pszKey) { throw "not implemented"; }

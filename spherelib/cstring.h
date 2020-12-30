@@ -9,6 +9,8 @@
 
 #include "common.h"
 
+#define CSTRING_MAX_LEN 8*1024
+
 class CString
 {
 public:

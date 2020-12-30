@@ -82,7 +82,7 @@ public:
 	* @param pszName new file path.
 	* @return true if new file name is setted, false otherwise.
 	*/
-	virtual bool SetFilePath(LPCTSTR pszName);
+	virtual void SetFilePath(LPCTSTR pszName);
 	/**
 	* @brief Gets the basename of the file.
 	* @return the basename of the file (name withouth paths).

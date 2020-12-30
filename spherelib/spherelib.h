@@ -14,3 +14,4 @@
 #include "CThread.h"
 #include "CScriptConsole.h"
 #include "ctime.h"
+#include "CNTService.h"

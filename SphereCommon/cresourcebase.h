@@ -116,6 +116,8 @@ public:
 
 class CResourceNamed : public CResourceLink
 {
+public:
+	LPCTSTR GetName() const;
 };
 
 class CUIDRefArray

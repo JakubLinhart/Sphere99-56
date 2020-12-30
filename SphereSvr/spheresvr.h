@@ -142,11 +142,17 @@ struct CLog : public CFileText, public CLogBase, public CThreadLockableObj
 	// Just use CRefPtr to thread lock this.
 	// subject matter. (severity level is first 4 bits, LOGL_EVENT)
 	// Similar to HRESULT (high bit=critical error, 4bit=reserve, 11bit=facility, 16bits=code)
+#define LOG_GROUP_TYPE DWORD
+#define	LOG_GROUP_ACCOUNTS		0x00080
+#define	LOG_GROUP_INIT			0x00100
+#define	LOG_GROUP_CLIENTS		0x00400
 #define LOG_GROUP_GM_PAGE		0x00800	// player gm pages.
 #define LOG_GROUP_PLAYER_SPEAK	0x01000	// All that the players say.
 #define LOG_GROUP_GM_CMDS		0x02000	// Log all GM commands.
+#define	LOG_GROUP_CHEAT			0x04000
 #define LOG_GROUP_KILLS			0x08000	// Log player combat results.
 #define LOG_GROUP_HTTP			0x10000
+#define	LOG_GROUP_DEBUG			0x20000
 
 public:
 	CLog();

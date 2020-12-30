@@ -113,6 +113,54 @@ class CResourceNamed : public CResourceLink
 {
 };
 
+class CUIDRefArray
+{
+	// List of Players and NPC's involved in the quest/party/account etc..
+
+public:
+	static const char* m_sClassName;
+
+	CUIDRefArray() { };
+
+private:
+	CGTypedArray<CSphereUID, CSphereUID> m_uidCharArray;
+
+public:
+	size_t FindObj(const CObjBase* pChar) const;
+	size_t AttachObj(const CObjBase* pChar);
+	size_t InsertObj(const CObjBase* pChar, size_t i);
+	void DetachObj(size_t i);
+	size_t DetachObj(const CObjBase* pChar);
+
+	CSphereUID GetChar(size_t i) const
+	{
+		return m_uidCharArray[i];
+	}
+	size_t GetCharCount() const
+	{
+		return m_uidCharArray.GetCount();
+	}
+
+	bool IsObjIn(const CObjBase* pChar) const
+	{
+		return (FindObj(pChar) != m_uidCharArray.BadIndex());
+	}
+
+	bool IsValidIndex(size_t i) const
+	{
+		return m_uidCharArray.IsValidIndex(i);
+	}
+	inline size_t BadIndex() const
+	{
+		return m_uidCharArray.BadIndex();
+	}
+
+private:
+	CUIDRefArray(const CUIDRefArray& copy);
+	CUIDRefArray& operator=(const CUIDRefArray& other);
+};
+
+
 //***********************************************************
 
 class CResourceRefArray : public CGRefArray<CResourceLink>

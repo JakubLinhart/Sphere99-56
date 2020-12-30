@@ -2,6 +2,7 @@
 #include "common.h"
 #include "crefobj.h"
 #include "cstring.h"
+#include "CMemBlock.h"
 #include "cfile.h"
 #include "CScript.h"
 #include "CScriptObj.h"

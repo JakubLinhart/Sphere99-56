@@ -109,6 +109,10 @@ class CResourceLink : public CResourceDef
 {
 };
 
+class CResourceNamed : public CResourceLink
+{
+};
+
 //***********************************************************
 
 class CResourceRefArray : public CGRefArray<CResourceLink>

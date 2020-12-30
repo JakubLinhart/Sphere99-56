@@ -153,6 +153,8 @@ inline void CGObListRec::RemoveSelf()       // remove myself from my parent list
 template<class TYPE>
 class CGObListType : public CGObList
 {
+public:
+	CRefPtr<TYPE>& GetHead() const;
 };
 
 ///////////////////////////////////////////////////////////

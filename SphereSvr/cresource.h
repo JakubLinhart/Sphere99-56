@@ -436,6 +436,8 @@ typedef CResLockNameArray<CServerDef> CServArray;	// use CThreadLockPtr
 
 class CResourceMgr
 {
+public:
+	LPCTSTR ResourceGetName(CSphereUID rid) const { throw "not implemented"; }
 };
 
 class CSphereResourceMgr : public CResourceMgr

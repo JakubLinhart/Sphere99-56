@@ -86,7 +86,8 @@ private:
 
 public:
 	CResourceDef(CSphereUID rid);
-	LPCTSTR GetResourceName() const;
+	LPCTSTR GetResourceName() const { throw "not implemented"; }
+	virtual CGString GetName() const { throw "not implemented"; } // default to same as the DEFNAME name.
 	CSphereUID GetUIDIndex() const
 	{
 		return(m_rid);
@@ -117,7 +118,7 @@ public:
 class CResourceNamed : public CResourceLink
 {
 public:
-	LPCTSTR GetName() const;
+	CGString GetName() const { throw "not implemented"; }
 };
 
 class CUIDRefArray

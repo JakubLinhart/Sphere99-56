@@ -504,7 +504,6 @@ struct CGSortedArray : public CGTypedArray<TYPE, ARG_TYPE>
 		return AddPresorted(index, iCompareRes, pNew);
 	}
 
-	virtual int CompareKey(KEY_TYPE, TYPE) const = 0;
 	void DeleteKey(KEY_TYPE key)
 	{
 		DeleteAt(FindKey(key));
@@ -512,6 +511,8 @@ struct CGSortedArray : public CGTypedArray<TYPE, ARG_TYPE>
 #ifdef _DEBUG
 	bool TestSort() const;
 #endif
+protected:
+	virtual int CompareKey(KEY_TYPE, ARG_TYPE) const = 0;
 };
 
 template<class TYPE>

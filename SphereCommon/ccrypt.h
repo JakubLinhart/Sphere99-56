@@ -27,6 +27,18 @@ enum CONNECT_TYPE	// What type of client connection is this ?
 	CONNECT_QTY,
 };
 
+class CCompressTree
+{
+};
+
+class CCompressXOR
+{
+};
+
+class CCryptVersion
+{
+};
+
 #pragma pack(1)
 
 union CCryptDWord

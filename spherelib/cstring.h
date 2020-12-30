@@ -366,13 +366,6 @@ enum MATCH_TYPE
 	MATCH_PATTERN		///< bad pattern
 };
 
-class CGVariant
-{
-public:
-	CGVariant();
-	CGVariant(const UID_INDEX uid);
-};
-
 // extern TCHAR * Str_GetTemporary(int amount = 1);
 extern TCHAR* Str_GetTemp();
 

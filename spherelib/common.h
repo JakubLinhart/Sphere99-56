@@ -55,3 +55,8 @@ class CLogBase
 {
 
 };
+
+class CGException
+{
+
+};

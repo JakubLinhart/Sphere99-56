@@ -39,3 +39,19 @@
 
 #define ISWHITESPACE(ch)		 (isspace(ch)||(ch)==0xa0)	// isspace
 #define GETNONWHITESPACE( pStr ) while ( ISWHITESPACE( (pStr)[0] )) { (pStr)++; }
+
+enum LOGL_TYPE
+{
+	// critical level.
+	LOGL_FATAL = 1, 	// fatal error ! cannot continue.
+	LOGL_CRIT = 2, 	// critical. might not continue.
+	LOGL_ERROR = 3, 	// non-fatal errors. can continue.
+	LOGL_WARN = 4,	// strange.
+	LOGL_EVENT = 5,	// Misc major events.
+	LOGL_TRACE = 6,	// low level debug trace.
+};
+
+class CLogBase
+{
+
+};

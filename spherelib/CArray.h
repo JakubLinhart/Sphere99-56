@@ -325,7 +325,7 @@ public:
 	*/
 	void Copy(const CGTypedArray<TYPE, ARG_TYPE>* pArray);
 public:
-	inline size_t BadIndex() const { return (std::numeric_limits<size_t>::max)(); }
+	inline int BadIndex() const;
 };
 
 /**
@@ -518,11 +518,7 @@ protected:
 template<class TYPE>
 struct CHashArray : public CGSortedArray< TYPE, const TYPE&, HASH_INDEX>
 {
-	int CompareKey(HASH_INDEX index, const TYPE& obj) const
-	{
-		HASH_INDEX index2 = obj.GetUIDIndex();
-		return index > index2;
-	}
+	int CompareKey(HASH_INDEX index, const TYPE& obj) const;
 };
 
 struct CGStringArray : public CGTypedArray<CGString, const CGString&>

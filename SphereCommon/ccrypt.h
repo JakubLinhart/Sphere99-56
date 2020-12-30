@@ -208,5 +208,9 @@ public:
 	void Encrypt( BYTE * pOutput, const BYTE * pInput, int iLen );
 };
 
+class CCryptText
+{
+};
+
 #endif // _INC_CCRYPT_H
 

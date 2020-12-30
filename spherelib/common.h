@@ -4,6 +4,8 @@
 #define MAX max
 #define IMULDIV(a,b,c) (((a)*(b))/(c))	// windows MulDiv will round ! 
 
+#define ABS(n) (((n) < 0) ? (-(n)) : (n))
+
 #ifndef _UNICODE		// _WIN32
 #define TCHAR			char
 #define LPCTSTR			LPCSTR

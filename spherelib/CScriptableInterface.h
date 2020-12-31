@@ -17,9 +17,11 @@
 #define VARTYPE_BOOL		0
 #define VARTYPE_CSTRING		1
 #define VARTYPE_INT			2
-#define VARTYPE_LPCTSTR		3
-#define VARTYPE_VOID		4
-#define VARTYPE_WORD		5
+#define VARTYPE_LPSTR		3
+#define VARTYPE_LPCTSTR		4
+#define VARTYPE_UID			5
+#define VARTYPE_VOID		6
+#define VARTYPE_WORD		7
 
 #define DECLARE_LISTREC_REF(a)
 #define DECLARE_LISTREC_REF2(a)

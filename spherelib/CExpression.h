@@ -2,6 +2,8 @@
 
 #include "catom.h"
 
+#define _ISCSYM(ch) ( isalnum(ch) || (ch)=='_')	// __iscsym or __iscsymf
+
 class CGVariant
 {
 public:

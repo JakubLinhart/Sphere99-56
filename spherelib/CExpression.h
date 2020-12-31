@@ -5,35 +5,37 @@
 class CGVariant
 {
 public:
-	CGVariant() { throw "NotImplemented"; }
-	CGVariant(const UID_INDEX uid) { throw "NotImplemented"; }
+	CGVariant() { throw "not implemented"; }
+	CGVariant(const UID_INDEX uid) { throw "not implemented"; }
 
-	void SetUID(UID_INDEX uid) { throw "NotImplemented"; }
-	void SetRef(CScriptObj* val) { throw "NotImplemented"; }
-	void SetBool(bool val) { throw "NotImplemented"; }
-	void SetInt(int val) { throw "NotImplemented"; }
-	void SetDWORD(DWORD val) { throw "NotImplemented"; }
-	void SetStrFormat(LPCTSTR format, ...) { throw "NotImplemented"; }
-	void SetVoid() { throw "NotImplemented"; }
+	void SetUID(UID_INDEX uid) { throw "not implemented"; }
+	void SetRef(CScriptObj* val) { throw "not implemented"; }
+	void SetBool(bool val) { throw "not implemented"; }
+	void SetInt(int val) { throw "not implemented"; }
+	void SetDWORD(DWORD val) { throw "not implemented"; }
+	void SetStrFormat(LPCTSTR format, ...) { throw "not implemented"; }
+	void SetVoid() { throw "not implemented"; }
 
-	bool IsEmpty() const { throw "NotImplemented"; }
-	bool IsNumeric() const { throw "NotImplemented"; }
+	bool IsEmpty() const { throw "not implemented"; }
+	bool IsNumeric() const { throw "not implemented"; }
 
-	bool GetBool() const { throw "NotImplemented"; }
-	int GetInt() const { throw "NotImplemented"; }
-	DWORD GetDWORD() const { throw "NotImplemented"; }
-	DWORD GetDWORDMask(DWORD flags1, DWORD flags2) const { throw "NotImplemented"; }
-	LPCTSTR GetPSTR() const { throw "NotImplemented"; }
-	CGString& GetStr() const { throw "NotImplemented"; }
-	UID_INDEX GetUID() const { throw "NotImplemented"; }
+	bool GetBool() const { throw "not implemented"; }
+	int GetInt() const { throw "not implemented"; }
+	DWORD GetDWORD() const { throw "not implemented"; }
+	DWORD GetDWORDMask(DWORD flags1, DWORD flags2) const { throw "not implemented"; }
+	LPCTSTR GetPSTR() const { throw "not implemented"; }
+	CGString& GetStr() const { throw "not implemented"; }
+	UID_INDEX GetUID() const { throw "not implemented"; }
 
-	int MakeArraySize() const { throw "NotImplemented"; }
-	CGString& GetArrayStr(int index) const { throw "NotImplemented"; }
-	LPCTSTR GetArrayPSTR(int index) { throw "NotImplemented"; }
-	int GetArrayInt(int index) const { throw "NotImplemented"; }
-	void RemoveArrayElement(int index) { throw "NotImplemented"; }
-	void SetArrayFormat(LPCTSTR format, ...) { throw "NotImplemented"; }
-	void SetArrayElement(int index, LPCTSTR value) { throw "NotImplemented"; }
+	int MakeArraySize() const { throw "not implemented"; }
+	CGString& GetArrayStr(int index) const { throw "not implemented"; }
+	LPCTSTR GetArrayPSTR(int index) { throw "not implemented"; }
+	int GetArrayInt(int index) const { throw "not implemented"; }
+	void RemoveArrayElement(int index) { throw "not implemented"; }
+	void SetArrayFormat(LPCTSTR format, ...) { throw "not implemented"; }
+	void SetArrayElement(int index, LPCTSTR value) { throw "not implemented"; }
+
+	CGVariant& operator=(const CGString& str) { throw "not implemented"; }
 };
 
 #define CVarDefPtr CVarDef*

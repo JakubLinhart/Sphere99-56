@@ -110,7 +110,7 @@ public:
 	{
 		return(m_port);
 	}
-	void SetPortA() { throw "not implemented"; }
+	void SetPortA(WORD port) { throw "not implemented"; }
 
 	CSocketAddress() { throw "not implemented"; }
 	CSocketAddress(in_addr dwIP, WORD uPort) { throw "not implemented"; }

@@ -148,6 +148,10 @@ public:
 	static inline int GetLastError() { throw "not implemented"; }
 };
 
+class CGSocketSet
+{
+};
+
 class CLogIP
 {
 	// Keep a log of recent ip's we have talked to.

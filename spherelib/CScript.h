@@ -28,14 +28,14 @@ public:
 
 	LPCTSTR GetArgStr() { throw "not implemented"; }
 	LPCTSTR GetArgRaw() { throw "not implemented"; }
-	LPCTSTR GetArgMod() { throw "not implemented"; }
+	TCHAR* GetArgMod() { throw "not implemented"; }
 	CGVariant& GetArgVar() { throw "not implemented"; }
 	int GetArgInt() { throw "not implemented"; }
 	
 	bool FindTextHeader(LPCTSTR pszName) { throw "not implemented"; } // Find a section in the current script
 	bool FindNextSection() { throw "not implemented"; }
 	bool ReadKeyParse() { throw "not implemented"; }
-	bool ReadLine() { throw "not implemented"; }
+	virtual bool ReadLine(bool fRemoveBlanks = true) { throw "not implemented"; }
 
 	void WriteSection(LPCTSTR pszSection, ...) { throw "not implemented"; }
 	void WriteKey(LPCTSTR lpszKey, LPCTSTR lpszVal) { throw "not implemented"; }

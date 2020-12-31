@@ -21,9 +21,16 @@ public:
 	virtual bool ReadTextLine(bool fRemoveBlanks) { throw "not implemented"; } // looking for a section or reading strangly formated section. 
 	TCHAR* GetLineBuffer() { throw "not implemented"; }
 
+	bool IsKeyHead(LPCTSTR lpszKey, int iLen) { throw "not implemented"; }
+	bool IsKey(LPCTSTR lpszKey) { throw "not implemented"; }
+	bool IsSectionType(LPCTSTR lpszSectionType) { throw "not implemented"; }
 	LPCTSTR GetKey() { throw "not implemented"; }
+
 	LPCTSTR GetArgStr() { throw "not implemented"; }
+	LPCTSTR GetArgRaw() { throw "not implemented"; }
+	LPCTSTR GetArgMod() { throw "not implemented"; }
 	CGVariant& GetArgVar() { throw "not implemented"; }
+	int GetArgInt() { throw "not implemented"; }
 	
 	bool FindTextHeader(LPCTSTR pszName) { throw "not implemented"; } // Find a section in the current script
 	bool FindNextSection() { throw "not implemented"; }

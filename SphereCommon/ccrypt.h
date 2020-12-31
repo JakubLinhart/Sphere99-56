@@ -21,7 +21,6 @@ enum CONNECT_TYPE	// What type of client connection is this ?
 	CONNECT_AUTO_SERVER,	// Auto listing server request.
 	CONNECT_PEER_SERVER,	// only secure listed peer servers can talk to us like this.
 	CONNECT_TELNET,			// we are in telnet console mode.
-	CONNECT_IRC,			// we are an IRC client.
 	CONNECT_PING,			// This will be dropped immediately anyhow.
 	CONNECT_GAME_PROXY,		// Just proxying this to another server. (Where the char really is)
 	CONNECT_QTY,

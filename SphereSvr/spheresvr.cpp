@@ -68,7 +68,6 @@
 #include "eh.h"
 #endif
 #include <crtdbg.h>
-#include "../sphereirc/circserver.h"
 
 extern "C"
 {
@@ -583,15 +582,6 @@ SPHEREERR_TYPE Sphere_InitServer( int argc, char *argv[] )
 	}
 
 	Debug_CheckPoint();
-	if ( g_Cfg.m_fUseIRC )
-	{
-		if( ! g_IRCLocalServer.Init())
-		{
-			g_Cfg.m_fUseIRC = false;
-		}
-	}
-
-	Debug_CheckPoint();
 
 	g_Log.Event( LOG_GROUP_INIT, LOGL_TRACE, g_Serv.GetStatusString( 0x24 ));
 	g_Log.Event( LOG_GROUP_INIT, LOGL_TRACE, _TEXT("Startup complete. items=%d, chars=%d" LOG_CR), g_Serv.StatGet(SERV_STAT_ITEMS), g_Serv.StatGet(SERV_STAT_CHARS));
@@ -651,11 +641,6 @@ SPHEREERR_TYPE Sphere_OnTick()
 		g_World.OnTick();
 		g_Serv.OnTick();
 
-		if ( g_Cfg.m_fUseIRC )
-		{
-			g_Serv.m_Profile.SwitchTask( PROFILE_IRC );
-			g_IRCLocalServer.OnTick();
-		}
 #ifndef _DEBUG
 	}
 	SPHERE_LOG_TRY_CATCH( "Main Loop" )

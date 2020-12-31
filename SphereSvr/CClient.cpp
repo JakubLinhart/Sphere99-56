@@ -3,7 +3,6 @@
 // Copyright 1996 - 2001 Menace Software (www.menasoft.com)
 //
 #include "stdafx.h"	// predef header.
-#include "../sphereirc/circserver.h"
 
 /////////////////////////////////////////////////////////////////
 // -CClient stuff.
@@ -101,11 +100,6 @@ void CClient::DeleteThis()
 	if ( ! PeerName.IsSameIP( g_Cfg.m_RegisterServer ))
 	{
 		g_Log.Event( LOG_GROUP_CLIENTS, LOGL_TRACE, "%x:Client disconnected [Total:%i]" LOG_CR, m_Socket.GetSocket(), g_Serv.StatGet(SERV_STAT_CLIENTS)-1 );
-	}
-
-	if ( m_ConnectType == CONNECT_IRC )
-	{
-		g_IRCLocalServer.GameClientQuit( this, "lost connection" );
 	}
 
 	CharDisconnect();	// am i a char in game ?

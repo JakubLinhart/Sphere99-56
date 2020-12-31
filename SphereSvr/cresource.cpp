@@ -37,7 +37,6 @@ CSphereResourceMgr::CSphereResourceMgr()
 	m_RegisterServer2.SetPort( SPHERE_DEF_PORT );
 
 	m_fAllowKeyLockdown = true;
-	m_fUseIRC = false;
 	m_iPollServers = 15*60*TICKS_PER_SEC;
 	m_iMapCacheTime = 2*60*TICKS_PER_SEC;
 	m_iSectorSleepMask = _1BITMASK(10)-1;

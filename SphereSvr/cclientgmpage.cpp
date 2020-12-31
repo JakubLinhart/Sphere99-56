@@ -3,7 +3,6 @@
 // Copyright 1996 - 2001 Menace Software (www.menasoft.com)
 //
 #include "stdafx.h"	// predef header.
-#include "../sphereirc/circserver.h"
 
 /////////////////////////////////////////////
 

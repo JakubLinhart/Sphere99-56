@@ -6,7 +6,6 @@
 //
 
 #include "stdafx.h"	// predef header.
-#include "../sphereirc/circserver.h"
 
 BYTE CClient::sm_xCompress_Buffer[UO_MAX_EVENT_BUFFER];	// static
 CCompressTree CClient::sm_xComp;
@@ -912,22 +911,6 @@ bool CClient::OnRxUnk( BYTE* pData, int iLen ) // Receive message from client
 			}
 		}
 
-		// Is it IRC ?
-		if ( ! memcmp( pData, "NICK ", 5 ) ||
-			! memcmp( pData, "PASS ", 5 ) ||
-			! memcmp( pData, "SERVER ", 7 ) ||
-			! memcmp( pData, "USER ", 5 ))
-		{
-			m_ConnectType = CONNECT_IRC;
-
-			if ( ! CheckLogIP())
-				return( false );
-			if ( ! g_Cfg.m_fUseIRC )
-				return( false );
-			// leave the connection open ?
-			return( g_IRCLocalServer.OnRequest(this, pData, iLen ));
-		}
-
 		// Is it a HTTP request ?
 		// Is it HTTP post ?
 		if ( ! memcmp( pData, "POST /", 6 ) ||
@@ -992,8 +975,6 @@ bool CClient::xRecvData() // Receive message from client
 		return( xProcessClientSetup( &Event, iCountNew ));
 
 #ifdef SPHERE_GAME_SERVER
-	case CONNECT_IRC:
-		return( g_IRCLocalServer.OnRequest( this, Event.m_Raw, iCountNew ));
 	case CONNECT_HTTP:
 		// we are serving web pages to this client.
 		return( OnRxWebPageRequest( Event.m_Raw, iCountNew ));

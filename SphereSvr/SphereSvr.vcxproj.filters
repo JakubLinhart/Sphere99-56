@@ -41,9 +41,6 @@
       <UniqueIdentifier>{3c64ef78-1c9f-47af-8272-e0d62f566476}</UniqueIdentifier>
       <Extensions>htt</Extensions>
     </Filter>
-    <Filter Include="IRC Files">
-      <UniqueIdentifier>{34dbc802-8328-4a9d-abb7-2f5843bd8b18}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scripting Tables">
       <UniqueIdentifier>{8941e9ae-e11c-43d9-a555-49c57e23c9b9}</UniqueIdentifier>
       <Extensions>tbl</Extensions>
@@ -266,78 +263,6 @@
     <ClCompile Include="CResourceTest.cpp">
       <Filter>SphereResource</Filter>
     </ClCompile>
-    <ClCompile Include="..\SphereIRC\CIRCServConf.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\CIRCServer.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\CIRCServer2.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\hash.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCBase64.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCChanServ.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCCloak.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCCommands.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCCommonServ.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCConfig.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCCRule.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCHelpServ.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCMemoServ.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCModes.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCNickServ.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCOperServ.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCPacket.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCProcess.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCRootServ.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCSendTo.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCServices.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCTools.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\IRCWhoWas.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SphereIRC\SCache.cpp">
-      <Filter>IRC Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\spherelib\CPointBase.cpp">
       <Filter>SphereLib</Filter>
     </ClCompile>
@@ -426,36 +351,6 @@
     </ClInclude>
     <ClInclude Include="cresource.h">
       <Filter>SphereResource</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\CIRCServer.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\hash.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\IRCBase64.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\IRCCRule.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\IRCModes.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\IRCSendTo.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\IRCServices.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\IRCTools.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\IRCWhoWas.h">
-      <Filter>IRC Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SphereIRC\SCache.h">
-      <Filter>IRC Files</Filter>
     </ClInclude>
     <ClInclude Include="..\spherelib\common.h">
       <Filter>SphereLib</Filter>

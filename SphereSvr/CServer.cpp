@@ -429,7 +429,6 @@ void CServer::ListClients( CScriptConsole* pSrc ) const
 			switch ( pClient->m_ConnectType )
 			{
 			case CONNECT_TELNET:	pszState = "TelNet"; break;
-			case CONNECT_IRC:		pszState = "IRC"; break;
 			case CONNECT_HTTP:		pszState = "Web"; break;
 			default: pszState = "NOT LOGGED IN"; break;
 			}
@@ -1243,8 +1242,7 @@ void CServer::SocketsReceive() // Check for messages from the clients
 
 			if ( g_Cfg.m_iDeadSocketTime &&
 				iLastEventDiff > g_Cfg.m_iDeadSocketTime &&
-				(	pClient->m_ConnectType != CONNECT_TELNET &&
-					pClient->m_ConnectType != CONNECT_IRC		)
+				(	pClient->m_ConnectType != CONNECT_TELNET )
 				)
 			{
 				// We have not talked in several minutes.

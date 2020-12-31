@@ -619,7 +619,6 @@ public:
 	// Begin INI file options.
 
 	// Server control features.
-	bool m_fUseIRC;
 	int  m_iPollServers;		// background polling of peer servers. (minutes)
 	CGString m_sMainLogServerDir;	// This is the main log server Directory. Will list any server that polls.
 	int  m_iMapCacheTime;		// Time in sec to keep unused map data.

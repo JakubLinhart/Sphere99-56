@@ -25,14 +25,19 @@ public:
     {
         return(m_lPrivateTime - time.m_lPrivateTime);
     }
+    int GetCacheAge() const { throw "not implemented"; }
     void Init()
     {
         m_lPrivateTime = 0;
     }
+    void InitTime() { throw "not implemented"; }
     void InitTime(long lTimeBase)
     {
         m_lPrivateTime = lTimeBase;
     }
+    void InitTimeCurrent() { throw "not implemented"; }
+    void InitTimeCurrent(long lTimeBase) { throw "not implemented"; }
+    
     bool IsTimeValid() const
     {
         return(m_lPrivateTime ? true : false);
@@ -77,6 +82,8 @@ public:
     {
         return(m_lPrivateTime >= time.m_lPrivateTime);
     }
+    bool AdvanceTime();
+
     static CServTime GetCurrentTime();
 };
 
@@ -164,6 +171,7 @@ public:
     {
         return GetLocalTm(NULL)->tm_mday;
     }
+    int GetTotalDays() const { throw "not implemented"; }
     int GetHour() const
     {
         return GetLocalTm(NULL)->tm_hour;
@@ -192,6 +200,7 @@ public:
     {
         m_time = -1;
     }
+    void InitTimeCurrent() { throw "not implemented"; }
     bool IsTimeValid() const
     {
         return((m_time && m_time != -1) ? true : false);
@@ -201,6 +210,8 @@ public:
         // Needs to be more consistant than accurate. just for compares.
         return((GetYear() * 366) + (GetMonth() * 31) + GetDay());
     }
+
+    static int GetTimeZoneOffset() { throw "not implemented"; }
 };
 
 #endif // _AFXDLL

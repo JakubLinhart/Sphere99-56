@@ -7,6 +7,8 @@
 
 #include <time.h>
 
+#define CTIME_FORMAT_DEFAULT "%Y/%m/%d %H:%M:%S"
+
 #define CServTimeBase CServTime
 #define CServTimeMaster CServTime
 class CServTime

@@ -699,7 +699,7 @@ int CItemStone::FixWeirdness()
 	// Make sure actual wars are mutual.
 
 	iQty = m_WeDeclared.GetSize();
-	for ( i=0; i<iQty; i++ )
+	for ( int i=0; i<iQty; i++ )
 	{
 		CItemStonePtr pStone = REF_CAST(CItemStone,g_World.ItemFind(m_WeDeclared.GetAt(i)));
 		if ( pStone == NULL )
@@ -722,7 +722,7 @@ int CItemStone::FixWeirdness()
 	}
 
 	iQty = m_AtWar.GetSize();
-	for ( i=0; i<iQty; i++ )
+	for ( int i=0; i<iQty; i++ )
 	{
 		CItemStonePtr pStone = REF_CAST(CItemStone,g_World.ItemFind(m_AtWar.GetAt(i)));
 		if ( pStone == NULL )
@@ -744,7 +744,7 @@ int CItemStone::FixWeirdness()
 		}
 	}
 
-	for ( i=0; i<m_TheyDeclared.GetSize(); i++ )
+	for ( int i=0; i<m_TheyDeclared.GetSize(); i++ )
 	{
 		CItemStonePtr pStone = REF_CAST(CItemStone,g_World.ItemFind(m_TheyDeclared.GetAt(i)));
 		if ( pStone == NULL ||

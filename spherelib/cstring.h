@@ -312,6 +312,10 @@ public:
 	{
 		return(GetPtr());
 	}
+	operator CString&() const
+	{
+		return CString(GetPtr());
+	}
 	/**
 	* @brief Concatenate CGString with a string.
 	* @param psz string to concatenate with.

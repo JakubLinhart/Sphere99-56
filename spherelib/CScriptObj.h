@@ -1,5 +1,7 @@
 #pragma once
 
+#define SCRIPT_EXT ".scp"
+
 #define CSCRIPT_ARGCHK_VAL 1000
 #define CSCRIPT_PARSE_HTML 1
 #define CSCRIPT_PARSE_NBSP 2

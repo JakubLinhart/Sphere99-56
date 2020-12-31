@@ -49,4 +49,7 @@ public:
 		pt.y = m_y;
 		return pt;
 	}
+
+	LPCTSTR v_Get() const { throw "not implemented"; }
+	void v_Get(CGVariant& vVal) const { throw "not implemented"; }
 };

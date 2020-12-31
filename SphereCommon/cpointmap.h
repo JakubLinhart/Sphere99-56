@@ -116,9 +116,6 @@ struct CPointMap : public CPointMapBase
 	}
 
 	bool IsSameMapPlane(BYTE mapplane) const { return m_mapplane == mapplane; }
-
-	LPCTSTR v_Get() const { throw "not implemented"; }
-	void v_Get(CGVariant& vVal) const { throw "not implemented"; }
 };
 
 

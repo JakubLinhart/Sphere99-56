@@ -436,6 +436,12 @@
     <ClInclude Include="..\spherelib\cregistry.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
+    <ClInclude Include="..\spherelib\cwindow.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\spherelib\cfiledir.h">
+      <Filter>SphereLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="spheresvr.rc">

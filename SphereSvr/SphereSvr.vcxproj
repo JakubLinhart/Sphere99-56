@@ -554,6 +554,7 @@
     <ClInclude Include="..\spherelib\CAtom.h" />
     <ClInclude Include="..\spherelib\CExpression.h" />
     <ClInclude Include="..\spherelib\cfile.h" />
+    <ClInclude Include="..\spherelib\cfiledir.h" />
     <ClInclude Include="..\spherelib\CMemBlock.h" />
     <ClInclude Include="..\spherelib\CNTService.h" />
     <ClInclude Include="..\spherelib\common.h" />
@@ -576,6 +577,7 @@
     <ClInclude Include="..\spherelib\CThread.h" />
     <ClInclude Include="..\spherelib\ctime.h" />
     <ClInclude Include="..\spherelib\CValueRange.h" />
+    <ClInclude Include="..\spherelib\cwindow.h" />
     <ClInclude Include="..\SphereLib\spherelib.h" />
     <ClInclude Include="CChat.h" />
     <ClInclude Include="cclient.h" />

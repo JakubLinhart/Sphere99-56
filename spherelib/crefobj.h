@@ -28,6 +28,10 @@ public:
         m_pointer = rhs.m_pointer;
         return *this;
     }
+
+    template <class U>
+    CRefPtr& operator=(U* rhs) { return CRefPtr<T>(static_cast<T*>(rhs)); }
+
     T& operator*() { return *m_pointer; }
     T* operator->() const { return m_pointer; }
     operator T* () const { return m_pointer; }

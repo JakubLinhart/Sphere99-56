@@ -139,6 +139,19 @@ public:
 	size_t InsertObj(const CObjBase* pChar, size_t i);
 	void DetachObj(size_t i);
 	size_t DetachObj(const CObjBase* pChar);
+	size_t GetSize() const { return m_uidCharArray.GetSize(); }
+
+	CSphereUID GetAt(size_t i) const { throw "not implemented"; }
+
+	void AttachUID(const CSphereUID uid) { throw "not implemented"; }
+	void RemoveAll() { throw "not implemented"; }
+	void RemoveAt(size_t i) { throw "not implemented"; }
+	void CopyArray(const CUIDRefArray& arr) { throw "not implemented"; }
+
+	bool IsUIDIn(const CSphereUID uid) { throw "not implemented"; }
+
+	void s_WriteObjs(CScript& s, LPCTSTR pszKey) { throw "not implemented"; }
+	HRESULT s_MethodObjs(CGVariant& vArgs, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; }
 
 	CSphereUID GetChar(size_t i) const
 	{

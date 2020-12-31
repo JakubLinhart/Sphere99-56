@@ -53,6 +53,8 @@ enum LOGL_TYPE
 	LOGL_TRACE = 6,	// low level debug trace.
 };
 
+#define LOG_GROUP_TYPE DWORD
+
 #define HRES_INVALID_HANDLE -1
 #define HRES_PRIVILEGE_NOT_HELD -2
 #define HRES_BAD_ARGUMENTS -3
@@ -73,6 +75,7 @@ enum LOGL_TYPE
 class CLogBase
 {
 public:
+	virtual void Event(LOG_GROUP_TYPE dwGroupMask, LOGL_TYPE level, const char* pszMsg, ...) { throw "not implemented"; }
 	void EventEvent(LPCTSTR pszFormat, ...) { throw "not implemented"; }
 	void EventTrace(LPCTSTR pszFormat, ...) { throw "not implemented"; }
 	void EventError(LPCTSTR pszFormat, ...) { throw "not implemented"; }

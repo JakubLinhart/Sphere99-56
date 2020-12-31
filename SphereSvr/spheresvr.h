@@ -142,7 +142,6 @@ struct CLog : public CFileText, public CLogBase, public CThreadLockableObj
 	// Just use CRefPtr to thread lock this.
 	// subject matter. (severity level is first 4 bits, LOGL_EVENT)
 	// Similar to HRESULT (high bit=critical error, 4bit=reserve, 11bit=facility, 16bits=code)
-#define LOG_GROUP_TYPE DWORD
 #define	LOG_GROUP_ACCOUNTS		0x00080
 #define	LOG_GROUP_INIT			0x00100
 #define	LOG_GROUP_CLIENTS		0x00400
@@ -174,6 +173,16 @@ public:
 
 	virtual int EventStr( LOG_GROUP_TYPE dwGroupMask, LOGL_TYPE level, const char* pszMsg );
 	void _cdecl CatchEvent( CGException* pErr, const char* pszCatchContext, ...  );
+
+	bool IsLogged(LOGL_TYPE level) const { throw "not implemented"; }
+	bool IsLogged(LOG_GROUP_TYPE dwGroupMask, LOGL_TYPE level) const { throw "not implemented"; }
+	bool IsLoggedGroupMask(LOG_GROUP_TYPE dwGroupMask) const { throw "not implemented"; }
+
+	void SetLogLevel(LOGL_TYPE level) { throw "not implemented"; }
+	void SetLogGroupMask(LOG_GROUP_TYPE dwGroupMask) { throw "not implemented"; }
+	
+	LOGL_TYPE GetLogLevel() const { throw "not implemented"; }
+	LOG_GROUP_TYPE GetLogGroupMask() const { throw "not implemented"; }
 
 public:
 	bool m_fLockOpen;	// resource is locked open ?

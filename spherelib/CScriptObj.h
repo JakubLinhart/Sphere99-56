@@ -1,5 +1,9 @@
 #pragma once
 
+#define CSCRIPT_ARGCHK_VAL 1000
+#define CSCRIPT_PARSE_HTML 1
+#define CSCRIPT_PARSE_NBSP 2
+
 enum TRIGRET_TYPE	// trigger script returns.
 {
 	TRIGRET_RET_FALSE = 0,	// default return. (script might not have been handled)

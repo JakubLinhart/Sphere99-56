@@ -86,5 +86,10 @@ extern CLogBase* g_pLog;
 
 class CGException
 {
+public:
+	CGException() { throw "not implemented"; }
+	CGException(LOGL_TYPE level, int lastError, LPCTSTR pszMessage) { throw "not implemented"; }
 
+	LOGL_TYPE GetSeverity() const { throw "not implemented"; }
+	void GetErrorMessage(char* pBuf, int iBufLen) { throw "not implemented"; }
 };

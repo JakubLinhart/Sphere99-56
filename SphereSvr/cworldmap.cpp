@@ -144,9 +144,9 @@ CPointMap CWorld::FindItemTypeNearby( const CPointMap& pt, IT_TYPE iType, int iD
 	rect.SetRect( pt.m_x - iDistance, pt.m_y - iDistance,
 		pt.m_x + iDistance + 1, pt.m_y + iDistance + 1 );
 
-	for (int x = rect.left; x < rect.right; x++ )
+	for (int x = rect.m_left; x < rect.m_right; x++ )
 	{
-		for ( int y = rect.top; y < rect.bottom; y++ )
+		for ( int y = rect.m_top; y < rect.m_bottom; y++ )
 		{
 			CPointMap ptTest( x, y, pt.m_z, pt.m_mapplane );
 			const CMulMapMeter* pMeter = GetMapMeter( ptTest );

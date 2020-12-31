@@ -1778,10 +1778,10 @@ int CChar::Skill_Cartography( CSkillDef::T_TYPE_ stage )
 
 		// Now create the map
 		pItem = CItem::CreateScript( ITEMID_MAP, this );
-		pItem->m_itMap.m_top = rect.top;
-		pItem->m_itMap.m_left = rect.left;
-		pItem->m_itMap.m_bottom = rect.bottom;
-		pItem->m_itMap.m_right = rect.right;
+		pItem->m_itMap.m_top = rect.m_top;
+		pItem->m_itMap.m_left = rect.m_left;
+		pItem->m_itMap.m_bottom = rect.m_bottom;
+		pItem->m_itMap.m_right = rect.m_right;
 		ItemBounce( pItem );
 		return( 0 );
 	}

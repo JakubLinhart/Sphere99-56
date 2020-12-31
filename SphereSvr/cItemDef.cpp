@@ -1169,14 +1169,14 @@ HRESULT CItemDefMulti::AddComponent(CGVariant& vVal)
 int CItemDefMulti::GetMaxDist() const
 {
 	// Get Max radius.
-	int iDist = ABS( m_rect.left );
-	int iDistTmp = ABS( m_rect.top );
+	int iDist = ABS( m_rect.m_left );
+	int iDistTmp = ABS( m_rect.m_top );
 	if ( iDistTmp > iDist )
 		iDist = iDistTmp;
-	iDistTmp = ABS( m_rect.right + 1 );
+	iDistTmp = ABS( m_rect.m_right + 1 );
 	if ( iDistTmp > iDist )
 		iDist = iDistTmp;
-	iDistTmp = ABS( m_rect.bottom + 1 );
+	iDistTmp = ABS( m_rect.m_bottom + 1 );
 	if ( iDistTmp > iDist )
 		iDist = iDistTmp;
 	return( iDist+1 );

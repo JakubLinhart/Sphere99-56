@@ -2738,10 +2738,10 @@ void CClient::addMap( CItemMap* pMap )
 	cmd.MapDisplay.m_Cmd = XCMD_MapDisplay;
 	cmd.MapDisplay.m_UID = pMap->GetUID();
 	cmd.MapDisplay.m_Gump_Corner = GUMP_MAP_2_NORTH;
-	cmd.MapDisplay.m_x_ul = rect.left;
-	cmd.MapDisplay.m_y_ul = rect.top;
-	cmd.MapDisplay.m_x_lr = rect.right;
-	cmd.MapDisplay.m_y_lr = rect.bottom;
+	cmd.MapDisplay.m_x_ul = rect.m_left;
+	cmd.MapDisplay.m_y_ul = rect.m_top;
+	cmd.MapDisplay.m_x_lr = rect.m_right;
+	cmd.MapDisplay.m_y_lr = rect.m_bottom;
 	cmd.MapDisplay.m_xsize = 0xc8;	// ??? we could make bigger maps ?
 	cmd.MapDisplay.m_ysize = 0xc8;
 	xSendPkt( &cmd, sizeof( cmd.MapDisplay ));

@@ -440,9 +440,9 @@ int CClient::Cmd_Extract( CScript* pScript, CRectMap &rect, int& zlowest )
 	CPointMap ptCtr = rect.GetCenter();
 
 	int iCount = 0;
-	for ( int mx = rect.left; mx <= rect.right; mx++)
+	for ( int mx = rect.m_left; mx <= rect.m_right; mx++)
 	{
-		for ( int my = rect.top; my <= rect.bottom; my++)
+		for ( int my = rect.m_top; my <= rect.m_bottom; my++)
 		{
 			CPointMap ptCur( mx, my );
 			const CMulMapBlock* pBlock = g_World.GetMapBlock( ptCur );
@@ -700,9 +700,9 @@ bool CClient::OnTarg_Tile( CObjBase* pObj, const CPointMap& pt )
 
 			PNT_Z_TYPE z = piArgs[0];	// z height is the first arg.
 			int iArg = 0;
-			for ( int mx = rect.left; mx <= rect.right; mx++)
+			for ( int mx = rect.m_left; mx <= rect.m_right; mx++)
 			{
-				for( int my = rect.top; my <= rect.bottom; my++)
+				for( int my = rect.m_top; my <= rect.m_bottom; my++)
 				{
 					if ( ++iArg >= iArgQty )
 						iArg = 1;
@@ -1593,12 +1593,12 @@ CItemPtr CClient::OnTarg_Use_Multi( const CItemDef* pItemDef, const CPointMap& p
 		rect.OffsetRect( pt.m_x, pt.m_y );
 		CPointMap ptn = pt;
 
-		int x=rect.left;
-		for ( ; x <=rect.right; x++ )
+		int x=rect.m_left;
+		for ( ; x <=rect.m_right; x++ )
 		{
 			ptn.m_x = x;
-			int y=rect.top;
-			for ( ; y<=rect.bottom; y++ )
+			int y=rect.m_top;
+			for ( ; y<=rect.m_bottom; y++ )
 			{
 				ptn.m_y = y;
 

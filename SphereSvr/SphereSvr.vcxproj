@@ -562,6 +562,7 @@
     <ClInclude Include="..\spherelib\CQueueBytes.h" />
     <ClInclude Include="..\spherelib\crefobj.h" />
     <ClInclude Include="..\spherelib\cregion.h" />
+    <ClInclude Include="..\spherelib\cregistry.h" />
     <ClInclude Include="..\spherelib\CResourceObj.h" />
     <ClInclude Include="..\spherelib\CScript.h" />
     <ClInclude Include="..\spherelib\CScriptableInterface.h" />

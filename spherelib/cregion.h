@@ -74,6 +74,38 @@ public:
 		if (m_bottom > cy)
 			m_bottom = cy;
 	}
+
+	void OffsetRect(int x, int y)
+	{
+		m_left += x;
+		m_top += y;
+		m_right += x;
+		m_bottom += y;
+	}
+
+	void UnionPoint(int x, int y)
+	{
+		// Inflate this rect to include this point.
+		// NON inclusive rect! 
+		if (x < m_left) m_left = x;
+		if (y < m_top) m_top = y;
+		if (x >= m_right) m_right = x + 1;
+		if (y >= m_bottom) m_bottom = y + 1;
+	}
+
+	void SetRect(int left, int top, int right, int bottom)
+	{
+		m_left = left;
+		m_top = top;
+		m_right = right;
+		m_bottom = bottom;
+		NormalizeRect();
+	}
+
+	bool PtInRect(CGPointBase point) { throw "not implemented"; }
+
+
+	static DIR_TYPE GetDirStr(LPCTSTR pszDir) { throw "not implemented"; }
 };
 
 class CGRegion
@@ -87,4 +119,12 @@ public:
 		m_rectUnion.SetRectEmpty();
 		m_Rects.Empty();
 	}
+
+	virtual bool AddRegionRect(const CGRect& rect) { throw "not implemented"; }
+	virtual bool IsOverlapped(const CGRect& rect) const { throw "not implemented"; }
+	bool IsEqualRegion(const CGRegion* pRegionTest) const { throw "not implemented"; }
+
+	CGPointBase GetRegionCorner(DIR_TYPE dir) const { throw "not implemented"; }
+	inline DIR_TYPE GetDirTurn(DIR_TYPE dir, int offset) { throw "not implemented"; }
+	bool PtInRegion(CGPointBase pt) { throw "not implemented"; }
 };

@@ -140,10 +140,10 @@ CSectorPtr CRectMap::GetSector( int i ) const	// get all the sectors that make u
 
 	// Align new rect.
 	CRectMap rect;
-	rect.left = left &~ (SECTOR_SIZE_X-1);
-	rect.right = ( right | (SECTOR_SIZE_X-1)) + 1;
-	rect.top = top &~ (SECTOR_SIZE_Y-1);
-	rect.bottom = ( bottom | (SECTOR_SIZE_Y-1)) + 1;
+	rect.m_left = m_left &~ (SECTOR_SIZE_X-1);
+	rect.m_right = ( m_right | (SECTOR_SIZE_X-1)) + 1;
+	rect.m_top = m_top &~ (SECTOR_SIZE_Y-1);
+	rect.m_bottom = ( m_bottom | (SECTOR_SIZE_Y-1)) + 1;
 	rect.NormalizeRectMax();
 
 	int width = (rect.Width()) / SECTOR_SIZE_X;
@@ -151,7 +151,7 @@ CSectorPtr CRectMap::GetSector( int i ) const	// get all the sectors that make u
 	int height = (rect.Height()) / SECTOR_SIZE_Y;
 	ASSERT(height<=SECTOR_ROWS);
 
-	int iBase = (( rect.top / SECTOR_SIZE_Y ) * SECTOR_COLS ) + ( rect.left / SECTOR_SIZE_X );
+	int iBase = (( rect.m_top / SECTOR_SIZE_Y ) * SECTOR_COLS ) + ( rect.m_left / SECTOR_SIZE_X );
 
 	if ( i >= ( height * width ))
 	{

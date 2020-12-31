@@ -56,6 +56,8 @@ struct CPointMapBase : public CGPointBase
 	{
 		return( GetDistZ(pt) / (PLAYER_HEIGHT/2) );
 	}
+	void Move(DIR_TYPE dir) { throw "not implemented"; }
+	void MoveN(DIR_TYPE dir, int amount) { throw "not implemented"; }
 };
 
 struct CPointMap : public CPointMapBase
@@ -112,6 +114,11 @@ struct CPointMap : public CPointMapBase
 
 		return hash;
 	}
+
+	bool IsSameMapPlane(BYTE mapplane) const { return m_mapplane == mapplane; }
+
+	LPCTSTR v_Get() const { throw "not implemented"; }
+	void v_Get(CGVariant& vVal) const { throw "not implemented"; }
 };
 
 

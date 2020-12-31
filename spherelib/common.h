@@ -39,6 +39,12 @@
 #define _1BITMASK(b)    (((size_t)1) << (b))
 #endif
 
+#ifndef _BITMASK // xstddef.h?
+#define _BITMASK(b) 	(1<<(b))
+#define _ISSET(w,b) 	((w)&_BITMASK(b))
+#define _ISCLR(w,b) 	(!_ISSET(w,b))
+#endif
+
 #define ISWHITESPACE(ch)		 (isspace(ch)||(ch)==0xa0)	// isspace
 #define GETNONWHITESPACE( pStr ) while ( ISWHITESPACE( (pStr)[0] )) { (pStr)++; }
 

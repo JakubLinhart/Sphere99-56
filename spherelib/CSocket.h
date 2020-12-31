@@ -13,6 +13,7 @@ typedef int socklen_t;
 
 struct CSocketAddressIP : public in_addr
 {
+public:
 	// Just the ip address. Not the port.
 #define SOCKET_LOCAL_ADDRESS 0x0100007f
 	// INADDR_ANY              (u_long)0x00000000
@@ -82,24 +83,6 @@ struct CSocketAddressIP : public in_addr
 		// NOTE: This is a blocking call !!!!
 		return SetHostStruct(gethostbyname(pszHostName));
 	}
-	bool GetHostStr(TCHAR* pszHostName, int iLenMax)
-	{
-		// try to resolve the host name with DNS for the true ip address.
-		// NOTE: This is a blocking call !!!!
-		ASSERT(pszHostName);
-		struct hostent* pHost = GetHostStruct();
-		if (pHost)
-		{
-			strcpy(pszHostName, pHost->h_name);
-			return(true);
-		}
-		else
-		{
-			// See CGSocket::GetLastError();
-			strcpy(pszHostName, GetAddrStr());
-			return(false);
-		}
-	}
 	bool operator==(CSocketAddressIP ip) const
 	{
 		return(IsSameIP(ip));
@@ -114,12 +97,55 @@ struct CSocketAddressIP : public in_addr
 	}
 };
 
-struct CSocketNamedAddr
+struct CSocketAddress : public CSocketAddressIP
 {
+	// IP plus port.
+	// similar to sockaddr_in but without the waste.
+	// use this instead.
+private:
+	WORD m_port;
+
+public:
+	WORD GetPort() const
+	{
+		return(m_port);
+	}
+	void SetPortA() { throw "not implemented"; }
+
+	CSocketAddress() { throw "not implemented"; }
+	CSocketAddress(in_addr dwIP, WORD uPort) { throw "not implemented"; }
+};
+
+struct CSocketNamedAddr : public CSocketAddress
+{
+	bool IsEmptyHost() const { throw "not implemented"; }
+	void EmptyHost() { throw "not implemented"; }
+	LPCTSTR GetHostName() { throw "not implemented"; }
+	void EmptyAddr() { throw "not implemented"; }
+	void SetHostPortStr(LPCTSTR pszHost) { throw "not implemented"; }
+	bool UpdateFromHostName() { throw "not implemented"; }
 };
 
 class CGSocket
 {
+public:
+	CSocketAddress GetPeerName() const { throw "not implemented"; }
+	SOCKET Detach() { throw "not implemented"; }
+	SOCKET GetSocket() const { throw "not implemented"; }
+	CSocketAddress& GetSockName() const { throw "not implemented"; }
+	bool IsOpen() const { throw "not implemented"; }
+	bool Socket() const { throw "not implemented"; }
+	bool ConnectAddr(CSocketNamedAddr& addr) const { throw "not implemented"; }
+	int Send(const void* pData, int len) const { throw "not implemented"; }
+	int Receive(void* pData, int len, int flags = 0) const { throw "not implemented"; }
+	void Close() { throw "not implemented"; }
+	int Bind(CSocketAddress& pSockAddrIn) { throw "not implemented"; }
+	int Listen() { throw "not implemented"; }
+	int IOCtl(long icmd, DWORD* pdwArgs) { throw "not implemented"; }
+	int GetSockOpt(int nOptionName, void* optval, int* poptlen, int nLevel = SOL_SOCKET) const { throw "not implemented"; }
+	int Accept(CGSocket& socket, CSocketAddress& addr) { throw "not implemented"; }
+
+	static inline int GetLastError() { throw "not implemented"; }
 };
 
 class CLogIP

@@ -103,7 +103,7 @@ public:
 	}
 
 	bool PtInRect(CGPointBase point) { throw "not implemented"; }
-
+	LPCTSTR WriteRectStr() { throw "not implemented"; }
 
 	static DIR_TYPE GetDirStr(LPCTSTR pszDir) { throw "not implemented"; }
 };
@@ -120,6 +120,8 @@ public:
 		m_Rects.Empty();
 	}
 
+	int GetRegionRectCount() const { throw "not implemented"; }
+	CGRect& GetRegionRect(int i) { throw "not implemented"; }
 	virtual bool AddRegionRect(const CGRect& rect) { throw "not implemented"; }
 	virtual bool IsOverlapped(const CGRect& rect) const { throw "not implemented"; }
 	bool IsEqualRegion(const CGRegion* pRegionTest) const { throw "not implemented"; }

@@ -9,6 +9,8 @@ class CGVariant
 public:
 	CGVariant() { throw "not implemented"; }
 	CGVariant(const UID_INDEX uid) { throw "not implemented"; }
+	CGVariant(LPCTSTR pszValue) { throw "not implemented"; }
+	CGVariant(VARTYPE type, void* rid) { throw "not implemented"; }
 
 	void SetUID(UID_INDEX uid) { throw "not implemented"; }
 	void SetRef(CScriptObj* val) { throw "not implemented"; }
@@ -20,6 +22,7 @@ public:
 
 	bool IsEmpty() const { throw "not implemented"; }
 	bool IsNumeric() const { throw "not implemented"; }
+	bool IsVoid() const { throw "not implemented"; }
 
 	bool GetBool() const { throw "not implemented"; }
 	int GetInt() const { throw "not implemented"; }
@@ -29,6 +32,8 @@ public:
 	CGString& GetStr() const { throw "not implemented"; }
 	UID_INDEX GetUID() const { throw "not implemented"; }
 
+	int CompareData(CGVariant& other) const { throw "not implemented"; }
+
 	int MakeArraySize() const { throw "not implemented"; }
 	CGString& GetArrayStr(int index) const { throw "not implemented"; }
 	LPCTSTR GetArrayPSTR(int index) { throw "not implemented"; }
@@ -36,8 +41,12 @@ public:
 	void RemoveArrayElement(int index) { throw "not implemented"; }
 	void SetArrayFormat(LPCTSTR format, ...) { throw "not implemented"; }
 	void SetArrayElement(int index, LPCTSTR value) { throw "not implemented"; }
+	CGVariant& GetArrayElement(int index) { throw "not implemented"; }
 
 	CGVariant& operator=(const CGString& str) { throw "not implemented"; }
+	operator LPCTSTR() { throw "not implemented"; }
+	operator char*() { throw "not implemented"; }
+	operator int() { throw "not implemented"; }
 };
 
 #define CVarDefPtr CVarDef*

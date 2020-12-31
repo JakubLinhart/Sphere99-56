@@ -10,6 +10,13 @@ class CThreadLockableObj
 {
 };
 
+class CThreadLockPtr
+{
+public:
+	CThreadLockPtr(CThreadLockableObj* pLockThis) { throw "not implemented"; }
+	CThreadLockPtr() { throw "not implemented"; }
+};
+
 class CThread	// basic multi tasking functionality.
 {
 };

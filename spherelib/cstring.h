@@ -11,15 +11,7 @@
 
 #define CSTRING_MAX_LEN 8*1024
 
-class CString
-{
-public:
-	CString(LPCTSTR pStr);
-	operator LPCTSTR() const
-	{
-		throw "Not implemented";
-	}
-};
+#define CString CGString
 
 /**
 * @brief Custom String implementation.

@@ -326,7 +326,7 @@ void CWndMain::FillStatusStats()
 			g_Serv.m_Profile.GetTaskStatusDesc( i ));
 	}
 
-	for ( i=0; i<SERV_STAT_QTY; i++ )
+	for ( int i=0; i<SERV_STAT_QTY; i++ )
 	{
 		capture.Printf( "'%s' = %d\n", 
 			g_Serv.CServerDef::sm_Props[ CServerDef::P_StatAccounts + i].m_pszName,

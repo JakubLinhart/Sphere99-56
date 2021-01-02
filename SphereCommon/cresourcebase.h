@@ -10,6 +10,13 @@
 
 #include "csphereexp.h"
 
+// Desguise an id as a pointer.
+#ifndef MAKEINTRESOURCE
+#define MAKEINTRESOURCE(id) ((LPCTSTR)((DWORD)((WORD)(id))))
+#endif
+#define ISINTRESOURCE(p)	(!(((DWORD)p)&0xFFFFF000))
+#define GETINTRESOURCE(p)	(((DWORD)p)&0x0FFF)
+
 struct CResourceQty
 {
 	// This can be used to "weight" any resource.

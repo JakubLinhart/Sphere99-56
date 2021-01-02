@@ -523,14 +523,15 @@ struct CHashArray : public CGSortedArray< TYPE, const TYPE&, HASH_INDEX>
 
 struct CGStringArray : public CGTypedArray<CGString, const CGString&>
 {
+public:
+	void AddFormat(LPCTSTR lpszFormat, ...) { throw "not implemented"; }
 };
 
-struct CStringSortArray
+struct CStringSortArray : public CGStringArray
 {
 };
 
 template<class TYPE, class KEY_TYPE>
 struct CGRefSortArray : public CGSortedArray<TYPE*, TYPE*, KEY_TYPE>
 {
-
 };

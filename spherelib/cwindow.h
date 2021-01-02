@@ -10,13 +10,36 @@ public:
 	HWND m_hWnd;
 
 public:
+	operator HWND () const       // cast as a HWND
+	{
+		return(m_hWnd);
+	}
+	CWindow()
+	{
+		m_hWnd = NULL;
+	}
+	~CWindow()
+	{
+		DestroyWindow();
+	}
+
+public:
 	BOOL SetWindowText(LPCSTR lpszText)
 	{
 		ASSERT(m_hWnd);
 		return ::SetWindowText(m_hWnd, lpszText);
 	}
 
+	BOOL OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct = NULL)
+	{
+		m_hWnd = hwnd;
+		return(TRUE);
+	}
 	void OnDestroy()
+	{
+		m_hWnd = NULL;
+	}
+	void OnDestroy(HWND hwnd)
 	{
 		m_hWnd = NULL;
 	}

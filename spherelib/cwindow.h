@@ -29,6 +29,11 @@ public:
 		ASSERT(m_hWnd);
 		return ::SetWindowText(m_hWnd, lpszText);
 	}
+	int GetWindowText(LPSTR lpszText, int iLen)
+	{
+		ASSERT(m_hWnd);
+		return ::GetWindowText(m_hWnd, lpszText, iLen);
+	}
 
 	BOOL OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct = NULL)
 	{
@@ -66,6 +71,11 @@ public:
 		// SW_SHOW
 		return(::ShowWindow(m_hWnd, nCmdShow));
 	}
+	HWND GetDlgItem(int id) const
+	{
+		ASSERT(m_hWnd);
+		return(::GetDlgItem(m_hWnd, id));
+	}
 	BOOL SetDlgItemText(int nIDDlgItem, LPCSTR lpString)
 	{
 		ASSERT(m_hWnd);
@@ -86,6 +96,11 @@ public:
 	BOOL MoveWindow(int X, int Y, int nWidth, int nHeight, BOOL bRepaint = TRUE)
 	{
 		return(::MoveWindow(m_hWnd, X, Y, nWidth, nHeight, bRepaint));
+	}
+	BOOL SetForegroundWindow()
+	{
+		ASSERT(m_hWnd);
+		return(::SetForegroundWindow(m_hWnd));
 	}
 	HWND SetFocus()
 	{
@@ -110,7 +125,11 @@ public:
 		ASSERT(m_hWnd);
 		return(::KillTimer(m_hWnd, uTimerID));
 	}
-
+	int MessageBox(LPCSTR lpszText, LPCSTR lpszTitle, UINT fuStyle = MB_OK) const
+	{
+		// ASSERT( m_hWnd ); ok for this to be NULL !
+		return(::MessageBox(m_hWnd, lpszText, lpszTitle, fuStyle));
+	}
 };
 
 class CDialogBase : public CWindow
@@ -128,7 +147,7 @@ public:
 class CWindowBase : public CWindow
 {
 public:
-	static ATOM RegisterClass(WNDCLASS& wc) { throw "not implemented"; }
+	static ATOM RegisterClass(WNDCLASS* wc) { throw "not implemented"; }
 	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		return ::DefWindowProc(m_hWnd, message, wParam, lParam);
@@ -147,6 +166,10 @@ public:
 	{
 		ASSERT(IsWindow());
 		SendMessage(LB_RESETCONTENT);
+	}
+	int GetCount() const
+	{
+		return((int)(DWORD)SendMessage(LB_GETCOUNT));
 	}
 	int AddString(LPCTSTR lpsz) const
 	{
@@ -178,6 +201,7 @@ public:
 		nStartChar = LOWORD(dwSel);
 		nEndChar = HIWORD(dwSel);
 	}
+	int GetSelText(LPCTSTR szLine);
 	void ReplaceSel(LPCTSTR lpszNewText, BOOL bCanUndo = FALSE)
 	{
 		ASSERT(IsWindow());

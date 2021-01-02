@@ -393,4 +393,21 @@ public:
 	size_t _cdecl Printf(LPCTSTR pFormat, ...) __printfargs(2, 3);
 };
 
+class CFileAttributes
+{
+public:
+	time_t m_timeChange;
+	DWORD m_Size;
+
+	CFileAttributes() { throw "not implemented"; }
+};
+
+class CFileDir : public CGStringArray
+{
+public:
+	static bool ReadFileInfo(LPCTSTR pszFilePath, CFileAttributes& attr) { throw "not implemented"; }
+	int ReadDir(LPCTSTR pszFilePath) { throw "not implemented"; }
+
+};
+
 #endif // _INC_CFILE_H

@@ -7,10 +7,11 @@ class CScriptMethod
 
 class CScriptProp
 {
-
+public:
+	LPCTSTR m_pszName;
 };
 
-class CScriptPropX
+class CScriptPropX : public CScriptProp
 {
 
 };

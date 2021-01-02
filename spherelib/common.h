@@ -99,3 +99,9 @@ public:
 	LOGL_TYPE GetSeverity() const { throw "not implemented"; }
 	void GetErrorMessage(char* pBuf, int iBufLen) { throw "not implemented"; }
 };
+
+class CGSystemInfo
+{
+public:
+	static bool IsNt() { throw "not implemented"; }
+};

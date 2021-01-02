@@ -20,3 +20,4 @@
 #include "CQueueBytes.h"
 #include "CSocket.h"
 #include "CResourceObj.h"
+#include "cregistry.h"

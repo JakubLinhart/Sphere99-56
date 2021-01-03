@@ -16,7 +16,6 @@
 #include "CScriptConsole.h"
 #include "ctime.h"
 #include "CNTService.h"
-#include "CProfilerPerfMon.h"
 #include "CQueueBytes.h"
 #include "CSocket.h"
 #include "CResourceObj.h"

@@ -424,9 +424,6 @@
     <ClInclude Include="..\spherelib\CNTService.h">
       <Filter>SphereLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\spherelib\CProfilerPerfMon.h">
-      <Filter>SphereLib</Filter>
-    </ClInclude>
     <ClInclude Include="..\spherelib\CQueueBytes.h">
       <Filter>SphereLib</Filter>
     </ClInclude>

@@ -897,6 +897,19 @@ enum PROFILE_TYPE
 	PROFILE_QTY,
 };
 
+class CProfilerPerfMon
+{
+public:
+	void InitTasks(LPCTSTR lpszFile, int iPropCount, const CScriptPropX* pProps) { }
+	int GetTaskStatusDesc(int iProp) { return 0; }
+	int GetTaskCurrent() { return 0; }
+	void SwitchTask(int type) { }
+	void IncTaskCount(PROFILE_TYPE type, int iLenRet) { }
+	int SetSampleWindowLen(int iLen) { return 0; }
+	int GetSampleWindowLen() { return 0; }
+	bool IsProfilingActive() const { return false; }
+};
+
 enum SERVMODE_TYPE
 {
 	SERVMODE_ScriptBook,	// Run at Lower Priv Level for IT_EQ_SCRIPT_BOOK

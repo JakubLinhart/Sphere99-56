@@ -271,3 +271,10 @@ public:
 		return(::LoadMenu(m_hInstance, MAKEINTRESOURCE(id)));
 	}
 };
+
+class CCommandLog
+{
+public:
+	void Add(LPCTSTR pszCmd) { throw "not implemented"; }
+	LPCTSTR ScrollCmd(DWORD dwParam) { throw "not implemented"; }
+};

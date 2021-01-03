@@ -368,6 +368,20 @@ extern int strcpylen(TCHAR* pDst, LPCTSTR pSrc);
 extern int strcpylen(TCHAR* pDst, LPCTSTR pSrc, int imaxlen);
 
 // extern TCHAR * Str_GetTemporary(int amount = 1);
+LPCTSTR Str_GetArticleAndSpace(LPCTSTR pszWords) { throw "not implemented"; }
 extern TCHAR* Str_GetTemp();
+int Str_GetBare(TCHAR* pszOut, LPCTSTR pszInp, int iMaxSize, LPCTSTR pszStrip = NULL) { throw "not implemented"; }
+TCHAR* Str_TrimWhitespace(TCHAR* pStr) { throw "not implemented"; }
+TCHAR* Str_GetNonWhitespace(LPCTSTR pStr) { throw "not implemented"; }
+bool Str_Parse(TCHAR* pArg1, TCHAR* pArg2) { throw "not implemented"; }
+int Str_GetEndWhitespace(LPCTSTR pStr, int iLen) { throw "not implemented"; }
+int Str_ParseCmdsStr(LPCTSTR pStr, TCHAR** ppCmds, int iCmdCount, LPCTSTR lpcSeparators) { throw "not implemented"; }
+int Str_ParseCmds(LPCTSTR pStr, TCHAR** ppCmds, int iCmdCount, LPCTSTR lpcSeparators) { throw "not implemented"; }
+MATCH_TYPE Str_Match(LPCTSTR pStr, LPCTSTR pPattern) { throw "not implemented"; }
+int Str_FindWord(LPCTSTR pStr, LPCTSTR pWord) { throw "not implemented"; }
+void Str_EscSeqAdd(LPCTSTR pStr1, LPCTSTR pStr2, int iSize) { throw "not implemented"; }
+void Str_EscSeqRemove(LPCTSTR pStr1, LPCTSTR pStr2, int iSize) { throw "not implemented"; }
+
+UINT Str_ahextou(LPCTSTR pszStr) { throw "not implemented"; }
 
 #endif _INC_CSTRING_H

@@ -247,6 +247,13 @@ protected:
 	DECLARE_MEM_DYNAMIC;
 };
 
+class CResourceFile : public CResourceScript
+{
+public:
+	void OnTick(bool fNow) { throw "not implemented"; }
+};
+typedef CRefPtr<CResourceFile> CResourceFilePtr;
+
 class CResourceLock : public CScript
 {
 };

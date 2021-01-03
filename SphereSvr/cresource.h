@@ -437,7 +437,18 @@ typedef CResLockNameArray<CServerDef> CServArray;	// use CThreadLockPtr
 class CResourceMgr
 {
 public:
+	CVarDefArray m_Const;
+	CVarDefArray m_Var;
+	CHashArray<CResourceDef> m_ResHash;
+	CGString m_sSCPBaseDir;		// if we want to get *.SCP files from elsewhere.
+
+public:
 	LPCTSTR ResourceGetName(CSphereUID rid) const { throw "not implemented"; }
+	CResourceFilePtr FindResourceFile(LPCTSTR pszName) { throw "not implemented"; }
+	CResourceFilePtr LoadResourcesAdd(LPCTSTR pszNewName) { throw "not implemented"; }
+	virtual CResourceDefPtr ResourceGetDef(UID_INDEX rid) { throw "not implemented"; }
+	void LoadResources(CResourceScript* pResScript) { throw "not implemented"; }
+	bool OpenScriptFind(CScript& s, LPCTSTR pszName) { throw "not implemented"; }
 };
 
 class CSphereResourceMgr : public CResourceMgr

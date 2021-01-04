@@ -448,7 +448,10 @@ public:
 	CResourceFilePtr LoadResourcesAdd(LPCTSTR pszNewName) { throw "not implemented"; }
 	virtual CResourceDefPtr ResourceGetDef(UID_INDEX rid) { throw "not implemented"; }
 	void LoadResources(CResourceScript* pResScript) { throw "not implemented"; }
+	void LoadResourcesOpen(CResourceScript &script) { throw "not implemented"; }
+	void AddResourceFile(LPCTSTR pszFile) { throw "not implemented"; }
 	bool OpenScriptFind(CScript& s, LPCTSTR pszName) { throw "not implemented"; }
+	CResourceFilePtr GetResourceFile(int iIndex) { throw "not implemented"; }
 };
 
 class CSphereResourceMgr : public CResourceMgr

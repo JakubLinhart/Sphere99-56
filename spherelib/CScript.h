@@ -16,6 +16,17 @@ class CScriptPropX : public CScriptProp
 
 };
 
+class CScriptPropArray : public CGRefArray<CScriptProp>
+{
+public:
+	void AddProps(const CScriptPropX pProps[]) { throw "not implemented"; }
+	void AddProps(CScriptPropX* pProps, int iCount) { throw "not implemented"; }
+};
+
+class CScriptLineContext
+{
+};
+
 class CScript : public CFileText
 {
 public:
@@ -26,6 +37,10 @@ public:
 	bool IsKey(LPCTSTR lpszKey) { throw "not implemented"; }
 	bool IsSectionType(LPCTSTR lpszSectionType) { throw "not implemented"; }
 	LPCTSTR GetKey() { throw "not implemented"; }
+
+	int GetSection() { throw "not implemented"; }
+	CScriptLineContext& GetContext() const { throw "not implemented"; }
+	void SeekContext(CScriptLineContext& context) { throw "not implemented"; }
 
 	LPCTSTR GetArgStr() { throw "not implemented"; }
 	LPCTSTR GetArgRaw() { throw "not implemented"; }

@@ -94,6 +94,7 @@ public:
 	CResourceDef(CSphereUID rid);
 	LPCTSTR GetResourceName() const { throw "not implemented"; }
 	virtual CGString GetName() const { throw "not implemented"; } // default to same as the DEFNAME name.
+	virtual bool s_LoadProps(CScript& s) { throw "not implemented"; } // Load an item from script
 	CSphereUID GetUIDIndex() const
 	{
 		return(m_rid);
@@ -115,12 +116,12 @@ public:
 	CResourceTriggered(CSphereUID rid);
 };
 
-#define CResourceLinkPtr CResourceLink*
 class CResourceLink : public CResourceDef
 {
 public:
 	CResourceLink(CSphereUID rid);
 };
+typedef CRefPtr<CResourceLink> CResourceLinkPtr;
 
 class CResourceNamed : public CResourceLink
 {
@@ -240,9 +241,11 @@ public:
 #define CResourceScriptPtr CResourceScript*
 class CResourceScript : public CScript, public CMemDynamic
 {
+public:
+	virtual void OnTick(bool fNow) { throw "not implemented"; }
+
 	// A script file containing resource, speech, motives or events handlers.
 	// NOTE: we should check periodically if this file has been altered externally ?
-
 protected:
 	DECLARE_MEM_DYNAMIC;
 };

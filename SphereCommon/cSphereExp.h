@@ -218,7 +218,6 @@ private:
 class CSphereExpContext : public CScriptExecContext
 {
 	// The base and default context. has no local arguments.
-
 public:
 	CSphereExpContext( CResourceObj* pBaseObj, CScriptConsole* pSrc );
 	~CSphereExpContext();
@@ -231,6 +230,13 @@ public:
 #undef GLOBALMETHOD
 		F_QTY,
 	};
+
+	virtual HRESULT Function_Dispatch(LPCTSTR pszKey, CGVariant& vArgs, CGVariant& vValRet);
+
+public:
+	static void InitFunctions();
+	static CScriptPropArray sm_FunctionsAll;
+	static const CScriptPropX sm_Functions[CSphereExpContext::F_QTY + 1];
 
 private:
 	CScriptExecContext* m_pPrvExecContext;	// previous general context before this was opened. (may be NULL)
@@ -245,6 +251,9 @@ class CSphereExpArgs : public CSphereExpContext
 	// NOTE: This is meant to be fast and simple.
 	//   Most triggers are never executed. So make setup/destroy FAST!
 	// NOTE: This should ONLY be stack based !
+
+public:
+	static void InitFunctions();
 
 public:
 	CSphereExpArgs( CResourceObj* pBaseObj, CScriptConsole* pSrc ) :
@@ -284,6 +293,8 @@ public:
 
 	void AddText( int id, const char* pszText );
 	void AddCheck( int id, DWORD dwCheckVal );
+
+	virtual HRESULT Function_Dispatch(LPCTSTR pszKey, CGVariant& vArgs, CGVariant& vValRet);
 
 	CSCRIPT_EXEC_DEF();
 	enum F_TYPE_

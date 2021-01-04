@@ -21,6 +21,7 @@ public:
     void ReleaseRefObj() {} // STUB
     virtual void UnLink() {} // STUB
     bool IsValidNewObj() const { return true; } // STUB
+    bool IsValidRefObj() const { throw "not implemented"; }
 
     CRefPtr& operator=(const CRefPtr& rhs)
     {                             // Assignment operator. 

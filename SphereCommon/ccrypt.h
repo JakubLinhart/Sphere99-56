@@ -36,6 +36,12 @@ class CCompressXOR
 
 class CCryptVersion
 {
+public:
+	int GetCryptVer() { throw "not implemented"; }
+	bool SetCryptVer(const char* pVer) { throw "not implemented"; }
+	void SetCryptVerEnum(int iVer) { throw "not implemented"; }
+	CGVariant& WriteCryptVer(LPCTSTR pszVer) const { throw "not implemented"; }
+	bool IsValid() const { throw "not implemented"; }
 };
 
 #pragma pack(1)
@@ -99,7 +105,7 @@ public:
 	BYTE  CodeNewByte(BYTE code);
 };
 
-class CCryptBase
+class CCryptBase : public CCryptVersion
 {
 	// The old rotary encrypt/decrypt interface.
 private:
@@ -117,12 +123,16 @@ protected:
 	DWORD m_seed;	// seed ip we got from the client.
 
 public:
+	static void SetDefaultMasterVer(int iSeed1, int iSeed2, int iSeed3) { throw "not implemented"; }
+
+public:
 	CCryptBase();
-	int GetClientVer() const
-	{
-		return(m_iClientVersion);
-	}
 	TCHAR* WriteClientVer(TCHAR* pStr) const;
+	int GetCryptVer() { throw "not implemented"; }
+	int GetCryptSeed() { throw "not implemented"; }
+	void SetCryptSeed(DWORD dwIP) { throw "not implemented"; }
+
+	virtual void InitCrypt() { throw "not implemented"; }
 
 	bool SetClientVerEnum(int iVer);
 	bool SetClientVer(LPCTSTR pszVersion);
@@ -202,6 +212,7 @@ private:
 
 public:
 	void SetCryptType( DWORD dwIP, CONNECT_TYPE type );
+	bool IsInitCrypt() const { throw "not implemented"; }
 	virtual void InitCrypt();
 	void Decrypt( BYTE * pOutput, const BYTE * pInput, int iLen );
 	void Encrypt( BYTE * pOutput, const BYTE * pInput, int iLen );
@@ -209,6 +220,11 @@ public:
 
 class CCryptText
 {
+public:
+	void SetCryptSeed(DWORD pSeed) { throw "not implemented"; }
+	void SetCryptMasterVer(DWORD dwSeed1, DWORD dwSeed2, DWORD dwSeed3) { throw "not implemented"; }
+	void EncryptText(LPCTSTR pszPassword, LPCTSTR pszText, int iLen) { throw "not implemented"; }
+	void DecryptText(LPCTSTR pszPassword, LPCTSTR pszText, int iLen) { throw "not implemented"; }
 };
 
 #endif // _INC_CCRYPT_H

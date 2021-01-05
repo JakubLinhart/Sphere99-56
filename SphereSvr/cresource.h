@@ -434,6 +434,8 @@ public:
 typedef CRefPtr<CProfessionDef> CProfessionPtr;
 typedef CResLockNameArray<CServerDef> CServArray;	// use CThreadLockPtr
 
+#define FOR_HASH(arr,idx1,idx2) int idx1, idx2; for (int idx1 = 0; idx1 < 5; idx1++)
+
 class CResourceMgr
 {
 public:
@@ -441,6 +443,7 @@ public:
 	CVarDefArray m_Var;
 	CHashArray<CResourceDef> m_ResHash;
 	CGString m_sSCPBaseDir;		// if we want to get *.SCP files from elsewhere.
+	CGRefArray<CResourceScript> m_ResourceFiles;
 
 public:
 	LPCTSTR ResourceGetName(CSphereUID rid) const { throw "not implemented"; }

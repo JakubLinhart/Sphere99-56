@@ -27,6 +27,10 @@
 #define __printfargs(a,b)
 #endif
 
+#ifndef MAKEDWORD
+#define MAKEDWORD(low, high) ((DWORD)(((WORD)(low)) | (((DWORD)((WORD)(high))) << 16)))
+#endif	// MAKEDWORD
+
 #ifndef COUNTOF
 #define COUNTOF(a)	(sizeof(a)/sizeof((a)[0]))
 #endif

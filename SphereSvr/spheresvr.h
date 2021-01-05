@@ -889,6 +889,17 @@ public:
 
 ////////////////////////////////////////////////////////////////////////////////////
 
+class CMailSMTP
+{
+public:
+	static bool IsValidEmailAddressChar(char ch) { throw "not implemented"; }
+	static bool IsValidEmailAddressFormat(LPCTSTR pszEmail) { throw "not implemented"; }
+
+public:
+	bool SendMail(LPCTSTR pszIp, LPCTSTR pszFrom, LPCTSTR pszTo, CGStringArray* pString) { throw "not implemented"; }
+	LPCTSTR GetLastResponse() const { throw "not implemented"; }
+};
+
 enum PROFILE_TYPE
 {
 #define CPROFILEPROP(a,b,c)		PROFILE_##a,

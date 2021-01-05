@@ -8,10 +8,38 @@
 #pragma once
 #endif // _MSC_VER >= 1000
 
-struct CMemBlock
+struct CMemBlockBase
 {
-private:
+public:
+    static DWORD sm_dwAllocTotal;
+
+public:
+    CMemBlockBase() { throw "not implemented"; }
+    CMemBlockBase(size_t dwSize) { throw "not implemented"; }
+
+    void Free()
+    {
+        if (m_pData != NULL)
+        {
+#if 0 // def _DEBUG
+            ASSERT(IsValidDebug());
+            m_pData -= (2 * 4);
+#endif
+            delete  m_pData;
+            m_pData = NULL;
+        }
+    }
+    BYTE* GetData() const
+    {
+        return(m_pData);
+    }
+
+protected:
     BYTE* m_pData;	// the actual data bytes of the bitmap.
+};
+
+struct CMemBlock : public CMemBlockBase
+{
 protected:
     // rather dangerous functions.
     void MemLink(BYTE* pData)
@@ -78,22 +106,6 @@ public:
         return(iOffset >= 0 && ((DWORD)iOffset < dwSize));
     }
 #endif
-    void Free()
-    {
-        if (m_pData != NULL)
-        {
-#if 0 // def _DEBUG
-            ASSERT(IsValidDebug());
-            m_pData -= (2 * 4);
-#endif
-            delete  m_pData;
-            m_pData = NULL;
-        }
-    }
-    BYTE* GetData() const
-    {
-        return(m_pData);
-    }
     bool IsValid() const
     {
         // Is this valid to use now ?

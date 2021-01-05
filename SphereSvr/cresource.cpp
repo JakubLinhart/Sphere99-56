@@ -2033,8 +2033,8 @@ void CSphereResourceMgr::LoadChangedFiles()
 
 	for ( int i=0; i<filedir.GetSize(); i++ )
 	{
-		CGString sPathName = CGFile::GetMergedFileName( szTmpDir, (LPCTSTR) filedir[i].m_sFileName );
-		DEBUG_MSG(( "LoadChange to '%s'='%s'" LOG_CR, (LPCTSTR) filedir[i].m_sFileName, (LPCTSTR) sPathName ));
+		CGString sPathName = CGFile::GetMergedFileName( szTmpDir, (LPCTSTR) filedir[i] );
+		DEBUG_MSG(( "LoadChange to '%s'='%s'" LOG_CR, (LPCTSTR) filedir[i], (LPCTSTR) sPathName ));
 
 		// Is the file matching one of my system files ?
 

@@ -384,4 +384,8 @@ void Str_EscSeqRemove(LPCTSTR pStr1, LPCTSTR pStr2, int iSize) { throw "not impl
 
 UINT Str_ahextou(LPCTSTR pszStr) { throw "not implemented"; }
 
+class CScriptProp;
+int s_FindKeyInTable(LPCTSTR pszKey, const LPCTSTR pTable[]) { throw "not implemented"; }
+int s_FindKeyInTable(LPCTSTR pszKey, const CScriptProp pTable[]) { throw "not implemented"; }
+
 #endif _INC_CSTRING_H

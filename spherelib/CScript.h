@@ -54,8 +54,9 @@ public:
 	virtual bool ReadLine(bool fRemoveBlanks = true) { throw "not implemented"; }
 
 	void WriteSection(LPCTSTR pszSection, ...) { throw "not implemented"; }
-	void WriteKey(LPCTSTR lpszKey, LPCTSTR lpszVal) { throw "not implemented"; }
-	void WriteKeyInt(LPCTSTR lpszKey, int iValue) { throw "not implemented"; }
-	void WriteKeyDWORD(LPCTSTR lpszKey, DWORD iValue) { throw "not implemented"; }
-
+	void WriteKey(LPCTSTR pszKey, LPCTSTR lpszVal) { throw "not implemented"; }
+	void WriteKeyInt(LPCTSTR pszKey, int iValue) { throw "not implemented"; }
+	void WriteKeyDWORD(LPCTSTR pszKey, DWORD iValue) { throw "not implemented"; }
 };
+
+void s_FixExtendedProp(LPCTSTR pszKey, LPCTSTR pszName, CGVariant& vVal) { throw "not implemented"; }

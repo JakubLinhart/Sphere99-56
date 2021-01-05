@@ -172,6 +172,10 @@ private:
 	UINT m_uMode;	///< MMSYSTEM may use 32 bit flags.
 public:
 	static const char* m_sClassName;
+	static void ExtractPath(LPTSTR szPath) { throw "not implemented"; }
+	static LPCTSTR GetFileNameTitle(LPCTSTR pszFileName) { throw "not implemented"; }
+	static void GetStrippedDirName(LPCTSTR pszDirName) { throw "not implemented"; }
+
 private:
 	/**
 	* @brief Open file with CFile method.

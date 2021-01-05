@@ -22,6 +22,9 @@ enum DIR_TYPE	// Walking directions. m_dir
 struct CGPointBase	// Non initialized 3d point.
 {
 public:
+	static LPCTSTR const sm_szDirs[DIR_QTY + 1];
+
+public:
 	signed short m_x;	// equipped items dont need x,y
 	signed short m_y;
 	signed char m_z;	// This might be layer if equipped ? or equipped on corpse. Not used if in other container.

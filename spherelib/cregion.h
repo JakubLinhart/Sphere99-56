@@ -128,5 +128,5 @@ public:
 
 	CGPointBase GetRegionCorner(DIR_TYPE dir) const { throw "not implemented"; }
 	inline DIR_TYPE GetDirTurn(DIR_TYPE dir, int offset) { throw "not implemented"; }
-	bool PtInRegion(CGPointBase pt) { throw "not implemented"; }
+	bool PtInRegion(const CGPointBase& pt) const { throw "not implemented"; }
 };

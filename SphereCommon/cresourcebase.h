@@ -114,7 +114,10 @@ class CResourceTriggered : public CResourceDef
 {
 public:
 	CResourceTriggered(CSphereUID rid);
+
+	TRIGRET_TYPE OnTriggerScript(CScriptExecContext& context, int iNum, LPCTSTR pszName) { throw "not implemented"; }
 };
+typedef CRefPtr<CResourceTriggered> CResourceTrigPtr;
 
 class CResourceLink : public CResourceDef
 {

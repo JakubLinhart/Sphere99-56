@@ -259,6 +259,13 @@ typedef CRefPtr<CResourceFile> CResourceFilePtr;
 
 class CResourceLock : public CScript
 {
+public:
+	CResourceLock(CScriptObj* pObj) { throw "not implemented"; }
+
+	bool IsLineTrigger() { throw "not implemented"; }
+	void ParseKeyLate() { throw "not implemented"; }
+	bool FindTriggerName(LPCTSTR pszName) { throw "not implemented"; }
+	bool FindTriggerNumber(DWORD dwNumber) { throw "not implemented"; }
 };
 
 #endif // _INC_CRESOURCEBASE_H

@@ -94,9 +94,24 @@ public:
     }
 };
 
+#define Exp_GetComplex(str) Exp_GetContext()->GetComplex(str)
+#define Exp_GetComplexRef(str) Exp_GetContext()->GetComplexRef(str)
+#define Exp_GetValueRef(str) Exp_GetContext()->GetValueRef(str)
+#define Exp_GetValue(str) Exp_GetContext()->GetValue(str)
+#define Exp_GetIdentifierString(str1, str2) Exp_GetContext()->GetIdentifierString(str1, str2)
+#define Exp_IsSimpleNumberString(str1) Exp_GetContext()->IsSimpleNumberString(str1)
+#define Exp_ParseCmds(str1, pArgs, iCnt) Exp_GetContext()->ParseCmds(str1, pArgs, iCnt)
+
 class CExpression
 {
-
+public:
+	int GetComplex(LPCTSTR pStr) { throw "not implemented"; }
+	int GetComplexRef(LPCTSTR pStr) { throw "not implemented"; }
+	int GetValue(LPCTSTR pStr) { throw "not implemented"; }
+	int GetValueRef(LPCTSTR pStr) { throw "not implemented"; }
+	int GetIdentifierString(LPCTSTR pStr1, LPCTSTR pStr2) { throw "not implemented"; }
+	bool IsSimpleNumberString(LPCTSTR pStr1) { throw "not implemented"; }
+	int ParseCmds(LPCTSTR pszStr, int* pArgs, int iCnt) { throw "not implemented"; }
 };
 
-extern int Calc_GetRandVal(int iqty);
+int Calc_GetRandVal(int iqty) { throw "not implemented"; }

@@ -387,5 +387,7 @@ public:
 
 #endif
 
+CExpression* Exp_GetContext();
+
 #endif // _INC_CSPHEREEXP_H
 

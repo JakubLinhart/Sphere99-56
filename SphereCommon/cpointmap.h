@@ -141,6 +141,8 @@ public:
 	void NormalizeRectMax();
 
 	CSectorPtr GetSector( int i ) const;	// get all the sectors that make up this rect.
+
+	void v_Set(CGVariant& val) { throw "not implemented"; }
 };
 
 #endif	// _INC_CPOINTMAP_H

@@ -88,4 +88,7 @@ public:
 	int GetChancePercent(int iSkillPercent) const;
 	int GetRandom() const;
 	int GetRandomLinear(int iPercent) const;
+
+	void v_Get(CGVariant& val) { throw "not implemented"; }
+	void v_Set(CGVariant& val) { throw "not implemented"; }
 };

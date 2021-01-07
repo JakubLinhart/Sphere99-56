@@ -15,4 +15,10 @@ public:
 		// How much data is avail?
 		return m_iDataQty;
 	}
+	void AddNewData(const BYTE* pBuf, int iLen) { throw "not implemented"; }
+	BYTE* AddNewDataLock(int iLen) { throw "not implemented"; }
+	void AddNewDataFinish(int iLen) { throw "not implemented"; }
+	const BYTE* RemoveDataLock() const { throw "not implemented"; }
+	void RemoveDataAmount(int iSize) { throw "not implemented"; }
+	void Empty() { throw "not implemented"; }
 };

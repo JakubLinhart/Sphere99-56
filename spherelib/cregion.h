@@ -127,6 +127,15 @@ public:
 	bool IsEqualRegion(const CGRegion* pRegionTest) const { throw "not implemented"; }
 
 	CGPointBase GetRegionCorner(DIR_TYPE dir) const { throw "not implemented"; }
-	inline DIR_TYPE GetDirTurn(DIR_TYPE dir, int offset) { throw "not implemented"; }
 	bool PtInRegion(const CGPointBase& pt) const { throw "not implemented"; }
 };
+
+inline DIR_TYPE GetDirTurn(DIR_TYPE dir, int offset)
+{
+	// Turn in a direction.
+	// +1 = to the right.
+	// -1 = to the left.
+	offset += DIR_QTY + dir;
+	offset %= DIR_QTY;
+	return((DIR_TYPE)(offset));
+}

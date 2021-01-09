@@ -72,20 +72,33 @@ public:
 	virtual CVarDef* CopySelf() const = 0;
 };
 
-struct CVarDefArray : public CGSortedArray<CVarDef*, const CVarDef&, CAtomRef>
+class CScript;
+class CScriptConsole;
+
+struct CVarDefArray : public CGSortedArray<CVarDef*, const CVarDef&, LPCTSTR>
 {
 public:
-	CVarDefPtr FindKeyPtr(CAtomRef pName);
+	CVarDefPtr FindKeyPtr(LPCTSTR pszKey) const { throw "not implemented"; }
     // Sorted array
 protected:
-    int CompareKey(CAtomRef Key, const CVarDef& pVar) const;
-    int Add(CVarDef* pVar);
+    int CompareKey(LPCTSTR pszKey, const CVarDef& pVar) const { throw "not implemented"; }
+    int Add(CVarDef* pVar) { throw "not implemented"; }
 public:
-    void Copy(const CVarDefArray* pArray);
-	int SetKeyVar(CAtomRef key, const CGVariant& val);
-	int SetKeyStr(CAtomRef key, LPCTSTR value);
-	UID_INDEX FindKeyVar(CAtomRef key) const;
-	CGString FindKeyStr(CAtomRef key) const;
+	bool AddHtmlArgs(LPCTSTR pszName, TCHAR** pArgs = NULL) { throw "not implemented"; }
+    void Copy(const CVarDefArray* pArray) { throw "not implemented"; }
+	int SetKeyVar(LPCTSTR pszKey, const CGVariant& val) { throw "not implemented"; }
+	int SetKeyStr(LPCTSTR pszKey, LPCTSTR pszVal) { throw "not implemented"; }
+	void SetKeyInt(LPCTSTR pszKey, DWORD dwVal) { throw "not implemented"; }
+	UID_INDEX FindKeyVar(LPCTSTR pszKey) const { throw "not implemented"; }
+	bool FindKeyVar(LPCTSTR pszKey, CGVariant& val) { throw "not implemented"; }
+	CGString FindKeyStr(LPCTSTR pszKey) const { throw "not implemented"; }
+	DWORD FindKeyInt(LPCTSTR pszKey) const { throw "not implemented"; }
+
+	void RemoveKey(LPCTSTR pszKey) { throw "not implemented"; }
+
+	HRESULT s_PropSetTags(CGVariant& vVal) { throw "not implemented"; }
+	HRESULT s_MethodTags(CGVariant& vArgs, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; }
+	void s_WriteTags(CScript& script, LPCTSTR pszName = NULL) { throw "not implemented"; }
 
     CVarDefArray& operator = (const CVarDefArray& array)
     {
@@ -115,3 +128,6 @@ public:
 };
 
 int Calc_GetRandVal(int iqty) { throw "not implemented"; }
+int Calc_GetLog2(int iNum) { throw "not implemented"; }
+int Calc_GetSCurve(int iValDiff, int iVariance) { throw "not implemented"; }
+int Calc_GetBellCurve(int iValDiff, int iVariance) { throw "not implemented"; }

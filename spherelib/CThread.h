@@ -27,4 +27,11 @@ public:
 	void CreateThread(PTHREAD_ENTRY_PROC pEntryProc) { throw "not implemented"; }
 	void CreateThread(PTHREAD_ENTRY_PROC pEntryProc, void* pArgs) { throw "not implemented"; }
 
+	void InitInstance() { throw "not implemented"; }
+	void ExitInstance() { throw "not implemented"; }
+
+	bool IsActive() const { throw "not implemented"; }
+	DWORD GetThreadID() const { throw "not implemented"; }
+
+	void WaitForClose(int iSec) { throw "not implemented"; }
 };

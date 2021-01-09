@@ -17,11 +17,15 @@ public:
     {
     }
 
+    void SetRefObj(T* pObj) { m_pointer = pObj; }
     T* GetRefObj() const { return m_pointer; }
     void ReleaseRefObj() {} // STUB
     virtual void UnLink() {} // STUB
     bool IsValidNewObj() const { return true; } // STUB
     bool IsValidRefObj() const { throw "not implemented"; }
+    void Free() { throw "not implemented"; }
+
+    T* DetachObj() { throw "not implemented"; }
 
     CRefPtr& operator=(const CRefPtr& rhs)
     {                             // Assignment operator. 

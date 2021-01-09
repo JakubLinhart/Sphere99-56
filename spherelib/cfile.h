@@ -175,6 +175,7 @@ public:
 	static void ExtractPath(LPTSTR szPath) { throw "not implemented"; }
 	static LPCTSTR GetFileNameTitle(LPCTSTR pszFileName) { throw "not implemented"; }
 	static void GetStrippedDirName(LPCTSTR pszDirName) { throw "not implemented"; }
+	static LPCTSTR GetFileNameExt(LPCTSTR pszFileName) { throw "not implemented"; }
 
 private:
 	/**
@@ -397,10 +398,12 @@ public:
 	size_t _cdecl Printf(LPCTSTR pFormat, ...) __printfargs(2, 3);
 };
 
+class CGTime;
+
 class CFileAttributes
 {
 public:
-	time_t m_timeChange;
+	CGTime m_timeChange;
 	DWORD m_Size;
 
 	CFileAttributes() { throw "not implemented"; }

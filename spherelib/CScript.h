@@ -38,7 +38,7 @@ public:
 	bool IsSectionType(LPCTSTR lpszSectionType) { throw "not implemented"; }
 	LPCTSTR GetKey() { throw "not implemented"; }
 
-	int GetSection() { throw "not implemented"; }
+	TCHAR* GetSection() { throw "not implemented"; }
 	CScriptLineContext& GetContext() const { throw "not implemented"; }
 	void SeekContext(CScriptLineContext& context) { throw "not implemented"; }
 

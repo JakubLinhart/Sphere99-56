@@ -49,6 +49,14 @@
 #define _ISCLR(w,b) 	(!_ISSET(w,b))
 #endif
 
+template <int size>
+class CBitArray
+{
+public:
+	bool IsSet(int iBit) { throw "not implemented"; }
+	void SetBit(int iBit) { throw "not implemented"; }
+};
+
 #define ISWHITESPACE(ch)		 (isspace(ch)||(ch)==0xa0)	// isspace
 #define GETNONWHITESPACE( pStr ) while ( ISWHITESPACE( (pStr)[0] )) { (pStr)++; }
 

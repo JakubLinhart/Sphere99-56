@@ -39,7 +39,7 @@ class CCryptVersion
 public:
 	int GetCryptVer() { throw "not implemented"; }
 	bool SetCryptVer(const char* pVer) { throw "not implemented"; }
-	void SetCryptVerEnum(int iVer) { throw "not implemented"; }
+	bool SetCryptVerEnum(int iVer) { throw "not implemented"; }
 	CGVariant& WriteCryptVer(LPCTSTR pszVer) const { throw "not implemented"; }
 	bool IsValid() const { throw "not implemented"; }
 };

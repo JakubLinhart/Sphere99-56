@@ -27,11 +27,24 @@ public:
 
     T* DetachObj() { throw "not implemented"; }
 
-    CRefPtr& operator=(const CRefPtr& rhs)
+    template <class U>
+    CRefPtr<U>& operator=(const CRefPtr<U>& rhs)
     {                             // Assignment operator. 
         if (this == &rhs) return *this;
         m_pointer = rhs.m_pointer;
         return *this;
+    }
+
+    template <class U>
+    bool operator==(const CRefPtr<U>& rhs) const
+    {
+        return m_pointer == rhs.m_pointer;
+    }
+
+    template <class U>
+    bool operator!=(const CRefPtr<U>& rhs) const
+    {
+        return m_pointer != rhs.m_pointer;
     }
 
     template <class U>

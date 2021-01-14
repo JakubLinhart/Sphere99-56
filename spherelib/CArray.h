@@ -9,13 +9,11 @@ class CMemDynamic
 
 #if defined(_DEBUG) || defined(DEBUG)
 
-#define DECLARE_MEM_DYNAMIC virtual const void * GetTopPtr() const { return this; } // Get the top level ptr.
+#define DECLARE_MEM_DYNAMIC
 #define COBJBASE_SIGNATURE  0xDEADBEEF      // used just to make sure this is valid.
 private:
 	DWORD m_dwSignature;
 
-protected:
-	virtual const void* GetTopPtr() const = 0;     // Get the top level class ptr.
 public:
 	bool IsValidDynamic() const
 	{

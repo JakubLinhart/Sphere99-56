@@ -58,6 +58,9 @@ struct CPointMapBase : public CGPointBase
 	}
 	void Move(DIR_TYPE dir) { throw "not implemented"; }
 	void MoveN(DIR_TYPE dir, int amount) { throw "not implemented"; }
+
+	bool operator==(const CPointMapBase& rhs) const { throw "not implemented"; }
+	bool operator!=(const CPointMapBase& rhs) const { throw "not implemented"; }
 };
 
 struct CPointMap : public CPointMapBase
@@ -116,6 +119,11 @@ struct CPointMap : public CPointMapBase
 	}
 
 	bool IsSameMapPlane(BYTE mapplane) const { return m_mapplane == mapplane; }
+
+	bool operator==(const CPointMap& rhs) const { throw "not implemented"; }
+	bool operator!=(const CPointMap& rhs) const { throw "not implemented"; }
+	void operator+=(const CPointMap& rhs) { throw "not implemented"; }
+	void operator-=(const CPointMap& rhs) { throw "not implemented"; }
 };
 
 

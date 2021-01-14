@@ -68,6 +68,7 @@ public:
 	{
 	}
 	virtual LPCTSTR GetValStr() const = 0;
+	virtual char* GetPSTR() const { throw "not implemented"; }
 	virtual int GetValNum() const = 0;
 	virtual CVarDef* CopySelf() const = 0;
 };

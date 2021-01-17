@@ -93,8 +93,13 @@ private:
 public:
 	CResourceDef(CSphereUID rid);
 	LPCTSTR GetResourceName() const { throw "not implemented"; }
+
 	virtual CGString GetName() const { throw "not implemented"; } // default to same as the DEFNAME name.
 	virtual bool s_LoadProps(CScript& s) { throw "not implemented"; } // Load an item from script
+	virtual HRESULT s_PropSet(LPCTSTR pszKey, const CGVariant& vVal) { throw "not implemented"; }
+	virtual HRESULT s_PropGet(LPCTSTR pszKey, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; }
+	virtual HRESULT s_Method(LPCTSTR pszKey, CGVariant& vArgs, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; } // Execute command from script
+
 	CSphereUID GetUIDIndex() const
 	{
 		return(m_rid);
@@ -119,10 +124,15 @@ public:
 };
 typedef CRefPtr<CResourceTriggered> CResourceTrigPtr;
 
+#define XTRIG_UNKNOWN 0	// bit 0 is reserved to say there are triggers here that do not conform.
+
 class CResourceLink : public CResourceDef
 {
 public:
 	CResourceLink(CSphereUID rid);
+	virtual HRESULT s_PropSet(LPCTSTR pszKey, const CGVariant& vVal) { throw "not implemented"; }
+	virtual HRESULT s_PropGet(LPCTSTR pszKey, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; }
+	virtual HRESULT s_Method(LPCTSTR pszKey, CGVariant& vArgs, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; } // Execute command from script
 };
 typedef CRefPtr<CResourceLink> CResourceLinkPtr;
 

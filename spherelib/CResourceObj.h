@@ -14,9 +14,10 @@ public:
 		m_dwHashIndex = dwHashIndex;
 	}
 
-	virtual HRESULT s_PropGet(LPCTSTR pszKey, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; }
 	virtual HRESULT s_Method(LPCTSTR pszKey, CGVariant& vArgs, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; }
 	virtual bool s_LoadProps(CScript& s) { throw "not implemented"; } // Load an item from script
+	virtual HRESULT s_PropGet(LPCTSTR pszKey, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; }
+	virtual HRESULT s_PropSet(const char* pszKey, CGVariant& vVal) { throw "not implemented"; }
 
 	int GetRefCount() { throw "not implemented"; }
 	HASH_INDEX GetUIDIndex() const { return m_dwHashIndex; }
@@ -45,5 +46,5 @@ struct CUIDArray
 		// Can't free up the UID til after the save !
 		m_UIDs.SetAt(pObj->GetUIDIndex(), UID_PLACE_HOLDER);
 	}
-	DWORD AllocUID(DWORD dwIndex, CResourceObj* pObj) { throw "not implemented"; }
+	DWORD AllocUID(CResourceObj* pObj, DWORD dwIndex) { throw "not implemented"; }
 };

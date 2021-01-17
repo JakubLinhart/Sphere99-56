@@ -102,6 +102,7 @@ protected:
 	// Never called directly. call pObRec->RemoveSelf()
 	virtual void OnRemoveOb(CGObListRec* pObRec); // Override this = called when removed from list.
 public:
+	bool IsMyChild(const CGObListRec* pElement) const { throw "not implemented"; }
 	CGObListRec* GetAt(int index) const;
 	// pPrev = NULL = first
 	virtual void InsertAfter(CGObListRec* pNewRec, CGObListRec* pPrev = NULL);
@@ -188,6 +189,7 @@ private:
 	*/
 	CGTypedArray<TYPE, ARG_TYPE>(const CGTypedArray<TYPE, ARG_TYPE>& copy);
 public:
+	void CopyArray(const CGTypedArray& arr) { throw "not implemented"; }
 	/**
 	* @brief Get the internal data pointer.
 	*

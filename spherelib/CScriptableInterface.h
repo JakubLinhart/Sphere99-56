@@ -34,7 +34,8 @@
 
 #define CSCRIPT_CLASS_DEF1(...) \
 	int s_FindMyPropKey(LPCTSTR pszKey); \
-	int s_FindMyMethodKey(LPCTSTR pszKey);
+	int s_FindMyMethodKey(LPCTSTR pszKey); \
+	static CScriptClass sm_ScriptClass;
 
 #define CSCRIPT_CLASS_IMP1(CLASS_NAME,b,c,d,e) \
 	int C##CLASS_NAME::s_FindMyPropKey(LPCTSTR pszKey) { throw "not implemented"; } \
@@ -47,3 +48,21 @@
 #define CSCRIPT_CLASS_IMP2(CLASS_NAME,b,c,d,e) \
 	int C##CLASS_NAME::s_FindMyPropKey(LPCTSTR pszKey) { throw "not implemented"; } \
 	int C##CLASS_NAME::s_FindMyMethodKey(LPCTSTR pszKey) { throw "not implemented"; }
+
+
+class CScriptClass
+{
+public:
+	void InitScriptClass() { throw "not implemented"; }
+	void AddSubClass(CScriptClass* pSubClass) { throw "not implemented"; }
+};
+
+template <class TYPE>
+class CScriptClassTemplate : public CScriptClass
+{
+public:
+	virtual void InitScriptClass();
+	bool IsInit() { throw "not implemented"; }
+};
+
+

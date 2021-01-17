@@ -63,6 +63,8 @@ public:
 	*/
 	CGString(const CGString& s);
 
+	void FormatErrorMessage(const HRESULT hRes) { throw "not implemented"; }
+
 	/**
 	* @brief Check if there is data allocated and if the string is zero ended.
 	* @return true if is valid, false otherwise.

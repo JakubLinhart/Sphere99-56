@@ -4,6 +4,8 @@
 
 #define _ISCSYM(ch) ( isalnum(ch) || (ch)=='_')	// __iscsym or __iscsymf
 
+#define EXPRESSION_MAX_KEY_LEN SCRIPT_MAX_SECTION_LEN
+
 class CGVariant
 {
 public:

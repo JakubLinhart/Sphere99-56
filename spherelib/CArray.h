@@ -529,6 +529,8 @@ public:
 
 struct CStringSortArray : public CGStringArray
 {
+public:
+	void AddSortString(LPCTSTR pszStr);
 };
 
 template<class TYPE, class KEY_TYPE>

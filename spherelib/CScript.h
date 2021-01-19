@@ -52,6 +52,8 @@ public:
 	
 	bool FindTextHeader(LPCTSTR pszName) { throw "not implemented"; } // Find a section in the current script
 	bool FindNextSection() { throw "not implemented"; }
+	virtual bool FindSection(LPCTSTR pszName, UINT uModeFlags) { throw "not implemented"; }
+	bool FindKey(LPCTSTR pszName) { throw "not implemented"; } // Find a key in the current section
 	bool ReadKeyParse() { throw "not implemented"; }
 	virtual bool ReadLine(bool fRemoveBlanks = true) { throw "not implemented"; }
 
@@ -59,6 +61,8 @@ public:
 	void WriteKey(LPCTSTR pszKey, LPCTSTR lpszVal) { throw "not implemented"; }
 	void WriteKeyInt(LPCTSTR pszKey, int iValue) { throw "not implemented"; }
 	void WriteKeyDWORD(LPCTSTR pszKey, DWORD iValue) { throw "not implemented"; }
+	bool WriteProfileStringSec(LPCTSTR pszSection, LPCTSTR pszKey, LPCTSTR pszVal) { throw "not implemented"; }
+	bool WriteProfileStringOffset(long lSectionOffset, LPCTSTR pszKey, LPCTSTR pszVal) { throw "not implemented"; }
 };
 
 void s_FixExtendedProp(LPCTSTR pszKey, LPCTSTR pszName, CGVariant& vVal) { throw "not implemented"; }

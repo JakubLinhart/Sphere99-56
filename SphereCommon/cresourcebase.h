@@ -85,7 +85,7 @@ public:
 	bool IsResourceMatchAll( CObjBase* pObj ) const;
 };
 
-class CResourceDef : public CScriptObj
+class CResourceDef : public CResourceObj
 {
 private:
 	CSphereUID m_rid;		// the true resource id. (must be unique for the RES_TYPE)
@@ -115,15 +115,6 @@ public:
 };
 typedef CRefPtr<CResourceDef> CResourceDefPtr;
 
-class CResourceTriggered : public CResourceDef
-{
-public:
-	CResourceTriggered(CSphereUID rid);
-
-	TRIGRET_TYPE OnTriggerScript(CScriptExecContext& context, int iNum, LPCTSTR pszName) { throw "not implemented"; }
-};
-typedef CRefPtr<CResourceTriggered> CResourceTrigPtr;
-
 #define XTRIG_UNKNOWN 0	// bit 0 is reserved to say there are triggers here that do not conform.
 
 class CResourceLink : public CResourceDef
@@ -135,6 +126,15 @@ public:
 	virtual HRESULT s_Method(LPCTSTR pszKey, CGVariant& vArgs, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; } // Execute command from script
 };
 typedef CRefPtr<CResourceLink> CResourceLinkPtr;
+
+class CResourceTriggered : public CResourceLink
+{
+public:
+	CResourceTriggered(CSphereUID rid);
+
+	TRIGRET_TYPE OnTriggerScript(CScriptExecContext& context, int iNum, LPCTSTR pszName) { throw "not implemented"; }
+};
+typedef CRefPtr<CResourceTriggered> CResourceTrigPtr;
 
 class CResourceNamed : public CResourceLink
 {

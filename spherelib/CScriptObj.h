@@ -31,8 +31,12 @@ enum TRIGRET_TYPE	// trigger script returns.
 	TRIGRET_QTY
 };
 
+class CScriptExecContext;
+
 class CScriptObj
 {
+public:
+	virtual TRIGRET_TYPE OnTrigger(LPCTSTR pszTrigName, CScriptExecContext& exec) { throw "not implemented"; }
 };
 
 class CRefObjDef

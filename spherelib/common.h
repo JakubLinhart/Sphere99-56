@@ -49,6 +49,8 @@
 #define _ISCLR(w,b) 	(!_ISSET(w,b))
 #endif
 
+#define _IS_SWITCH(c)    ((c) == '-' || (c) == '/' )	// command line switch.
+
 template <int size>
 class CBitArray
 {

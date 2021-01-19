@@ -130,6 +130,7 @@ class CGSocket
 {
 public:
 	CSocketAddress GetPeerName() const { throw "not implemented"; }
+	void Attach(SOCKET client) { throw "not implemented"; }
 	SOCKET Detach() { throw "not implemented"; }
 	SOCKET GetSocket() const { throw "not implemented"; }
 	CSocketAddress& GetSockName() const { throw "not implemented"; }
@@ -142,6 +143,7 @@ public:
 	int Bind(CSocketAddress& pSockAddrIn) { throw "not implemented"; }
 	int Listen() { throw "not implemented"; }
 	int IOCtl(long icmd, DWORD* pdwArgs) { throw "not implemented"; }
+	int SetSockOpt(int nOptionName, const void* optval, int optlen, int nLevel = SOL_SOCKET) const { throw "not implemented"; }
 	int GetSockOpt(int nOptionName, void* optval, int* poptlen, int nLevel = SOL_SOCKET) const { throw "not implemented"; }
 	int Accept(CGSocket& socket, CSocketAddress& addr) { throw "not implemented"; }
 
@@ -150,6 +152,12 @@ public:
 
 class CGSocketSet
 {
+public:
+	CGSocketSet(SOCKET socket) { throw "not implemented"; }
+	int GetNFDS() { throw "not implemented"; }
+	void Set(SOCKET socket) { throw "not implemented"; }
+	bool IsSet(const SOCKET socket) const { throw "not implemented"; }
+	operator fd_set*() { throw "not implemented"; }
 };
 
 class CLogIP

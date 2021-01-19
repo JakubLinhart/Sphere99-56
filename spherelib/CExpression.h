@@ -92,7 +92,7 @@ public:
 	int SetKeyVar(LPCTSTR pszKey, const CGVariant& val) { throw "not implemented"; }
 	int SetKeyStr(LPCTSTR pszKey, LPCTSTR pszVal) { throw "not implemented"; }
 	void SetKeyInt(LPCTSTR pszKey, DWORD dwVal) { throw "not implemented"; }
-	UID_INDEX FindKeyVar(LPCTSTR pszKey) const { throw "not implemented"; }
+	CGVariant FindKeyVar(LPCTSTR pszKey) const { throw "not implemented"; }
 	bool FindKeyVar(LPCTSTR pszKey, CGVariant& val) { throw "not implemented"; }
 	CGString FindKeyStr(LPCTSTR pszKey) const { throw "not implemented"; }
 	DWORD FindKeyInt(LPCTSTR pszKey) const { throw "not implemented"; }

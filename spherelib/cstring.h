@@ -390,4 +390,9 @@ class CScriptProp;
 int s_FindKeyInTable(LPCTSTR pszKey, const LPCTSTR pTable[]) { throw "not implemented"; }
 int s_FindKeyInTable(LPCTSTR pszKey, const CScriptProp pTable[]) { throw "not implemented"; }
 
+int FindTable(LPCTSTR pFind, LPCTSTR const* ppTable) { throw "not implemented"; }
+int FindTableSorted(LPCTSTR pFind, LPCTSTR const* ppTable, int count = -1) { throw "not implemented"; }
+int FindTableHead(LPCTSTR pFind, LPCTSTR const* ppTable, int count = -1) { throw "not implemented"; }
+int FindTableHeadSorted(LPCTSTR pFind, LPCTSTR const* ppTable, int count = -1) { throw "not implemented"; }
+
 #endif _INC_CSTRING_H

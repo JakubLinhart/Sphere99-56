@@ -417,4 +417,6 @@ public:
 
 };
 
+#define CFileBin CGFile
+
 #endif // _INC_CFILE_H

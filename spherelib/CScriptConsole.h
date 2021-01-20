@@ -15,4 +15,5 @@ public:
 
 	void WriteString(LPCTSTR pszStr) { throw "not implemented"; }
 	CScriptObj* GetAttachedObj() const { throw "not implemented"; }
+	int AddConsoleKey(LPCTSTR pszKey, BYTE bVal, bool bEcho) { throw "not implemented"; }
 };

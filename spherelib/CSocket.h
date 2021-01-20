@@ -148,6 +148,8 @@ public:
 	int Accept(CGSocket& socket, CSocketAddress& addr) { throw "not implemented"; }
 
 	static inline int GetLastError() { throw "not implemented"; }
+
+	operator CSocketAddress() const { throw "not implemented"; }
 };
 
 class CGSocketSet
@@ -164,13 +166,21 @@ class CLogIP
 {
 	// Keep a log of recent ip's we have talked to.
 	// Prevent ping floods etc.
+public:
+	void SetAccount(CScriptObj* pAccount) { throw "not implemented"; }
+	CScriptObj* GetAccount() const { throw "not implemented"; }
+	bool IncPingBlock(bool bVal) { throw "not implemented"; }
+	void InitTimes() { throw "not implemented"; }
+	void IncBadPassword(LPCTSTR pszAccount) { throw "not implemented"; }
 };
 typedef CRefPtr<CLogIP> CLogIPPtr;
 
 class CLogIPArray
 {
 public:
-	CLogIPPtr FindLogIP(const CGSocket& socket);
+	CLogIPPtr FindLogIP(const CSocketAddress& socket, bool fCreate = false) { throw "not implemented"; }
+	bool SetLogIPBlock(LPCTSTR pszIP, LPCTSTR pszReason) { throw "not implemented"; }
+	void OnTick() { throw "not implemented"; }
 };
 
 #endif

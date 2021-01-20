@@ -114,6 +114,7 @@ public:
 
 	CSocketAddress() { throw "not implemented"; }
 	CSocketAddress(in_addr dwIP, WORD uPort) { throw "not implemented"; }
+	CSocketAddress(DWORD dwIP, WORD uPort) { throw "not implemented"; }
 };
 
 struct CSocketNamedAddr : public CSocketAddress
@@ -124,6 +125,9 @@ struct CSocketNamedAddr : public CSocketAddress
 	void EmptyAddr() { throw "not implemented"; }
 	void SetHostPortStr(LPCTSTR pszHost) { throw "not implemented"; }
 	bool UpdateFromHostName() { throw "not implemented"; }
+
+	CSocketNamedAddr() { throw "not implemented"; }
+	CSocketNamedAddr(CSocketAddressIP ip, WORD uPort) { throw "not implemented"; }
 };
 
 class CGSocket

@@ -119,3 +119,13 @@ class CGSystemInfo
 public:
 	static bool IsNt() { throw "not implemented"; }
 };
+
+class CAssocStrVal
+{
+public:
+	LPCTSTR m_pszName;
+	int m_iVal;
+
+public:
+	LPCTSTR FindValSorted(int iVal) const { throw "not implemented"; }
+};

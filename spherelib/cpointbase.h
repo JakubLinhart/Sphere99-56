@@ -32,15 +32,20 @@ public:
 
 public:
 	void InitPoint();
+	virtual void ZeroPoint() { throw "not implemented"; }
 
 	int GetDistZ(const CGPointBase& pt) const;
 	int GetDist(const CGPointBase& pt) const; // Distance between points
 	int GetDist3D(const CGPointBase& pt) const; // 3D Distance between points
+	int GetDistBase(const CGPointBase& pt) const { throw "not implemented"; } // Distance between points
+	bool IsSame2D(const CGPointBase& pt) const { throw "not implemented"; }
 
 	void Set(const CGPointBase& pt);
 	void Set(const POINT pt);
 	void Set(const POINTS pt);
 	void v_Set(CGVariant& vVal);
+
+	int StepLinePath(const CGPointBase& ptSrc, int iSteps);
 
 	DIR_TYPE GetDir(const CGPointBase& pt, DIR_TYPE DirDefault = DIR_QTY) const; // Direction to point pt
 
@@ -56,3 +61,5 @@ public:
 	LPCTSTR v_Get() const { throw "not implemented"; }
 	void v_Get(CGVariant& vVal) const { throw "not implemented"; }
 };
+
+#define MAPPLANE_ALL	255

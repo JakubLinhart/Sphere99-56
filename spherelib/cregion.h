@@ -12,6 +12,7 @@ public:
 public:
 	int Width() const { return(m_right - m_left); }
 	int Height() const { return(m_bottom - m_top); }
+	bool IsRectEmpty() const { throw "not implemented"; }
 
 	operator RECT& ()
 	{
@@ -120,11 +121,15 @@ public:
 		m_Rects.Empty();
 	}
 
+	bool IsRegionEmpty() const { throw "not implemented"; }
 	int GetRegionRectCount() const { throw "not implemented"; }
 	CGRect& GetRegionRect(int i) { throw "not implemented"; }
 	virtual bool AddRegionRect(const CGRect& rect) { throw "not implemented"; }
 	virtual bool IsOverlapped(const CGRect& rect) const { throw "not implemented"; }
+	virtual bool IsOverlapped(const CGRect* rect) const { throw "not implemented"; }
+	virtual bool IsOverlapped(const CGRegion* pRect) const { throw "not implemented"; }
 	bool IsEqualRegion(const CGRegion* pRegionTest) const { throw "not implemented"; }
+	bool IsInside(const CGRegion* pRect) const { throw "not implemented"; }
 
 	CGPointBase GetRegionCorner(DIR_TYPE dir) const { throw "not implemented"; }
 	bool PtInRegion(const CGPointBase& pt) const { throw "not implemented"; }

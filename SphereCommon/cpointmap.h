@@ -39,7 +39,7 @@ struct CPointMapBase : public CGPointBase
 	CMulMapPtr GetMulMap() const;	// What VERFILE_MAP0 is this on ?
 	CSectorPtr GetSector() const;
 	CRegionPtr GetRegion( DWORD dwType ) const;
-
+	bool IsSameMapPlane(BYTE mapplane) const { throw "not implemented"; }
 	bool IsValidZ() const
 	{
 		return( m_z > SPHEREMAP_SIZE_MIN_Z && m_z < SPHEREMAP_SIZE_Z );
@@ -147,6 +147,7 @@ public:
 	// Keep in range for the selected map.
 	void NormalizeRect();
 	void NormalizeRectMax();
+	CPointMap GetCenter() const { throw "not implemented"; }
 
 	CSectorPtr GetSector( int i ) const;	// get all the sectors that make up this rect.
 

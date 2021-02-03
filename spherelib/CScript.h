@@ -4,18 +4,27 @@
 
 class CScriptMethod
 {
-
+public:
+	CScriptMethod() { throw "not implemented"; }
+	CScriptMethod(int i) { throw "not implemented"; }
+	CScriptMethod(LPCTSTR pszName, DWORD dwFlags, LPCTSTR pszDesc) { throw "not implemented"; }
 };
 
 class CScriptProp
 {
 public:
+	CScriptProp() { throw "not implemented"; }
+	CScriptProp(int i) { throw "not implemented"; }
+	CScriptProp(LPCTSTR pszName, DWORD dwFlags, LPCTSTR pszDesc) { throw "not implemented"; }
 	LPCTSTR m_pszName;
 };
 
 class CScriptPropX : public CScriptProp
 {
-
+public:
+	CScriptPropX() { throw "not implemented"; }
+	CScriptPropX(int i) { throw "not implemented"; }
+	CScriptPropX(LPCTSTR pszName, DWORD dwFlags, LPCTSTR pszDesc) { throw "not implemented"; }
 };
 
 class CScriptPropArray : public CGRefArray<CScriptProp>

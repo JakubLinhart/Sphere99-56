@@ -129,3 +129,6 @@ public:
 public:
 	LPCTSTR FindValSorted(int iVal) const { throw "not implemented"; }
 };
+
+int CvtUNICODEToSystem(TCHAR* pOut, int iSizeOutBytes, WCHAR* pwChar, int iSizeInBytes) { throw "not implemented"; }
+int CvtSystemToUNICODE(WCHAR* wChar, int iSizeInBytes, LPCTSTR pInp) { throw "not implemented"; }

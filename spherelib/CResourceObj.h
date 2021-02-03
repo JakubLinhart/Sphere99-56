@@ -21,6 +21,7 @@ public:
 
 	int GetRefCount() { throw "not implemented"; }
 	HASH_INDEX GetUIDIndex() const { return m_dwHashIndex; }
+	bool IsValidUID() const { throw "not implemented"; }
 };
 typedef CRefPtr<CResourceObj> CResourceObjPtr;
 

@@ -117,10 +117,14 @@ typedef CRefPtr<CResourceDef> CResourceDefPtr;
 
 #define XTRIG_UNKNOWN 0	// bit 0 is reserved to say there are triggers here that do not conform.
 
+class CResourceScript;
 class CResourceLink : public CResourceDef
 {
 public:
 	CResourceLink(CSphereUID rid);
+
+	CResourceScript* GetLinkFile() const { throw "not implemented"; }
+
 	virtual HRESULT s_PropSet(LPCTSTR pszKey, const CGVariant& vVal) { throw "not implemented"; }
 	virtual HRESULT s_PropGet(LPCTSTR pszKey, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; }
 	virtual HRESULT s_Method(LPCTSTR pszKey, CGVariant& vArgs, CGVariant& vValRet, CScriptConsole* pSrc) { throw "not implemented"; } // Execute command from script
@@ -251,7 +255,6 @@ public:
 #endif
 };
 
-#define CResourceScriptPtr CResourceScript*
 class CResourceScript : public CScript, public CMemDynamic
 {
 public:
@@ -262,6 +265,7 @@ public:
 protected:
 	DECLARE_MEM_DYNAMIC;
 };
+typedef CRefPtr<CResourceScript> CResourceScriptPtr;
 
 class CResourceFile : public CResourceScript
 {

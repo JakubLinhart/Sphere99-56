@@ -387,8 +387,10 @@ void Str_EscSeqRemove(LPCTSTR pStr1, LPCTSTR pStr2, int iSize) { throw "not impl
 UINT Str_ahextou(LPCTSTR pszStr) { throw "not implemented"; }
 
 class CScriptProp;
+class CScriptMethod;
 int s_FindKeyInTable(LPCTSTR pszKey, const LPCTSTR pTable[]) { throw "not implemented"; }
 int s_FindKeyInTable(LPCTSTR pszKey, const CScriptProp pTable[]) { throw "not implemented"; }
+int s_FindKeyInTable(LPCTSTR pszKey, const CScriptMethod pTable[]) { throw "not implemented"; }
 
 int FindTable(LPCTSTR pFind, LPCTSTR const* ppTable) { throw "not implemented"; }
 int FindTableSorted(LPCTSTR pFind, LPCTSTR const* ppTable, int count = -1) { throw "not implemented"; }
